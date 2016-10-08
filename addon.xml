@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<addon
+	id="skin.aeonmq6Krypton"
+	version="6.6.6"
+	name="Aeon MQ6 Krypton"
+	provider-name="MarcosQui">
+	<requires>
+	<import addon="xbmc.gui" version="5.12.0"/>
+	<import addon="script.skin.helper.service" version="1.0.0"/>
+	<import addon="resource.images.studios.white" version="0.0.6"/>
+	<import addon="resource.images.studios.coloured" version="0.0.7"/>
+	</requires>
+	<extension
+	  point="xbmc.gui.skin"
+	  debugging="false"
+	  effectslowdown="0.75">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+	<summary lang="en">Aeon MQ 6, improved, more light and more powerful than ever.</summary>
+	<summary lang="pt_br">Aeon MQ 6, melhorada, mais leve e mais poderosa do que nunca.</summary>
+	<description lang="en">The traditional Aeon MQ reaches its sixth edition.[CR]Reformulated, very simple to use, with a new code that provides a lightweight and powerful skin.[CR]The Aeon MQ 6 incorporates new features such as REPLACE which takes the main menu's level of customization to something never seen before.[CR]Aeon MQ 6, you've never seen a skin like this.</description>
+	<description lang="pt_br">A tradicional Aeon MQ chega a sua sexta edição.[CR]Aeon MQ 6 conta com todos os recursos presentes na versão anterior, no entanto, esses recursos foram otimizados afim de proporcionar uma experiência ainda melhor ao usuário.[CR]Aeon MQ 6, você nunca viu uma skin assim.</description>
+	<platform>all</platform>
+	</extension>
+</addon>
