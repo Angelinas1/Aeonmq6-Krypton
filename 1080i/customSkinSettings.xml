@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="6639" type="dialog">
+    <!-- Aeon MQ 6 -->
+    <defaultcontrol>9911</defaultcontrol>
+    <include>Animation_Fade</include>
+    <controls>
+        <control type="button" id="9911">
+            <include>InvisibleButton</include>
+            <onleft>Dialog.Close(6639)</onleft>
+            <onright>Dialog.Close(6639)</onright>
+            <onup>Dialog.Close(6639)</onup>
+            <ondown>Dialog.Close(6639)</ondown>
+        </control>
+        <control type="image">
+            <left>810</left>
+            <top>0</top>
+            <width>1110</width>
+            <height>600</height>
+            <texture>darkgrey.png</texture>
+            <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+            <animation effect="fade" end="95" condition="true">Conditional</animation>
+        </control>
+        <control type="group">
+            <!-- default group -->
+            <control type="label">
+                <left>810</left>
+                <top>22</top>
+                <width>1110</width>
+                <height>74</height>
+                <align>center</align>
+                <label>Skin setting</label>
+                <font>Font_32</font>
+                <textcolor>FFFFFAF0</textcolor>
+            </control>
+            <control type="image">
+                <left>210</left>
+                <top>120</top>
+                <width>1500</width>
+                <height>3</height>
+                <align>left</align>
+                <texture flipx="true">divider.png</texture>
+            </control>
+            <control type="image">
+                <!-- Skin Logo -->
+                <posx>1647</posx>
+                <posy>32</posy>
+                <width>210</width>
+                <height>150</height>
+                <texture>aeonmq6_logo.png</texture>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+                <aspectratio align="center" aligny="top">keep</aspectratio>
+            </control>
+            <control type="label">
+                <!-- Versao -->
+                <left>1647</left>
+                <top>135</top>
+                <width>210</width>
+                <height>38</height>
+                <align>center</align>
+                <font>Font_18</font>
+                <textcolor>FFFFFAF0</textcolor>
+                <label>$VAR[SkinVersion]</label>
+            </control>
+            <control type="textbox">
+                <left>870</left>
+                <top>135</top>
+                <width>1050</width>
+                <height>390</height>
+                <label>Initial skin setting for MOD Version</label>
+                <font>Font_18A</font>
+                <align>justify</align>
+            </control>
+        </control>
+    </controls>
+</window>

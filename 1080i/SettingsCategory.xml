@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="12">
+	<!-- Aeon MQ 6 -->
+	<defaultcontrol>3</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="multiimage">
+			<include>WindowBG</include>
+			<imagepath background="true">$VAR[value_menutheme_settings]</imagepath>
+		</control>
+		<control type="group">
+			<!-- default group -->
+			<include>Animation_Window</include>
+			<include>SettingsBack</include>
+			<!-- Menu da direita -->
+			<visible>!Window.IsActive(PVRChannelManager)</visible>
+			<control type="label">
+				<include>SettingsContentTitle</include>
+				<label>Interface Settings</label>
+				<visible>Window.IsActive(InterfaceSettings)</visible>
+			</control>
+			<control type="label">
+				<include>SettingsContentTitle</include>
+				<label>Player Settings</label>
+				<visible>Window.IsActive(PlayerSettings)</visible>
+			</control>
+			<control type="label">
+				<include>SettingsContentTitle</include>
+				<label>Library Settings</label>
+				<visible>Window.IsActive(MediaSettings)</visible>
+			</control>
+			<control type="label">
+				<include>SettingsContentTitle</include>
+				<label>31357</label>
+				<visible>System.HasPVRAddon</visible>
+			</control>
+			<control type="label">
+				<include>SettingsContentTitle</include>
+				<label>31359</label>
+				<visible>Window.IsActive(systemsettings)</visible>
+			</control>
+			<control type="label">
+				<include>SettingsContentTitle</include>
+				<label>31361</label>
+				<visible>Window.IsActive(servicesettings)</visible>
+			</control>
+			<control type="image">
+				<left>360</left>
+				<top>900</top>
+				<height>180</height>
+				<width>1560</width>
+				<texture flipy="true">osd_grey_bg.png</texture>
+				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+				<animation effect="fade" end="85" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<!-- Painel de info no rodape -->
+				<left>360</left>
+				<top>900</top>
+				<height>3</height>
+				<width>1560</width>
+				<texture>separator.png</texture>
+			</control>
+			<control type="textbox" id="6">
+				<left>435</left>
+				<top>915</top>
+				<width>1410</width>
+				<height>135</height>
+				<font>Font_18A</font>
+				<align>justify</align>
+				<aligny>top</aligny>
+				<textcolor>FFFFFAF0</textcolor>
+				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+			</control>
+			<control type="grouplist" id="5">
+				<left>390</left>
+				<top>180</top>
+				<width>1530</width>
+				<height>720</height>
+				<itemgap>0</itemgap>
+				<onup>5</onup>
+				<ondown>5</ondown>
+				<onleft>3</onleft>
+				<onright>80</onright>
+				<pagecontrol>80</pagecontrol>
+			</control>
+			<control type="button" id="7"/>
+			<control type="radiobutton" id="8"/>
+			<control type="spincontrolex" id="9"/>
+			<control type="sliderex" id="13"/>
+			<control type="label" id="14"/>
+			<include>RSS</include>
+			<control type="scrollbar" id="80">
+				<include>ScrollBar_Vertical</include>
+				<left>1860</left>
+				<top>195</top>
+				<height>696</height>
+				<onleft>5</onleft>
+				<onright>3</onright>
+				<animation effect="fade" time="200">Visible</animation>
+				<animation effect="fade" time="50">Hidden</animation>
+			</control>
+			<include>SettingsMenu</include>
+			<!-- Menu da esquerda -->
+			<include>Date</include>
+			<control type="label">
+				<include>SettingsSectionTitle</include>
+				<label>31202</label>
+			</control>
+			<control type="group">
+				<!-- Menu de nivel -->
+				<left>-450</left>
+				<animation effect="slide" start="0,0" end="450,0" time="300" easing="out" tween="cubic" condition="ControlGroup(9000).HasFocus">Conditional</animation>
+				<control type="grouplist" id="9000">
+					<left>0</left>
+					<top>180</top>
+					<width>360</width>
+					<height>990</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<onleft>9000</onleft>
+					<onright>3</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onback>3</onback>
+					<control type="button" id="20">
+						<!-- Setting level -->
+						<include>SettingsButton</include>
+						<label>10037</label>
+						<onclick>SettingsLevelChange</onclick>
+					</control>
+					<control type="button" id="21">
+						<!-- Reset level -->
+						<include>SettingsButton</include>
+						<label>10035</label>
+						<onclick>SettingsReset</onclick>
+					</control>
+				</control>
+			</control>
+			<control type="grouplist" id="3">
+				<left>0</left>
+				<top>180</top>
+				<width>360</width>
+				<height>990</height>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				<onleft>9000</onleft>
+				<onright>5</onright>
+				<onup>3</onup>
+				<ondown>3</ondown>
+				<animation effect="slide" start="0,0" end="-450,0" time="300" easing="out" tween="cubic" condition="ControlGroup(9000).HasFocus">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>375</width>
+				<height>1080</height>
+				<texture>menu_glass.png</texture>
+				<colordiffuse>70FFFAF0</colordiffuse>
+			</control>
+			<control type="button" id="10">
+				<!-- Default category button-->
+				<include>SettingsButton</include>
+				<onclick>SetFocus(800)</onclick>
+			</control>
+			<include>BGBlack</include>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Aeon MQ 6 -->
+    <!--##################################################################################   VISTA LOW LIST - ID 55   ##################################################################################-->
+    <include name="LowListLabel">
+        <left>0</left>
+        <height>30</height>
+        <width>525</width>
+        <font>Font_18A</font>
+        <aligny>top</aligny>
+        <align>left</align>
+        <textcolor>$VAR[value_headercolor]</textcolor>
+        <textoffsetx>0</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <scroll>true</scroll>
+    </include>
+    <include name="LowListDisc">
+        <width>195</width>
+        <height>195</height>
+        <fadetime>FanartCrossFadeTime</fadetime>
+        <aspectratio align="center" aligny="center">keep</aspectratio>
+        <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+        <include>Animation_ViewsCDart</include>
+    </include>
+    <include name="ViewLowList">
+        <control type="group">
+            <!-- default group -->
+            <animation effect="fade" time="400">VisibleChange</animation>
+            <visible>StringCompare(Container.Viewmode,LOW LIST)</visible>
+            <control type="button" id="9915">
+                <include>InvisibleButton</include>
+                <onup>55</onup>
+                <ondown>55</ondown>
+                <onleft>55</onleft>
+                <onright>9920</onright>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>450</top>
+                <width>1920</width>
+                <height>315</height>
+                <texture>gradient_small.png</texture>
+                <colordiffuse>E9FFFFFF</colordiffuse>
+                <include>Animation_Fade</include>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>722</top>
+                <width>1920</width>
+                <height>45</height>
+                <texture>shadow_h.png</texture>
+                <colordiffuse>C3FFFFFF</colordiffuse>
+                <include>Animation_Fade</include>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>765</top>
+                <width>450</width>
+                <height>210</height>
+                <texture flipy="true" diffuse="shadow_mask.png">darkgrey.png</texture>
+                <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                <animation effect="fade" end="85" condition="true">Conditional</animation>
+            </control>
+            <control type="image">
+                <left>1350</left>
+                <top>765</top>
+                <width>570</width>
+                <height>210</height>
+                <texture flipy="true" diffuse="shadow_mask.png">darkgrey.png</texture>
+                <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                <animation effect="fade" end="85" condition="true">Conditional</animation>
+                <include>Animation_Fade</include>
+            </control>
+            <control type="group">
+                <animation effect="slide" time="500" start="0,600" end="0,0" tween="cubic" easing="out">WindowOpen</animation>
+                <animation effect="slide" time="500" start="0,600" end="0,0" tween="cubic" easing="out">Visible</animation>
+                <animation effect="fade" time="200" start="100" end="0">Hidden</animation>
+                <control type="group">
+                    <animation effect="slide" time="600" start="0,0" end="-600,0" tween="cubic" easing="inout" condition="[Control.HasFocus(9915) | Window.IsVisible(6621) | Window.IsActive(videos) + Skin.HasSetting(lowlistplotvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(lowlistplotaudio)] + !IsEmpty(Control.GetLabel(5501))">Conditional</animation>
+                    <animation effect="slide" time="400" start="-600,0" end="0,0" tween="cubic" easing="inout">Hidden</animation>
+                    <control type="image">
+                        <!-- Logo -->
+                        <left>1440</left>
+                        <top>570</top>
+                        <width>450</width>
+                        <height>195</height>
+                        <texture background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
+                        <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <visible>Window.IsActive(musicplaylist) | Window.IsActive(music)</visible>
+                    </control>
+                    <control type="image">
+                        <!-- clearlogo e clearart -->
+                        <left>1440</left>
+                        <top>570</top>
+                        <width>450</width>
+                        <height>195</height>
+                        <texture background="true">$VAR[value_logoandclearart]</texture>
+                        <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <visible>Window.IsActive(videos) + !Skin.HasSetting(noartlowlistvideo)</visible>
+                    </control>
+                </control>
+                <control type="group">
+                    <!-- Painel de Info -->
+                    <animation effect="slide" time="600" start="600,0" end="0,0" tween="cubic" easing="inout">Visible</animation>
+                    <animation effect="slide" time="400" start="0,0" end="600,0" tween="cubic" easing="inout">Hidden</animation>
+                    <visible>Control.HasFocus(9915) | Window.IsVisible(6621) | Window.IsActive(videos) + Skin.HasSetting(lowlistplotvideo) + !IsEmpty(Control.GetLabel(5501)) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(lowlistplotaudio) + !IsEmpty(Control.GetLabel(5501))</visible>
+                    <control type="image">
+                        <left>1306</left>
+                        <top>-105</top>
+                        <width>45</width>
+                        <height>870</height>
+                        <texture flipx="true">shadow.png</texture>
+                        <colordiffuse>C3FFFFFF</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>1350</left>
+                        <top>-105</top>
+                        <width>570</width>
+                        <height>870</height>
+                        <texture>darkgrey.png</texture>
+                        <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                        <animation effect="fade" end="85" condition="true">Conditional</animation>
+                        <include>Animation_Fade</include>
+                    </control>
+                    <control type="textbox">
+                        <left>1380</left>
+                        <top>30</top>
+                        <width>510</width>
+                        <height>711</height>
+                        <font>Font_18A</font>
+                        <label>$VAR[value_plot]</label>
+                        <autoscroll delay="30000" time="3000" repeat="30000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                    </control>
+                </control>
+                <control type="grouplist">
+                    <!-- Painel de info -->
+                    <left>1920</left>
+                    <top>771</top>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <animation effect="slide" time="600" start="0,0" end="-540,0" tween="cubic" easing="inout" condition="Control.HasFocus(9915) | Window.IsVisible(6621) | Window.IsActive(videos) + Skin.HasSetting(lowlistplotvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(lowlistplotaudio)">Conditional</animation>
+                    <control type="label">
+                        <include>LowListLabel</include>
+                        <label>$VAR[value_ground11_label]: [COLOR=FFFFFAF0]$VAR[value_ground11_value][/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <include>LowListLabel</include>
+                        <label>$VAR[value_ground12_label]: [COLOR=FFFFFAF0]$VAR[value_ground12_value][/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <include>LowListLabel</include>
+                        <label>$VAR[value_ground13_label]: [COLOR=FFFFFAF0]$VAR[value_ground13_value][/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <include>LowListLabel</include>
+                        <label>$VAR[value_ground15_label]: [COLOR=FFFFFAF0]$VAR[value_ground15_value][/COLOR]</label>
+                    </control>
+                    <control type="label">
+                        <include>LowListLabel</include>
+                        <label>$VAR[value_ground16_label]: [COLOR=FFFFFAF0]$VAR[value_ground16_value][/COLOR]</label>
+                    </control>
+                </control>
+                <control type="image">
+                    <left>405</left>
+                    <top>765</top>
+                    <width>45</width>
+                    <height>210</height>
+                    <texture flipx="true">shadow.png</texture>
+                    <colordiffuse>C3FFFFFF</colordiffuse>
+                </control>
+                <control type="image">
+                    <left>1350</left>
+                    <top>765</top>
+                    <width>45</width>
+                    <height>210</height>
+                    <texture>shadow.png</texture>
+                    <colordiffuse>C3FFFFFF</colordiffuse>
+                </control>
+                <control type="image">
+                    <left>450</left>
+                    <top>765</top>
+                    <width>900</width>
+                    <height>210</height>
+                    <texture flipy="true" diffuse="shadow_mask.png">darkgrey.png</texture>
+                    <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                    <animation effect="fade" end="85" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <left>1185</left>
+                    <top>765</top>
+                    <width>105</width>
+                    <height>210</height>
+                    <texture>grey.png</texture>
+                    <animation effect="fade" end="20" condition="true">conditional</animation>
+                    <visible>[Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(years)]</visible>
+                </control>
+                <control type="list" id="55">
+                    <viewtype label="31807">list</viewtype>
+                    <left>450</left>
+                    <top>765</top>
+                    <width>900</width>
+                    <height>210</height>
+                    <pagecontrol>80</pagecontrol>
+                    <onleft>80</onleft>
+                    <onright condition="![IsEmpty(Control.GetLabel(5501)) | Window.IsActive(videos) + Skin.HasSetting(lowlistplotvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(lowlistplotaudio)]">9915</onright>
+                    <onright condition="IsEmpty(Control.GetLabel(5501)) | Window.IsActive(videos) + Skin.HasSetting(lowlistplotvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(lowlistplotaudio)">9920</onright>
+                    <onup>55</onup>
+                    <ondown>55</ondown>
+                    <focusposition>1</focusposition>
+                    <orientation>vertical</orientation>
+                    <scrolltime>450</scrolltime>
+                    
+                    <animation effect="fade" start="100" end="20" time="200" condition="Window.IsVisible(6621)">Conditional</animation>
+                    <itemlayout condition="[Window.IsActive(videos) + !Skin.HasSetting(slimlowlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(slimlowlistmusic)]" height="45">
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>898</width>
+                            <height>1</height>
+                            <texture>line.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>30</left>
+                            <top>1</top>
+                            <width>675</width>
+                            <height>45</height>
+                            <font>Font_20</font>
+                            <aligny>center</aligny>
+                            <include>listcolor</include>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="label">
+                            <left>724</left>
+                            <top>0</top>
+                            <width>128</width>
+                            <height>45</height>
+                            <font>Font_18A</font>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <include>detailcolor</include>
+                            <label>$INFO[ListItem.Rating]</label>
+                        </control>
+                        <control type="image">
+                            <left>855</left>
+                            <top>4</top>
+                            <width>38</width>
+                            <height>38</height>
+                            <texture>$VAR[value_watchedstyle]</texture>
+                            <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                            <visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        </control>
+                    </itemlayout>
+                    <itemlayout condition="[Window.IsActive(videos) + Skin.HasSetting(slimlowlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimlowlistmusic)]" height="40">
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>898</width>
+                            <height>1</height>
+                            <texture>line.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>30</left>
+                            <top>1</top>
+                            <width>675</width>
+                            <height>40</height>
+                            <font>Font_20</font>
+                            <aligny>center</aligny>
+                            <include>listcolor</include>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="label">
+                            <left>724</left>
+                            <top>1</top>
+                            <width>128</width>
+                            <height>40</height>
+                            <font>Font_18A</font>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <include>detailcolor</include>
+                            <label>$INFO[ListItem.Rating]</label>
+                        </control>
+                        <control type="image">
+                            <left>848</left>
+                            <top>0</top>
+                            <width>42</width>
+                            <height>42</height>
+                            <texture>$VAR[value_watchedstyle]</texture>
+                            <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                            <visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout condition="IsEmpty(Control.GetLabel(5502)) | [Window.IsActive(videos) + Skin.HasSetting(slimlowlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimlowlistmusic)]" height="45">
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>900</width>
+                            <height>45</height>
+                            <texture>settings_button_focus.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>30</left>
+                            <top>1</top>
+                            <width>675</width>
+                            <height>45</height>
+                            <font>Font_20</font>
+                            <aligny>center</aligny>
+                            <include>listcolorfocus</include>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="label">
+                            <left>724</left>
+                            <top>0</top>
+                            <width>128</width>
+                            <height>45</height>
+                            <font>Font_18A</font>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <include>detailcolorfocus</include>
+                            <label>$INFO[ListItem.Rating]</label>
+                        </control>
+                        <control type="image">
+                            <left>848</left>
+                            <top>0</top>
+                            <width>45</width>
+                            <height>45</height>
+                            <texture>$VAR[value_watchedstyle]</texture>
+                            <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                            <visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        </control>
+                    </focusedlayout>
+                    <focusedlayout condition="!IsEmpty(Control.GetLabel(5502)) + [Window.IsActive(videos) + !Skin.HasSetting(slimlowlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(slimlowlistmusic)]" height="75">
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>900</width>
+                            <height>75</height>
+                            <texture>settings_button_focus.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>30</left>
+                            <top>0</top>
+                            <width>675</width>
+                            <height>45</height>
+                            <font>Font_22</font>
+                            <aligny>center</aligny>
+                            <include>listcolorfocus</include>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="label">
+                            <left>30</left>
+                            <top>44</top>
+                            <width>675</width>
+                            <height>24</height>
+                            <font>Font_18A</font>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <include>subcolorfocus</include>
+                            <label>$VAR[value_listinfofocus]</label>
+                            <visible>!StringCompare(ListItem.Label,..)</visible>
+                        </control>
+                        <control type="label">
+                            <left>724</left>
+                            <top>0</top>
+                            <width>128</width>
+                            <height>45</height>
+                            <font>Font_18A</font>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <include>detailcolorfocus</include>
+                            <label>$INFO[ListItem.Rating]</label>
+                        </control>
+                        <control type="image">
+                            <description>IMDB rating</description>
+                            <left>738</left>
+                            <top>45</top>
+                            <width>98</width>
+                            <height>20</height>
+                            <texture>$VAR[value_starrating]</texture>
+                            <colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
+                            <visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | IsEmpty(ListItem.Title)]</visible>
+                        </control>
+                        <control type="image">
+                            <left>848</left>
+                            <top>1</top>
+                            <width>45</width>
+                            <height>45</height>
+                            <texture>$VAR[value_watchedstyle]</texture>
+                            <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                            <visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        </control>
+                    </focusedlayout>
+                </control>
+                <control type="textbox">
+                    <left>1380</left>
+                    <top>780</top>
+                    <width>510</width>
+                    <height>171</height>
+                    <font>Font_18A</font>
+                    <label>$VAR[value_plot]</label>
+                    <autoscroll delay="8000" time="2000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                    <animation effect="slide" time="600" start="600,0" end="0,0" tween="cubic" easing="inout">Visible</animation>
+                    <animation effect="slide" time="400" start="0,0" end="600,0" tween="cubic" easing="inout">Hidden</animation>
+                    <visible>![Control.HasFocus(9915) | Window.IsVisible(6621) | Window.IsActive(videos) + Skin.HasSetting(lowlistplotvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(lowlistplotaudio)]</visible>
+                </control>
+                <control type="label" id="5501">
+                    <!-- Plot -->
+                    <include>InvisibleButton</include>
+                    <label>$VAR[value_plot]</label>
+                </control>
+                <control type="label" id="5502">
+                    <!-- Tag -->
+                    <include>InvisibleButton</include>
+                    <label>$VAR[value_listinfofocus]</label>
+                </control>
+            </control>
+            <control type="group">
+                <!-- Default Group - Miniaturas -->
+                <left>45</left>
+                <top>300</top>
+                <visible>StringCompare(Container.Viewmode,LOW LIST)</visible>
+                <animation effect="slide" time="1000" start="-600,0" end="0,0" tween="cubic" easing="out">WindowOpen</animation>
+                <animation effect="slide" time="1000" start="-600,0" end="0,0" tween="cubic" easing="out">Visible</animation>
+                <animation effect="fade" time="400" start="100" end="0">Hidden</animation>
+                <control type="group">
+                    <!-- CDART VIDEO -->
+                    <animation type="WindowOpen">
+                        <effect type="slide" start="-150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                        <effect type="fade" start="0" end="100" time="500" delay="500" />
+                    </animation>
+                    <animation type="Visible">
+                        <effect type="slide" start="-150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                        <effect type="fade" start="0" end="100" time="500" delay="500" />
+                    </animation>
+                    <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+                    <animation type="Hidden">
+                        <effect type="slide" start="0,0" end="-150,0" time="300" tween="cubic" easing="out" />
+                        <effect type="fade" start="100" end="0" time="200" />
+                    </animation>
+                    <animation effect="slide" time="200" start="0,0" end="0,-30" tween="cubic" easing="out" condition="!Skin.HasSetting(nolowlistvideocase)">Conditional</animation>
+                    <visible>![IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nolowlistdiscart) | SubString(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
+                    <control type="image">
+                        <left>168</left>
+                        <top>105</top>
+                        <width>375</width>
+                        <height>375</height>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
+                        <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                        <include>Animation_ViewsCDart</include>
+                    </control>
+                </control>
+                <control type="grouplist">
+                    <!-- CDART SETS -->
+                    <left>398</left>
+                    <top>262</top>
+                    <orientation>horizontal</orientation>
+                    <itemgap>-117</itemgap>
+                    <animation type="WindowOpen">
+                        <effect type="slide" start="-150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                        <effect type="fade" start="0" end="100" time="500" delay="500" />
+                    </animation>
+                    <animation type="Visible">
+                        <effect type="slide" start="-150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                        <effect type="fade" start="0" end="100" time="500" delay="500" />
+                    </animation>
+                    <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+                    <animation type="Hidden">
+                        <effect type="slide" start="0,0" end="-150,0" time="300" tween="cubic" easing="out" />
+                        <effect type="fade" start="100" end="0" time="200" />
+                    </animation>
+                    <visible>![IsEmpty(Window(0).Property(SkinHelper.MovieSet.0.DiscArt)) | Skin.HasSetting(nolowlistdiscart)] + Window.IsActive(videos) + SubString(ListItem.Path,videodb://movies/sets,left) + Control.IsVisible(9923)</visible>
+                    <control type="image">
+                        <include>LowListDisc</include>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.0.DiscArt)]</texture>
+                        <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.0.DiscArt))</visible>
+                    </control>
+                    <control type="image">
+                        <include>LowListDisc</include>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.1.DiscArt)]</texture>
+                        <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.1.DiscArt))</visible>
+                    </control>
+                    <control type="image">
+                        <include>LowListDisc</include>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.2.DiscArt)]</texture>
+                        <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.2.DiscArt))</visible>
+                    </control>
+                    <control type="image">
+                        <include>LowListDisc</include>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.3.DiscArt)]</texture>
+                        <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.3.DiscArt))</visible>
+                    </control>
+                    <control type="image">
+                        <include>LowListDisc</include>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.4.DiscArt)]</texture>
+                        <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.4.DiscArt))</visible>
+                    </control>
+                    <control type="image">
+                        <include>LowListDisc</include>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.5.DiscArt)]</texture>
+                        <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.5.DiscArt))</visible>
+                    </control>
+                    <control type="image">
+                        <include>LowListDisc</include>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.6.DiscArt)]</texture>
+                        <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.6.DiscArt))</visible>
+                    </control>
+                    <control type="image">
+                        <include>LowListDisc</include>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.7.DiscArt)]</texture>
+                        <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.7.DiscArt))</visible>
+                    </control>
+                    <control type="image">
+                        <include>LowListDisc</include>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.8.DiscArt)]</texture>
+                        <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.8.DiscArt))</visible>
+                    </control>
+                    <control type="image">
+                        <include>LowListDisc</include>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.9.DiscArt)]</texture>
+                        <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.9.DiscArt))</visible>
+                    </control>
+                </control>
+                <control type="group">
+                    <!-- VIDEO SEM ESTOJO -->
+                    <include>Animation_Fade</include>
+                    <visible>![!Skin.HasSetting(nolowlistvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)] | Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+                    <control type="image">
+                        <!-- Filmes/Fotos/Arquivos reflexo -->
+                        <left>-8</left>
+                        <top>628</top>
+                        <width>368</width>
+                        <height>525</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <aspectratio align="center" aligny="top">keep</aspectratio>
+                        <texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_poster]</texture>
+                        <bordertexture flipy="true" diffuse="thumb_reflect.png" border="-2">black.png</bordertexture>
+                    </control>
+                    <control type="image">
+                        <!-- Filmes/Fotos/Arquivos -->
+                        <left>-8</left>
+                        <top>98</top>
+                        <width>368</width>
+                        <height>525</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                        <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+                        <bordertexture border="-2">black.png</bordertexture>
+                    </control>
+                </control>
+                <control type="group">
+                    <!-- FILMES ESTOJO -->
+                    <include>Animation_Fade</include>
+                    <visible>!Skin.HasSetting(nolowlistvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)]</visible>
+                    <control type="image">
+                        <!-- Poster reflexo -->
+                        <left>-8</left>
+                        <top>651</top>
+                        <width>368</width>
+                        <height>525</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_poster]</texture>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    <control type="image">
+                        <!-- Estojo reflexo -->
+                        <left>-39</left>
+                        <top>597</top>
+                        <width>453</width>
+                        <height>652</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <texture flipy="true" diffuse="thumb_box_reflect.png">$VAR[value_videocase0]</texture>
+                        <aspectratio>stretch</aspectratio>
+                        <include>Animation_CaseGlass</include>
+                    </control>
+                    <control type="image">
+                        <!-- Poster -->
+                        <left>-8</left>
+                        <top>94</top>
+                        <width>368</width>
+                        <height>525</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+                    </control>
+                    <control type="image">
+                        <!-- Estojo -->
+                        <left>-39</left>
+                        <top>12</top>
+                        <width>453</width>
+                        <height>652</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <texture>$VAR[value_videocase0]</texture>
+                        <include>Animation_CaseGlass</include>
+                    </control>
+                    <control type="image">
+                        <!-- Codec -->
+                        <left>132</left>
+                        <top>18</top>
+                        <width>105</width>
+                        <height>105</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <aspectratio scalediffuse="true">keep</aspectratio>
+                        <texture>$VAR[value_videocodec0]</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <!-- MUSICA -->
+                    <include>Animation_Fade</include>
+                    <visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(nolowlistaudiocase)</visible>
+                    <control type="image">
+                        <!-- Musica reflexo -->
+                        <left>-8</left>
+                        <top>630</top>
+                        <width>368</width>
+                        <height>525</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <aspectratio align="center" aligny="top">keep</aspectratio>
+                        <texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_poster]</texture>
+                        <bordertexture flipy="true" diffuse="thumb_reflect.png" border="-2">black.png</bordertexture>
+                    </control>
+                    <control type="image">
+                        <!-- Musica -->
+                        <left>-8</left>
+                        <top>98</top>
+                        <width>368</width>
+                        <height>525</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                        <texture fallback="DefaultAudioCover.png" background="true">$VAR[value_poster]</texture>
+                        <bordertexture border="-2">black.png</bordertexture>
+                    </control>
+                </control>
+                <control type="group">
+                    <!-- MUSICA ESTOJO -->
+                    <include>Animation_Fade</include>
+                    <visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(nolowlistaudiocase)</visible>
+                    <control type="image">
+                        <!-- Musica/Estojo reflexo-->
+                        <left>27</left>
+                        <top>630</top>
+                        <width>345</width>
+                        <height>345</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <texture flipy="true" diffuse="thumb_box_diffuse_reflect.png" background="true">$VAR[value_poster]</texture>
+                    </control>
+                    <control type="image">
+                        <!-- Estojo reflexo -->
+                        <left>-30</left>
+                        <top>627</top>
+                        <width>417</width>
+                        <height>364</height>
+                        <texture flipy="true" diffuse="thumb_box_reflect.png">thumb_box_cd.png</texture>
+                    </control>
+                    <control type="image">
+                        <!-- Musica -->
+                        <left>27</left>
+                        <top>291</top>
+                        <width>345</width>
+                        <height>345</height>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <texture diffuse="thumb_box_diffuse.png" fallback="DefaultAudioCover.png" background="true">$VAR[value_poster]</texture>
+                    </control>
+                    <control type="image">
+                        <!-- Estojo -->
+                        <left>-30</left>
+                        <top>285</top>
+                        <width>417</width>
+                        <height>364</height>
+                        <texture>thumb_box_cd.png</texture>
+                        <colordiffuse>DEFFFFFF</colordiffuse>
+                    </control>
+                </control>
+            </control>
+            <control type="scrollbar" id="80">
+                <include>ScrollBar_Vertical</include>
+                <left>408</left>
+                <top>766</top>
+                <height>210</height>
+                <onleft>9900</onleft>
+                <onright>55</onright>
+                <include>Animation_Fade</include>
+                <visible allowhiddenfocus="true">StringCompare(Container.Viewmode,LOW LIST) + Control.HasFocus(80)</visible>
+            </control>
+        </control>
+    </include>
+</includes>

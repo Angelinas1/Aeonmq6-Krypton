@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="6626">
+    <!-- Aeon MQ 6 -->
+    <defaultcontrol always="true">9030</defaultcontrol>
+    <controls>
+        <control type="multiimage">
+            <include>WindowBG</include>
+            <imagepath background="true">$VAR[value_menutheme_settings]</imagepath>
+        </control>
+        <control type="group">
+            <include>Animation_DialogPopup</include>
+            <control type="image">
+                <left>165</left>
+                <top>0</top>
+                <width>45</width>
+                <height>1080</height>
+                <texture flipx="true">shadow.png</texture>
+                <colordiffuse>C3FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>1710</left>
+                <top>0</top>
+                <width>45</width>
+                <height>1080</height>
+                <texture>shadow.png</texture>
+                <colordiffuse>C3FFFFFF</colordiffuse>
+            </control>
+            <control type="image">
+                <left>210</left>
+                <top>0</top>
+                <width>1500</width>
+                <height>1080</height>
+                <texture>darkgrey.png</texture>
+                <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                <include>Animation_DefaultGlass</include>
+            </control>
+            <control type="image">
+                <left>210</left>
+                <top>0</top>
+                <width>1500</width>
+                <height>120</height>
+                <texture>black.png</texture>
+                <colordiffuse>90FFFFFF</colordiffuse>
+            </control>
+            <control type="label">
+                <left>322</left>
+                <top>8</top>
+                <width>1278</width>
+                <height>45</height>
+                <align>center</align>
+                <aligny>top</aligny>
+                <label>31479</label>
+                <font>Font_32</font>
+                <textcolor>FFFFFAF0</textcolor>
+            </control>
+            <control type="label">
+                <left>322</left>
+                <top>68</top>
+                <width>1278</width>
+                <height>45</height>
+                <align>center</align>
+                <aligny>top</aligny>
+                <label>31140</label>
+                <font>Font_18A</font>
+                <textcolor>FFFFFAF0</textcolor>
+            </control>
+            <control type="grouplist" id="9030">
+                <left>210</left>
+                <top>150</top>
+                <width>1500</width>
+                <height>900</height>
+                <itemgap>0</itemgap>
+                <onleft>back</onleft>
+                <onright>back</onright>
+                <control type="radiobutton" id="19299">
+                    <!-- Clicar e Ativar -->
+                    <radioposx>1341</radioposx>
+                    <label>31496</label>
+                    <onclick>Skin.ToggleSetting(clickactivateview_music)</onclick>
+                    <selected>Skin.HasSetting(clickactivateview_music)</selected>
+                </control>
+                <control type="radiobutton" id="19254">
+                    <!-- Poster -->
+                    <!-- 54 -->
+                    <radioposx>1341</radioposx>
+                    <label>31808</label>
+                    <onclick>Skin.ToggleSetting(viewposter_music)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewposter_music)">Skin.SetString(setviewmusic,54)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewposter_music) + Skin.HasSetting(clickactivateview_music)">back</onclick>
+                    <selected>Skin.HasSetting(viewposter_music)</selected>
+                </control>
+                <control type="radiobutton" id="19255">
+                    <!-- Low List -->
+                    <!-- 55 -->
+                    <radioposx>1341</radioposx>
+                    <label>31807</label>
+                    <onclick>Skin.ToggleSetting(viewlowlist_music)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewlowlist_music)">Skin.SetString(setviewmusic,55)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewlowlist_music) + Skin.HasSetting(clickactivateview_music)">back</onclick>
+                    <selected>Skin.HasSetting(viewlowlist_music)</selected>
+                </control>
+                <control type="radiobutton" id="19256">
+                    <!-- Wall -->
+                    <!-- 56 -->
+                    <radioposx>1341</radioposx>
+                    <label>31805</label>
+                    <onclick>Skin.ToggleSetting(viewwall_music)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewwall_music)">Skin.SetString(setviewmusic,56)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewwall_music) + Skin.HasSetting(clickactivateview_music)">back</onclick>
+                    <selected>Skin.HasSetting(viewwall_music)</selected>
+                </control>
+                <control type="radiobutton" id="19258">
+                    <!-- CoverFlow -->
+                    <!-- 58 -->
+                    <radioposx>1341</radioposx>
+                    <label>31810</label>
+                    <onclick>Skin.ToggleSetting(viewcoverflow_music)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewcoverflow_music)">Skin.SetString(setviewmusic,58)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewcoverflow_music) + Skin.HasSetting(clickactivateview_music)">back</onclick>
+                    <selected>Skin.HasSetting(viewcoverflow_music)</selected>
+                </control>
+                <control type="radiobutton" id="19259">
+                    <!-- Wide -->
+                    <!-- 59 -->
+                    <radioposx>1341</radioposx>
+                    <label>31813</label>
+                    <onclick>Skin.ToggleSetting(viewwide_music)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewwide_music)">Skin.SetString(setviewmusic,59)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewwide_music) + Skin.HasSetting(clickactivateview_music)">back</onclick>
+                    <selected>Skin.HasSetting(viewwide_music)</selected>
+                </control>
+                <control type="radiobutton" id="19262">
+                    <!-- Panel -->
+                    <!-- 62 -->
+                    <radioposx>1341</radioposx>
+                    <label>31818</label>
+                    <onclick>Skin.ToggleSetting(viewpanel_music)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewpanel_music)">Skin.SetString(setviewmusic,62)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewpanel_music) + Skin.HasSetting(clickactivateview_music)">back</onclick>
+                    <selected>Skin.HasSetting(viewpanel_music)</selected>
+                </control>
+                <control type="radiobutton" id="19278">
+                    <!-- CoverFlowandBack -->
+                    <!-- 78 -->
+                    <radioposx>1341</radioposx>
+                    <label>CoverFlowandBack</label>
+                    <onclick>Skin.ToggleSetting(viewcoverflowback_music)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewcoverflowback_music)">Skin.SetString(setviewmusic,78)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewcoverflowback_music) + Skin.HasSetting(clickactivateview_music)">back</onclick>
+                    <selected>Skin.HasSetting(viewcoverflowback_music)</selected>
+                </control>
+                <control type="radiobutton" id="19279">
+                    <!-- Banner -->
+                    <!-- 53 -->
+                    <radioposx>1341</radioposx>
+                    <label>Banner</label>
+                    <onclick>Skin.ToggleSetting(viewbanner_music)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewbanner_music)">Skin.SetString(setviewmusic,53)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewbanner_music) + Skin.HasSetting(clickactivateview_music)">back</onclick>
+                    <selected>Skin.HasSetting(viewbanner_music)</selected>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

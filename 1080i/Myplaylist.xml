@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Aeon MQ 6 -->
+<window>
+    <include condiftion="Window.Is(musicplaylist)">MusicWindow</include>
+    <include condiftion="Window.Is(videoplaylist)">Vplaylist</include>
+</window>

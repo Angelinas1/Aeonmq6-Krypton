@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="6530">
+    <!-- Aeon MQ 6 -->
+    <onload>AlarmClock(setfocus,SetFocus(100),00:01,silent)</onload>
+    <onunload>ClearProperty(AdditionalInfo)</onunload>
+    <controls>
+        <!--fake list used as container -->
+        <!-- use Container(999).ListItem to get all info -->
+        <!-- all normal listitem properties will be available -->
+        <control type="list" id="999">
+            <posx>945</posx>
+            <posy>0</posy>
+            <itemlayout />
+            <focusedlayout />
+        </control>
+        <control type="button" id="5">
+            <!--Play-->
+            <label>208</label>
+            <width>428</width>
+            <height>90</height>
+            <align>center</align>
+            <textoffsetx>0</textoffsetx>
+        </control>
+        <control type="image">
+            <left>0</left>
+            <top>330</top>
+            <width>1920</width>
+            <height>450</height>
+            <texture flipy="true" diffuse="shadow_mask.png">darkgrey.png</texture>
+            <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+            <animation effect="fade" end="85" condition="true">Conditional</animation>
+        </control>
+        <control type="label">
+            <!-- New -->
+            <left>0</left>
+            <top>435</top>
+            <width>1920</width>
+            <height>60</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>Font_40</font>
+            <label>Dialog is in work ......will be available Soon !!!!</label>
+            <textcolor>FFFFFAF0</textcolor>
+            <shadowcolor>grey</shadowcolor>
+        </control>
+        <control type="grouplist" id="9000">
+            <control type="button" id="100">
+                <!-- Home -->
+                <top>390</top>
+                <include>TopMenuButton</include>
+                <label>Exit Dialog</label>
+                <onclick>Dialog.Close(all,true)</onclick>
+                <onclick>ReplaceWindow(Home)</onclick>
+                <!--<onclick condition="System.HasAddon(plugin.video.youtube) + Skin.String(videoinfo_traileraction,fullscreen)">RunScript(script.skin.helper.service,action=searchyoutube,title=$INFO[Container(999).ListItem.Title] Trailer,header=YouTube</onclick>-->
+            </control>
+        </control>
+    </controls>
+</window>

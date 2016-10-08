@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Aeon MQ 6 -->
+    <!--##################################################################################   VISTA POSTER - ID 54   #############################################################################-->
+    <include name="PosterLabel">
+        <left>0</left>
+        <height>30</height>
+        <width>458</width>
+        <font>Font_18A</font>
+        <aligny>top</aligny>
+        <align>left</align>
+        <textcolor>$VAR[value_headercolor]</textcolor>
+        <textoffsetx>0</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <scroll>true</scroll>
+    </include>
+    <include name="PosterFixedList">
+        <control type="fixedlist" id="54">
+            <include>Poster_Content</include>
+        </control>
+    </include>
+    <include name="PosterWrapList">
+        <control type="wraplist" id="54">
+            <include>Poster_Content</include>
+        </control>
+    </include>
+    <include name="Poster_Content">
+        <viewtype label="31808">list</viewtype>
+        <left>-132</left>
+        <top>180</top>
+        <width>2130</width>
+        <height>600</height>
+        <onleft>54</onleft>
+        <onright>54</onright>
+        <onup>9900</onup>
+        <ondown>80</ondown>
+        <orientation>horizontal</orientation>
+        <focusposition>2</focusposition>
+        <scrolltime>400</scrolltime>
+        
+        <pagecontrol>80</pagecontrol>
+        <animation effect="fade" start="100" end="20" time="200" condition="Window.IsVisible(6621)">Conditional</animation>
+        <visible>!Container.Content(years)</visible>
+        <itemlayout width="447" height="540">
+            <control type="image">
+                <left>0</left>
+                <top>9</top>
+                <width>390</width>
+                <height>525</height>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <bordertexture border="-2">black.png</bordertexture>
+                <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+                <visible>![Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>9</top>
+                <width>390</width>
+                <height>525</height>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <bordertexture border="-2">black.png</bordertexture>
+                <texture fallback="DefaultAudioCover.png" background="true">$VAR[value_poster]</texture>
+                <visible>Window.IsActive(musicplaylist) | Window.IsActive(music)</visible>
+            </control>
+            <control type="image">
+                <left>330</left>
+                <top>472</top>
+                <width>60</width>
+                <height>60</height>
+                <texture>$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                <visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
+            </control>
+            <control type="image">
+                <left>332</left>
+                <top>478</top>
+                <width>60</width>
+                <height>60</height>
+                <texture flipy="true">$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                <visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
+            </control>
+        </itemlayout>
+        <focusedlayout width="447" height="540">
+            <control type="image">
+                <left>0</left>
+                <top>9</top>
+                <width>390</width>
+                <height>525</height>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+                <bordertexture border="-2">grey.png</bordertexture>
+                <animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
+                <visible>![Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>9</top>
+                <width>390</width>
+                <height>525</height>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <texture fallback="DefaultAudioCover.png" background="true">$VAR[value_poster]</texture>
+                <bordertexture border="-2">grey.png</bordertexture>
+                <animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
+                <visible>Window.IsActive(musicplaylist) | Window.IsActive(music)</visible>
+            </control>
+            <control type="image">
+                <left>315</left>
+                <top>458</top>
+                <width>75</width>
+                <height>75</height>
+                <texture>$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <animation reversible="false" effect="slide" start="0,0" end="36,54" center="auto" time="200">Focus</animation>
+                <animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
+                <visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
+            </control>
+            <control type="image">
+                <left>316</left>
+                <top>464</top>
+                <width>75</width>
+                <height>75</height>
+                <texture flipy="true">$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <animation reversible="false" effect="slide" start="0,0" end="36,54" center="auto" time="200">Focus</animation>
+                <animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
+                <visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
+            </control>
+        </focusedlayout>
+    </include>
+    <include name="ViewPoster">
+        <control type="group">
+            <!-- default group -->
+            <animation effect="fade" time="400">VisibleChange</animation>
+            <visible>StringCompare(Container.Viewmode,POSTER)</visible>
+            <control type="group">
+                <!-- CDART VIDEO -->
+                <animation type="WindowOpen">
+                    <effect type="slide" start="0,-150" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                    <effect type="fade" start="0" end="100" time="500" delay="500" />
+                </animation>
+                <animation type="Visible">
+                    <effect type="slide" start="0,-150" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                    <effect type="fade" start="0" end="100" time="500" delay="500" />
+                </animation>
+                <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+                <animation effect="fade" start="100" end="0" time="50">Hidden</animation>
+                <visible>!IsEmpty(ListItem.Art(discart)) + !Skin.HasSetting(noposterdiscart) + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
+                <control type="image">
+                    <left>746</left>
+                    <top>548</top>
+                    <width>420</width>
+                    <height>420</height>
+                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
+                    <fadetime>FanartCrossFadeTime</fadetime>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+                    <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                    <include>Animation_ViewsCDart</include>
+                </control>
+            </control>
+            <include>ViewBack</include>
+            <!-- Fundo -->
+            <control type="image">
+                <left>0</left>
+                <top>772</top>
+                <width>1920</width>
+                <height>201</height>
+                <texture flipy="true" diffuse="shadow_mask.png">darkgrey.png</texture>
+                <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+            </control>
+            <control type="image" id="1008">
+                <!-- clearlogo e clearart -->
+                <left>1552</left>
+                <top>802</top>
+                <width>330</width>
+                <height>165</height>
+                <aligny>center</aligny>
+                <texture background="true">$VAR[value_logoandclearart]</texture>
+                <aspectratio align="right">keep</aspectratio>
+                <fadetime>FanartCrossFadeTime</fadetime>
+                <visible>!Skin.HasSetting(noartpostervideo)</visible>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>772</top>
+                <width>1920</width>
+                <height>3</height>
+                <texture>separator.png</texture>
+            </control>
+            <control type="image">
+                <left>525</left>
+                <top>774</top>
+                <width>3</width>
+                <height>201</height>
+                <texture>separator_v.png</texture>
+            </control>
+            <control type="image">
+                <left>1530</left>
+                <top>774</top>
+                <width>3</width>
+                <height>201</height>
+                <texture>separator_v.png</texture>
+                <visible>![IsEmpty(Control.GetLabel(1008)) | Skin.HasSetting(noartpostervideo)]</visible>
+            </control>
+            <control type="grouplist">
+                <!-- Painel de info -->
+                <left>45</left>
+                <top>780</top>
+                <orientation>vertical</orientation>
+                <itemgap>0</itemgap>
+                <control type="label">
+                    <include>PosterLabel</include>
+                    <label>$VAR[value_ground11_label]: [COLOR=FFFFFAF0]$VAR[value_ground11_value][/COLOR]</label>
+                </control>
+                <control type="label">
+                    <include>PosterLabel</include>
+                    <label>$VAR[value_ground12_label]: [COLOR=FFFFFAF0]$VAR[value_ground12_value][/COLOR]</label>
+                </control>
+                <control type="label">
+                    <include>PosterLabel</include>
+                    <label>$VAR[value_ground13_label]: [COLOR=FFFFFAF0]$VAR[value_ground13_value][/COLOR]</label>
+                    <visible>!Container.Content(songs)</visible>
+                </control>
+                <control type="label">
+                    <include>PosterLabel</include>
+                    <label>$VAR[value_ground14_label]: [COLOR=FFFFFAF0]$VAR[value_ground14_value][/COLOR]</label>
+                    <visible>![Container.Content(artists) | Container.Content(albums) | Container.Content(songs)]</visible>
+                </control>
+                <control type="label">
+                    <include>PosterLabel</include>
+                    <label>$VAR[value_ground16_label]: [COLOR=FFFFFAF0]$VAR[value_ground16_value][/COLOR]</label>
+                </control>
+                <control type="label">
+                    <include>PosterLabel</include>
+                    <label>$VAR[value_ground17_label]: [COLOR=FFFFFAF0]$VAR[value_ground17_value][/COLOR]</label>
+                    <visible>![Container.Content(artists) | Container.Content(songs)]</visible>
+                </control>
+            </control>
+            <control type="textbox">
+                <left>549</left>
+                <top>788</top>
+                <width>960</width>
+                <height>170</height>
+                <textcolor>FFFFFAF0</textcolor>
+                <font>Font_18A</font>
+                <label>$VAR[value_plot]</label>
+                <autoscroll delay="15000" time="3000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                <visible>![IsEmpty(Control.GetLabel(1008)) | Skin.HasSetting(noartpostervideo)]</visible>
+            </control>
+            <control type="textbox">
+                <left>549</left>
+                <top>788</top>
+                <width>1328</width>
+                <height>170</height>
+                <textcolor>FFFFFAF0</textcolor>
+                <font>Font_18A</font>
+                <label>$VAR[value_plot]</label>
+                <autoscroll delay="15000" time="3000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                <visible>IsEmpty(Control.GetLabel(1008)) | Skin.HasSetting(noartpostervideo)</visible>
+            </control>
+            <include condition="Skin.HasSetting(posterfixedlist)">PosterFixedList</include>
+            <include condition="!Skin.HasSetting(posterfixedlist)">PosterWrapList</include>
+            <control type="scrollbar" id="80">
+                <include>ScrollBar_Horizontal</include>
+                <left>285</left>
+                <top>720</top>
+                <width>1350</width>
+                <onup>54</onup>
+                <ondown>9920</ondown>
+                <include>Animation_Fade</include>
+                <visible allowhiddenfocus="true">StringCompare(Container.Viewmode,POSTER) + Control.HasFocus(80)</visible>
+            </control>
+        </control>
+    </include>
+</includes>

@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Aeon MQ 6 -->
+    <!--##################################################################################   VISTA ARTE TOTAL - 71   ##################################################################################-->
+    <include name="ViewTotalArt">
+        <control type="group">
+            <!-- default group -->
+            <animation effect="fade" time="400">VisibleChange</animation>
+            <visible>StringCompare(Container.Viewmode,TOTAL ART)</visible>
+            <control type="wraplist" id="71">
+                <viewtype label="31816">list</viewtype>
+                <left>0</left>
+                <top>-48</top>
+                <width>1920</width>
+                <height>1005</height>
+                <onleft>80</onleft>
+                <onright>noop</onright>
+                <pagecontrol>80</pagecontrol>
+                <focusposition>4</focusposition>
+                <orientation>vertical</orientation>
+                <scrolltime>450</scrolltime>
+                
+                <visible>Container.Content(movies)</visible>
+                <itemlayout width="960" height="40">
+                    <control type="label">
+                        <left>360</left>
+                        <top>0</top>
+                        <width>1200</width>
+                        <height>60</height>
+                        <font>Font_23</font>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <textcolor>99FFFAF0</textcolor>
+                        <selectedcolor>$VAR[value_headercolor]</selectedcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout condition="StringCompare(ListItem.Label,..)" width="1920" height="465">
+                    <control type="image">
+                        <left>0</left>
+                        <top>22</top>
+                        <width>1920</width>
+                        <height>698</height>
+                        <texture>darkgrey.png</texture>
+                        <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                        <animation effect="fade" start="100" end="25" condition="true">Conditional</animation>
+                        <include>Animation_Fade</include>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>-22</top>
+                        <width>1928</width>
+                        <height>45</height>
+                        <texture>shadow_h.png</texture>
+                        <colordiffuse>C3FFFFFF</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>454</top>
+                        <width>1928</width>
+                        <height>45</height>
+                        <texture flipy="true">shadow_h.png</texture>
+                        <colordiffuse>C3FFFFFF</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <!-- poster -->
+                        <left>670</left>
+                        <top>38</top>
+                        <width>272</width>
+                        <height>400</height>
+                        <aspectratio align="center" aligny="bottom">stretch</aspectratio>
+                        <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+                        <bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+                        <animation effect="fade" time="200">Focus</animation>
+                    </control>
+                </focusedlayout>
+                <focusedlayout condition="!StringCompare(ListItem.Label,..)" width="1920" height="720">
+                    <control type="image">
+                        <left>0</left>
+                        <top>22</top>
+                        <width>1920</width>
+                        <height>698</height>
+                        <texture>darkgrey.png</texture>
+                        <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                        <animation effect="fade" start="100" end="65" condition="true">Conditional</animation>
+                        <include>Animation_Fade</include>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>-22</top>
+                        <width>1928</width>
+                        <height>45</height>
+                        <texture>shadow_h.png</texture>
+                        <colordiffuse>C3FFFFFF</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>720</top>
+                        <width>1928</width>
+                        <height>45</height>
+                        <texture flipy="true">shadow_h.png</texture>
+                        <colordiffuse>C3FFFFFF</colordiffuse>
+                    </control>
+                    <control type="group">
+                        <top>38</top>
+                        <animation effect="slide" start="0,0" end="45,0" time="200" easing="inout" tween="cubic" condition="Control.HasFocus(80)">Conditional</animation>
+                        <control type="label">
+                            <!-- ano -->
+                            <left>506</left>
+                            <top>-12</top>
+                            <width>150</width>
+                            <height>60</height>
+                            <align>right</align>
+                            <aligny>top</aligny>
+                            <font>Font_40</font>
+                            <label>$INFO[ListItem.Year]</label>
+                            <textcolor>FFFFFAF0</textcolor>
+                        </control>
+                        <control type="label">
+                            <!-- nota -->
+                            <left>120</left>
+                            <top>-12</top>
+                            <width>150</width>
+                            <height>60</height>
+                            <align>right</align>
+                            <aligny>top</aligny>
+                            <font>Font_40</font>
+                            <label>$INFO[ListItem.Rating]</label>
+                            <textcolor>FFFFFAF0</textcolor>
+                        </control>
+                        <control type="image">
+                            <!-- estrelas -->
+                            <left>285</left>
+                            <top>-4</top>
+                            <width>240</width>
+                            <height>60</height>
+                            <texture>$VAR[value_starrating]</texture>
+                            <colordiffuse>$VAR[value_headercolor]</colordiffuse>
+                            <aspectratio align="center" aligny="top">keep</aspectratio>
+                            <visible>!StringCompare(ListItem.Label,..)</visible>
+                        </control>
+                        <control type="label">
+                            <!-- duracao -->
+                            <left>417</left>
+                            <top>48</top>
+                            <width>240</width>
+                            <height>38</height>
+                            <align>right</align>
+                            <aligny>top</aligny>
+                            <font>Font_21</font>
+                            <label>$VAR[value_totalartdetails]</label>
+                            <textcolor>90FFFFFF</textcolor>
+                            <scroll>true</scroll>
+                            <scrollout>false</scrollout>
+                            <visible>!StringCompare(ListItem.Label,..)</visible>
+                        </control>
+                        <control type="image">
+                            <!-- thumb 1 -->
+                            <left>24</left>
+                            <top>93</top>
+                            <width>378</width>
+                            <height>213</height>
+                            <aspectratio align="center" aligny="bottom">stretch</aspectratio>
+                            <texture background="true">$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
+                            <bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+                            <animation effect="fade" time="200">Focus</animation>
+                        </control>
+                        <control type="image">
+                            <!-- thumb 2 -->
+                            <left>24</left>
+                            <top>321</top>
+                            <width>378</width>
+                            <height>213</height>
+                            <aspectratio align="center" aligny="bottom">stretch</aspectratio>
+                            <texture background="true">$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
+                            <bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+                            <animation effect="fade" time="200">Focus</animation>
+                        </control>
+                        <control type="image">
+                            <!-- landscape -->
+                            <left>417</left>
+                            <top>93</top>
+                            <width>240</width>
+                            <height>135</height>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(landscape)]</texture>
+                            <bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+                            <animation effect="fade" time="200">Focus</animation>
+                        </control>
+                        <control type="image">
+                            <!-- logo back -->
+                            <left>417</left>
+                            <top>243</top>
+                            <width>240</width>
+                            <height>123</height>
+                            <texture>darkgrey.png</texture>
+                            <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                            <bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+                            <visible>!IsEmpty(ListItem.Art(clearlogo))</visible>
+                        </control>
+                        <control type="image">
+                            <!-- logo -->
+                            <left>417</left>
+                            <top>243</top>
+                            <width>240</width>
+                            <height>123</height>
+                            <aspectratio align="center" aligny="center">keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                            <animation effect="fade" time="200">Focus</animation>
+                        </control>
+                        <control type="image">
+                            <!-- clearart back -->
+                            <left>417</left>
+                            <top>382</top>
+                            <width>240</width>
+                            <height>152</height>
+                            <texture>darkgrey.png</texture>
+                            <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                            <bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+                            <visible>!IsEmpty(ListItem.Art(clearart))</visible>
+                        </control>
+                        <control type="image">
+                            <!-- clearart -->
+                            <left>417</left>
+                            <top>382</top>
+                            <width>240</width>
+                            <height>152</height>
+                            <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(clearart)]</texture>
+                            <animation effect="fade" time="200">Focus</animation>
+                        </control>
+                        <control type="group">
+                            <!-- cdart -->
+                            <animation type="WindowOpen">
+                                <effect type="slide" start="0,0" end="0,150" time="500" delay="300" tween="cubic" easing="out" />
+                                <effect type="fade" start="0" end="100" time="500" delay="300" />
+                            </animation>
+                            <animation type="Visible">
+                                <effect type="slide" start="0,0" end="0,150" time="500" delay="300" tween="cubic" easing="out" />
+                                <effect type="fade" start="0" end="100" time="500" delay="300" />
+                            </animation>
+                            <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+                            <animation effect="fade" start="100" end="0" time="50">Hidden</animation>
+                            <visible>!IsEmpty(ListItem.Art(discart)) + !Skin.HasSetting(noposterdiscart) + Control.IsVisible(9923)</visible>
+                            <control type="image">
+                                <left>674</left>
+                                <top>120</top>
+                                <width>266</width>
+                                <height>266</height>
+                                <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
+                                <fadetime>FanartCrossFadeTime</fadetime>
+                                <aspectratio align="center" aligny="center">keep</aspectratio>
+                                <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                                <include>Animation_ViewsCDart</include>
+                            </control>
+                        </control>
+                        <control type="image">
+                            <!-- poster -->
+                            <left>670</left>
+                            <top>0</top>
+                            <width>272</width>
+                            <height>400</height>
+                            <aspectratio align="center" aligny="bottom">stretch</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+                            <bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+                            <animation effect="fade" time="200">Focus</animation>
+                        </control>
+                        <control type="image">
+                            <left>879</left>
+                            <top>3</top>
+                            <width>56</width>
+                            <height>56</height>
+                            <texture>$VAR[value_watchedstyle]</texture>
+                            <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                            <visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        </control>
+                        <control type="label">
+                            <!-- titulo -->
+                            <left>956</left>
+                            <top>-12</top>
+                            <width>939</width>
+                            <height>60</height>
+                            <align>left</align>
+                            <aligny>top</aligny>
+                            <font>Font_40</font>
+                            <label>$VAR[value_videotitle]</label>
+                            <textcolor>FFFFFAF0</textcolor>
+                            <scroll>true</scroll>
+                            <scrollout>false</scrollout>
+                        </control>
+                        <control type="label">
+                            <!-- tag -->
+                            <left>956</left>
+                            <top>48</top>
+                            <width>939</width>
+                            <height>38</height>
+                            <align>left</align>
+                            <aligny>top</aligny>
+                            <font>Font_21</font>
+                            <label>$INFO[ListItem.Tagline]</label>
+                            <textcolor>90FFFFFF</textcolor>
+                            <scroll>true</scroll>
+                            <scrollout>false</scrollout>
+                            <visible>!Skin.HasSetting(nomoviestagline)</visible>
+                        </control>
+                        <control type="image">
+                            <!-- fanart -->
+                            <left>956</left>
+                            <top>93</top>
+                            <width>548</width>
+                            <height>308</height>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                            <bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+                            <animation effect="fade" time="200">Focus</animation>
+                        </control>
+                        <control type="image">
+                            <!-- banner -->
+                            <left>956</left>
+                            <top>416</top>
+                            <width>548</width>
+                            <height>117</height>
+                            <aspectratio align="center" aligny="top">stretch</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(banner)]</texture>
+                            <bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+                            <animation effect="fade" time="200">Focus</animation>
+                        </control>
+                        <control type="image">
+                            <!-- thumb 3 -->
+                            <left>1518</left>
+                            <top>93</top>
+                            <width>378</width>
+                            <height>213</height>
+                            <aspectratio align="center" aligny="bottom">stretch</aspectratio>
+                            <texture background="true">$INFO[ListItem.Path,,extrathumbs/thumb3.jpg]</texture>
+                            <bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+                            <animation effect="fade" time="200">Focus</animation>
+                        </control>
+                        <control type="image">
+                            <!-- thumb 4 -->
+                            <left>1518</left>
+                            <top>321</top>
+                            <width>378</width>
+                            <height>213</height>
+                            <aspectratio align="center" aligny="bottom">stretch</aspectratio>
+                            <texture background="true">$INFO[ListItem.Path,,extrathumbs/thumb4.jpg]</texture>
+                            <bordertexture border="-2" colordiffuse="$VAR[value_texturecolor]">darkgrey.png</bordertexture>
+                            <animation effect="fade" time="200">Focus</animation>
+                        </control>
+                        <control type="label">
+                            <!-- genero/diretor -->
+                            <left>30</left>
+                            <top>555</top>
+                            <width>1860</width>
+                            <height>38</height>
+                            <align>center</align>
+                            <aligny>top</aligny>
+                            <font>Font_21</font>
+                            <label>[B][COLOR=$VAR[value_headercolor]]$LOCALIZE[515]: [/COLOR] $INFO[ListItem.Genre] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[20339]: [/COLOR] $INFO[ListItem.Director][/B]</label>
+                            <textcolor>FFFFFAF0</textcolor>
+                            <scroll>true</scroll>
+                            <scrollout>false</scrollout>
+                            <visible>![Skin.HasSetting(nomoviestagline) | StringCompare(ListItem.Label,..)]</visible>
+                        </control>
+                        <control type="textbox">
+                            <!-- plot -->
+                            <left>30</left>
+                            <top>592</top>
+                            <width>1860</width>
+                            <height>68</height>
+                            <align>center</align>
+                            <aligny>top</aligny>
+                            <font>Font_18A</font>
+                            <label>$VAR[value_plot]</label>
+                            <autoscroll delay="15000" time="2000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                            <include>Animation_Fade</include>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="scrollbar" id="80">
+                <include>ScrollBar_Vertical</include>
+                <left>8</left>
+                <top>102</top>
+                <height>870</height>
+                <onleft>9900</onleft>
+                <onright>71</onright>
+                <include>Animation_Fade</include>
+                <visible allowhiddenfocus="true">StringCompare(Container.Viewmode,TOTAL ART) + Control.HasFocus(80)</visible>
+            </control>
+        </control>
+    </include>
+</includes>

@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Aeon MQ 6 -->
+    <!--##################################################################################   VISTA WIDE - 59   ##################################################################################-->
+    <include name="listcolor">
+        <textcolor>FFFFFAF0</textcolor>
+        <selectedcolor>$VAR[value_headercolor]</selectedcolor>
+    </include>
+    <include name="listcolorfocus">
+        <textcolor>E4101010</textcolor>
+        <selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
+    </include>
+    <include name="subcolor">
+        <textcolor>80FFFAF0</textcolor>
+        <selectedcolor>$VAR[value_headercolor]</selectedcolor>
+    </include>
+    <include name="subcolorfocus">
+        <textcolor>FF151515</textcolor>
+        <selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
+    </include>
+    <include name="detailcolor">
+        <textcolor>FFFFFAF0</textcolor>
+        <selectedcolor>$VAR[value_headercolor]</selectedcolor>
+    </include>
+    <include name="detailcolorfocus">
+        <textcolor>FF151515</textcolor>
+        <selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
+    </include>
+    <include name="WideLabel">
+        <left>990</left>
+        <height>66</height>
+        <width>900</width>
+        <font>Font_18A</font>
+        <aligny>top</aligny>
+        <align>left</align>
+        <textcolor>$VAR[value_headercolor]</textcolor>
+        <textoffsetx>45</textoffsetx>
+        <textoffsety>3</textoffsety>
+    </include>
+    <include name="WideValue">
+        <left>990</left>
+        <height>20</height>
+        <width>900</width>
+        <font>Font_18A</font>
+        <aligny>top</aligny>
+        <align>left</align>
+        <textoffsetx>45</textoffsetx>
+        <textoffsety>32</textoffsety>
+        <scroll>true</scroll>
+    </include>
+    <include name="WideDisc">
+        <width>225</width>
+        <height>225</height>
+        <fadetime>FanartCrossFadeTime</fadetime>
+        <aspectratio align="center" aligny="center">keep</aspectratio>
+        <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+        <include>Animation_ViewsCDart</include>
+    </include>
+    <include name="ViewWide">
+        <control type="group">
+            <!-- default group -->
+            <animation effect="fade" time="400">VisibleChange</animation>
+            <visible>StringCompare(Container.Viewmode,WIDE)</visible>
+            <control type="group">
+                <animation effect="slide" time="500" start="-1200,0" end="0,0" tween="cubic" easing="out">WindowOpen</animation>
+                <animation effect="slide" time="500" start="-1200,0" end="0,0" tween="cubic" easing="out">Visible</animation>
+                <animation effect="fade" time="200" start="100" end="0">Hidden</animation>
+                <control type="image">
+                    <left>0</left>
+                    <top>54</top>
+                    <width>960</width>
+                    <height>45</height>
+                    <texture>shadow_h.png</texture>
+                    <colordiffuse>C3FFFFFF</colordiffuse>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>98</top>
+                    <width>960</width>
+                    <height>878</height>
+                    <texture flipy="true" diffuse="shadow_mask.png">darkgrey.png</texture>
+                    <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                </control>
+                <control type="image">
+                    <left>765</left>
+                    <top>98</top>
+                    <width>135</width>
+                    <height>876</height>
+                    <texture>grey.png</texture>
+                    <animation effect="fade" end="20" condition="true">conditional</animation>
+                    <visible>[Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(years)]</visible>
+                </control>
+                <control type="button" id="562">
+                    <include>InvisibleButton</include>
+                    <onright>9920</onright>
+                    <onleft>59</onleft>
+                    <onup>59</onup>
+                    <ondown>59</ondown>
+                </control>
+                <control type="list" id="59">
+                    <viewtype label="31813">list</viewtype>
+                    <left>0</left>
+                    <top>98</top>
+                    <width>960</width>
+                    <height>876</height>
+                    <pagecontrol>80</pagecontrol>
+                    <onleft>80</onleft>
+                    <onright>562</onright>
+                    <orientation>vertical</orientation>
+                    <scrolltime>450</scrolltime>
+                    
+                    <itemlayout height="60">
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>1108</width>
+                            <height>1</height>
+                            <texture>line.png</texture>
+                        </control>
+                        <control type="label">
+                            <left>68</left>
+                            <top>1</top>
+                            <width>660</width>
+                            <height>60</height>
+                            <font>Font_22</font>
+                            <aligny>center</aligny>
+                            <include>listcolor</include>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="label">
+                            <left>770</left>
+                            <top>-12</top>
+                            <width>128</width>
+                            <height>60</height>
+                            <font>Font_18A</font>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <include>detailcolor</include>
+                            <label>$INFO[ListItem.Rating]</label>
+                            <animation effect="slide" start="0,0" end="0,12" time="0" condition="Container.Content(albums) | Container.Content(years)">Conditional</animation>
+                        </control>
+                        <control type="image">
+                            <left>784</left>
+                            <top>38</top>
+                            <width>98</width>
+                            <height>20</height>
+                            <texture>$VAR[value_starrating]</texture>
+                            <colordiffuse>$VAR[value_headercolor]</colordiffuse>
+                            <visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | StringCompare(ListItem.Label,..)]</visible>
+                        </control>
+                        <control type="image">
+                            <left>902</left>
+                            <top>3</top>
+                            <width>56</width>
+                            <height>56</height>
+                            <texture>$VAR[value_watchedstyle]</texture>
+                            <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                            <visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout condition="IsEmpty(Control.GetLabel(5901)) | [Window.IsActive(videos) + Skin.HasSetting(slimwidevideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimwidemusic)]" height="60">
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>960</width>
+                            <height>60</height>
+                            <texture>settings_button_focus.png</texture>
+                            <animation effect="fade" start="100" end="30" time="0" condition="!Control.Hasfocus(59)">conditional</animation>
+                        </control>
+                        <control type="label">
+                            <left>68</left>
+                            <top>1</top>
+                            <width>660</width>
+                            <height>60</height>
+                            <font>Font_24A</font>
+                            <aligny>center</aligny>
+                            <include>listcolorfocus</include>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="label">
+                            <left>770</left>
+                            <top>-12</top>
+                            <width>128</width>
+                            <height>60</height>
+                            <font>Font_18A</font>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <include>detailcolorfocus</include>
+                            <label>$INFO[ListItem.Rating]</label>
+                            <animation effect="slide" start="0,0" end="0,12" time="0" condition="Container.Content(albums) | Container.Content(years)">Conditional</animation>
+                        </control>
+                        <control type="image">
+                            <left>784</left>
+                            <top>34</top>
+                            <width>98</width>
+                            <height>20</height>
+                            <texture>$VAR[value_starrating]</texture>
+                            <colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
+                            <visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | StringCompare(ListItem.Label,..)]</visible>
+                        </control>
+                        <control type="image">
+                            <left>902</left>
+                            <top>3</top>
+                            <width>56</width>
+                            <height>56</height>
+                            <texture>$VAR[value_watchedstyle]</texture>
+                            <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                            <visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        </control>
+                    </focusedlayout>
+                    <focusedlayout condition="!IsEmpty(Control.GetLabel(5901)) + [Window.IsActive(videos) + !Skin.HasSetting(slimwidevideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(slimwidemusic)]" height="94">
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>960</width>
+                            <height>94</height>
+                            <texture>settings_button_focus.png</texture>
+                            <animation effect="fade" start="100" end="30" time="0" condition="!Control.Hasfocus(59)">conditional</animation>
+                        </control>
+                        <control type="label">
+                            <left>68</left>
+                            <top>3</top>
+                            <width>660</width>
+                            <height>62</height>
+                            <font>Font_24A</font>
+                            <aligny>center</aligny>
+                            <include>listcolorfocus</include>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="label">
+                            <left>68</left>
+                            <top>56</top>
+                            <width>660</width>
+                            <height>24</height>
+                            <font>Font_18A</font>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <include>subcolorfocus</include>
+                            <label>$VAR[value_listinfofocus]</label>
+                            <visible>!StringCompare(ListItem.Label,..)</visible>
+                        </control>
+                        <control type="label">
+                            <left>770</left>
+                            <top>0</top>
+                            <width>128</width>
+                            <height>62</height>
+                            <font>Font_18A</font>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <include>detailcolorfocus</include>
+                            <label>$INFO[ListItem.Rating]</label>
+                        </control>
+                        <control type="image">
+                            <left>784</left>
+                            <top>56</top>
+                            <width>98</width>
+                            <height>20</height>
+                            <texture>$VAR[value_starrating]</texture>
+                            <colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
+                            <visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | StringCompare(ListItem.Label,..)]</visible>
+                        </control>
+                        <control type="image">
+                            <left>902</left>
+                            <top>1</top>
+                            <width>56</width>
+                            <height>56</height>
+                            <texture>$VAR[value_watchedstyle]</texture>
+                            <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                            <visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        </control>
+                    </focusedlayout>
+                </control>
+                <control type="label" id="5901">
+                    <!-- Tag -->
+                    <include>InvisibleButton</include>
+                    <label>$VAR[value_listinfofocus]</label>
+                </control>
+            </control>
+            <control type="group">
+                <!-- Grupo da direita -->
+                <left>960</left>
+                <top>0</top>
+                <animation effect="slide" time="1000" start="900,0" end="0,0" tween="cubic" easing="out">WindowOpen</animation>
+                <animation effect="slide" time="1000" start="900,0" end="0,0" tween="cubic" easing="out">Visible</animation>
+                <animation effect="fade" time="400" start="100" end="0">Hidden</animation>
+                <visible>StringCompare(Container.Viewmode,WIDE)</visible>
+                <control type="image">
+                    <left>-44</left>
+                    <top>-105</top>
+                    <width>45</width>
+                    <height>1080</height>
+                    <texture flipx="true">shadow.png</texture>
+                    <colordiffuse>C3FFFFFF</colordiffuse>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>-105</top>
+                    <width>960</width>
+                    <height>1080</height>
+                    <texture flipy="true" diffuse="shadow_mask.png">darkgrey.png</texture>
+                    <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                    <animation effect="fade" end="85" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>594</top>
+                    <width>960</width>
+                    <height>381</height>
+                    <texture flipy="true" diffuse="shadow_mask.png">darkgrey.png</texture>
+                    <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+                    <animation effect="fade" end="85" condition="true">Conditional</animation>
+                    <include>Animation_Fade</include>
+                    <visible>![Control.HasFocus(562) | Skin.HasSetting(widebanner)]</visible>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>210</top>
+                    <width>960</width>
+                    <height>765</height>
+                    <texture>black.png</texture>
+                    <colordiffuse>75FFFFFF</colordiffuse>
+                    <include>Animation_Fade</include>
+                    <visible>!Control.HasFocus(562) + Skin.HasSetting(widebanner)</visible>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>-105</top>
+                    <width>960</width>
+                    <height>1080</height>
+                    <texture>black.png</texture>
+                    <colordiffuse>75FFFFFF</colordiffuse>
+                    <include>Animation_Fade</include>
+                    <visible>Control.HasFocus(562)</visible>
+                </control>
+                <control type="group">
+                    <!-- Grupo das artes -->
+                    <animation effect="slide" start="0,0" end="1050,0" time="400" easing="inout" tween="cubic" condition="Control.HasFocus(562) | Control.HasFocus(9920) | Window.IsVisible(6621)">Conditional</animation>
+                    <control type="group">
+                        <!-- CDART VIDEO -->
+                        <animation type="WindowOpen">
+                            <effect type="slide" start="-150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                            <effect type="fade" start="0" end="100" time="500" delay="500" />
+                        </animation>
+                        <animation type="Visible">
+                            <effect type="slide" start="-150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                            <effect type="fade" start="0" end="100" time="500" delay="500" />
+                        </animation>
+                        <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+                        <animation type="Hidden">
+                            <effect type="slide" start="0,0" end="-150,0" time="300" tween="cubic" easing="out" />
+                            <effect type="fade" start="100" end="0" time="200" />
+                        </animation>
+                        <visible>![IsEmpty(ListItem.Art(discart)) | SubString(skin.string(widemovies.art),banner) | Skin.HasSetting(nowidediscart) | SubString(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
+                        <control type="image">
+                            <left>405</left>
+                            <top>75</top>
+                            <width>375</width>
+                            <height>375</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="center">keep</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                        </control>
+                    </control>
+                    <control type="grouplist">
+                        <!-- CDART SETS da esquerda -->
+                        <left>192</left>
+                        <top>45</top>
+                        <orientation>vertical</orientation>
+                        <itemgap>-147</itemgap>
+                        <animation type="WindowOpen">
+                            <effect type="slide" start="150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                            <effect type="fade" start="0" end="100" time="500" delay="500" />
+                        </animation>
+                        <animation type="Visible">
+                            <effect type="slide" start="150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                            <effect type="fade" start="0" end="100" time="500" delay="500" />
+                        </animation>
+                        <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+                        <animation type="Hidden">
+                            <effect type="slide" start="0,0" end="150,0" time="300" tween="cubic" easing="out" />
+                            <effect type="fade" start="100" end="0" time="200" />
+                        </animation>
+                        <animation effect="slide" start="0,0" end="-14,0" time="400" easing="inout" tween="cubic" condition="Skin.HasSetting(nowidevideocase)">Conditional</animation>
+                        <visible>![IsEmpty(Window(0).Property(SkinHelper.MovieSet.5.DiscArt)) | SubString(skin.string(widemovies.art),banner) | Skin.HasSetting(nowidediscart)] + Window.IsActive(videos) + SubString(ListItem.Path,videodb://movies/sets,left) + Control.IsVisible(9923)</visible>
+                        <control type="image">
+                            <include>WideDisc</include>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.5.DiscArt)]</texture>
+                            <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.5.DiscArt))</visible>
+                        </control>
+                        <control type="image">
+                            <include>WideDisc</include>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.6.DiscArt)]</texture>
+                            <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.6.DiscArt))</visible>
+                        </control>
+                        <control type="image">
+                            <include>WideDisc</include>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.7.DiscArt)]</texture>
+                            <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.7.DiscArt))</visible>
+                        </control>
+                        <control type="image">
+                            <include>WideDisc</include>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.8.DiscArt)]</texture>
+                            <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.8.DiscArt))</visible>
+                        </control>
+                        <control type="image">
+                            <include>WideDisc</include>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.9.DiscArt)]</texture>
+                            <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.9.DiscArt))</visible>
+                        </control>
+                    </control>
+                    <control type="grouplist">
+                        <!-- CDART SETS da direita -->
+                        <left>532</left>
+                        <top>45</top>
+                        <orientation>vertical</orientation>
+                        <itemgap>-147</itemgap>
+                        <animation type="WindowOpen">
+                            <effect type="slide" start="-150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                            <effect type="fade" start="0" end="100" time="500" delay="500" />
+                        </animation>
+                        <animation type="Visible">
+                            <effect type="slide" start="-150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
+                            <effect type="fade" start="0" end="100" time="500" delay="500" />
+                        </animation>
+                        <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+                        <animation type="Hidden">
+                            <effect type="slide" start="0,0" end="-150,0" time="300" tween="cubic" easing="out" />
+                            <effect type="fade" start="100" end="0" time="200" />
+                        </animation>
+                        <animation effect="slide" start="0,0" end="22,0" time="400" easing="inout" tween="cubic" condition="Skin.HasSetting(nowidevideocase)">Conditional</animation>
+                        <visible>![IsEmpty(Window(0).Property(SkinHelper.MovieSet.0.DiscArt)) | SubString(skin.string(widemovies.art),banner) | Skin.HasSetting(nowidediscart)] + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
+                        <control type="image">
+                            <include>WideDisc</include>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.0.DiscArt)]</texture>
+                            <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.0.DiscArt))</visible>
+                        </control>
+                        <control type="image">
+                            <include>WideDisc</include>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.1.DiscArt)]</texture>
+                            <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.1.DiscArt))</visible>
+                        </control>
+                        <control type="image">
+                            <include>WideDisc</include>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.2.DiscArt)]</texture>
+                            <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.2.DiscArt))</visible>
+                        </control>
+                        <control type="image">
+                            <include>WideDisc</include>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.3.DiscArt)]</texture>
+                            <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.3.DiscArt))</visible>
+                        </control>
+                        <control type="image">
+                            <include>WideDisc</include>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.4.DiscArt)]</texture>
+                            <visible>!IsEmpty(Window(0).Property(SkinHelper.MovieSet.4.DiscArt))</visible>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <!-- BANNER -->
+                        <include>Animation_Fade</include>
+                        <visible>Container.Content(movies) + SubString(skin.string(widemovies.art),banner) | Container.Content(tvshows) + SubString(skin.string(widetvshows.art),banner)</visible>
+                        <control type="image">
+                            <!-- banner reflexo -->
+                            <left>30</left>
+                            <top>602</top>
+                            <width>900</width>
+                            <height>550</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">keep</aspectratio>
+                            <texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_banner]</texture>
+                            <bordertexture flipy="true" diffuse="thumb_reflect.png" border="-2">black.png</bordertexture>
+                        </control>
+                        <control type="image">
+                            <!-- banner -->
+                            <left>30</left>
+                            <top>45</top>
+                            <width>900</width>
+                            <height>550</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                            <texture background="true">$VAR[value_banner]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <!-- EPISODIOS -->
+                        <include>Animation_Fade</include>
+                        <visible>![Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(genres) | Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+                        <control type="image">
+                            <!-- episodios reflexo -->
+                            <left>30</left>
+                            <top>602</top>
+                            <width>900</width>
+                            <height>550</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">keep</aspectratio>
+                            <texture flipy="true" fallback="special://skin/backgrounds/default.jpg" diffuse="thumb_reflect.png" background="true">$VAR[value_poster]</texture>
+                            <bordertexture flipy="true" diffuse="thumb_reflect.png" border="-2">black.png</bordertexture>
+                        </control>
+                        <control type="image">
+                            <!-- episodios -->
+                            <left>30</left>
+                            <top>45</top>
+                            <width>900</width>
+                            <height>550</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                            <texture fallback="special://skin/backgrounds/default.jpg" background="true">$VAR[value_poster]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <!-- VIDEO SEM ESTOJO -->
+                        <include>Animation_Fade</include>
+                        <animation effect="slide" start="0,0" end="-68,0" time="500" delay="50" tween="cubic" easing="in" condition="!Skin.HasSetting(nowidediscart) + !IsEmpty(ListItem.Art(discart)) + Control.IsVisible(9923)">Conditional</animation>
+                        <visible>Skin.HasSetting(nowidevideocase) + [Container.Content(movies) + SubString(skin.string(widemovies.art),poster) | Container.Content(musicvideos) | Container.Content(sets)] | Container.Content(tvshows) + SubString(skin.string(widetvshows.art),poster) | Container.Content(seasons) | Container.Content(genres)</visible>
+                        <control type="image">
+                            <!-- Filmes/Fotos/Arquivos reflexo -->
+                            <left>30</left>
+                            <top>602</top>
+                            <width>900</width>
+                            <height>550</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">keep</aspectratio>
+                            <texture flipy="true" fallback="DefaultVideoPoster.png" diffuse="thumb_reflect.png" background="true">$VAR[value_poster]</texture>
+                            <bordertexture flipy="true" diffuse="thumb_reflect.png" border="-2">black.png</bordertexture>
+                        </control>
+                        <control type="image">
+                            <!-- Filmes/Fotos/Arquivos -->
+                            <left>30</left>
+                            <top>45</top>
+                            <width>900</width>
+                            <height>550</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <!-- FILMES ESTOJO -->
+                        <include>Animation_Fade</include>
+                        <animation effect="slide" start="0,0" end="-50,0" time="500" delay="50" tween="cubic" easing="in" condition="!Skin.HasSetting(nowidediscart) + !IsEmpty(ListItem.Art(discart)) + Control.IsVisible(9923)">Conditional</animation>
+                        <visible>!Skin.HasSetting(nowidevideocase) + Container.Content(movies) + SubString(skin.string(widemovies.art),poster) | !Skin.HasSetting(nowidevideocase) + [Container.Content(musicvideos) | Container.Content(sets)]</visible>
+                        <control type="image">
+                            <!-- Poster reflexo -->
+                            <left>308</left>
+                            <top>624</top>
+                            <width>338</width>
+                            <height>495</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <texture flipy="true" fallback="DefaultVideoPoster.png" diffuse="thumb_reflect.png" background="true">$VAR[value_poster]</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control>
+                        <control type="image">
+                            <!-- Estojo reflexo -->
+                            <left>278</left>
+                            <top>572</top>
+                            <width>418</width>
+                            <height>626</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <texture flipy="true" diffuse="thumb_box_reflect.png">$VAR[value_videocase0]</texture>
+                            <aspectratio>stretch</aspectratio>
+                            <include>Animation_CaseGlass</include>
+                        </control>
+                        <control type="image">
+                            <!-- Poster -->
+                            <left>308</left>
+                            <top>90</top>
+                            <width>338</width>
+                            <height>495</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+                        </control>
+                        <control type="image">
+                            <!-- Estojo -->
+                            <left>278</left>
+                            <top>10</top>
+                            <width>418</width>
+                            <height>626</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <texture>$VAR[value_videocase0]</texture>
+                            <include>Animation_CaseGlass</include>
+                        </control>
+                        <control type="image">
+                            <!-- Codec -->
+                            <left>430</left>
+                            <top>16</top>
+                            <width>102</width>
+                            <height>102</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <aspectratio scalediffuse="true">keep</aspectratio>
+                            <texture>$VAR[value_videocodec0]</texture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <!-- MUSICA -->
+                        <include>Animation_Fade</include>
+                        <visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + [Skin.HasSetting(nowideaudiocase) | Container.Content(genres)]</visible>
+                        <control type="image">
+                            <!-- Musica reflexo -->
+                            <left>30</left>
+                            <top>600</top>
+                            <width>900</width>
+                            <height>550</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="top">keep</aspectratio>
+                            <texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_poster]</texture>
+                            <bordertexture flipy="true" diffuse="thumb_reflect.png" border="-2">black.png</bordertexture>
+                        </control>
+                        <control type="image">
+                            <!-- Musica -->
+                            <left>30</left>
+                            <top>45</top>
+                            <width>900</width>
+                            <height>550</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                            <texture fallback="DefaultAudioCover.png" background="true">$VAR[value_poster]</texture>
+                            <bordertexture border="-2">black.png</bordertexture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <!-- MUSICA ESTOJO -->
+                        <include>Animation_Fade</include>
+                        <visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + ![Skin.HasSetting(nowideaudiocase) | Container.Content(genres)]</visible>
+                        <control type="image">
+                            <!-- Musica reflexo-->
+                            <left>255</left>
+                            <top>606</top>
+                            <width>510</width>
+                            <height>510</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <texture flipy="true" diffuse="thumb_box_diffuse_reflect.png" background="true">$VAR[value_poster]</texture>
+                        </control>
+                        <control type="image">
+                            <!-- Estojo reflexo -->
+                            <left>171</left>
+                            <top>584</top>
+                            <width>616</width>
+                            <height>543</height>
+                            <texture flipy="true" diffuse="thumb_box_reflect.png">thumb_box_cd.png</texture>
+                        </control>
+                        <control type="image">
+                            <!-- Musica -->
+                            <left>255</left>
+                            <top>86</top>
+                            <width>510</width>
+                            <height>510</height>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <texture diffuse="thumb_box_diffuse.png" fallback="DefaultAudioCover.png" background="true">$VAR[value_poster]</texture>
+                        </control>
+                        <control type="image">
+                            <!-- Estojo -->
+                            <left>171</left>
+                            <top>75</top>
+                            <width>616</width>
+                            <height>543</height>
+                            <texture>thumb_box_cd.png</texture>
+                            <colordiffuse>DEFFFFFF</colordiffuse>
+                        </control>
+                    </control>
+                </control>
+                <control type="textbox">
+                    <!-- Video e audio para quando tem logo -->
+                    <left>30</left>
+                    <top>615</top>
+                    <width>900</width>
+                    <height>234</height>
+                    <font>Font_18A</font>
+                    <label>$VAR[value_plot]</label>
+                    <autoscroll delay="15000" time="2000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                    <include>Animation_Fade</include>
+                    <visible>![Control.HasFocus(562) | IsEmpty(Control.GetLabel(1018)) + IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1))] + Window.IsActive(videos) | ![Control.HasFocus(562) | IsEmpty(Control.GetLabel(1017))] + [Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+                </control>
+                <control type="textbox">
+                    <!-- Video e audio para quando nao tem logo -->
+                    <left>30</left>
+                    <top>615</top>
+                    <width>900</width>
+                    <height>356</height>
+                    <font>Font_18A</font>
+                    <label>$VAR[value_plot]</label>
+                    <autoscroll delay="15000" time="2000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                    <include>Animation_Fade</include>
+                    <visible>[!Control.HasFocus(562) + [IsEmpty(Control.GetLabel(1018)) + IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1))]] + Window.IsActive(videos) | [!Control.HasFocus(562) + IsEmpty(Control.GetLabel(1017))] + [Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+                </control>
+                <control type="textbox">
+                    <!-- Video e audio para quando tem logo + foco no painel -->
+                    <left>30</left>
+                    <top>440</top>
+                    <width>900</width>
+                    <height>405</height>
+                    <font>Font_18A</font>
+                    <label>$VAR[value_plot]</label>
+                    <autoscroll delay="15000" time="2000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                    <include>Animation_Fade</include>
+                    <visible>[Control.HasFocus(562) + ![IsEmpty(Control.GetLabel(1018)) + IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1))]] + Window.IsActive(videos) | [Control.HasFocus(562) + !IsEmpty(Control.GetLabel(1017))] + [Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+                </control>
+                <control type="textbox">
+                    <!-- Video e audio para quando nao tem logo + foco no painel -->
+                    <left>30</left>
+                    <top>440</top>
+                    <width>900</width>
+                    <height>522</height>
+                    <font>Font_18A</font>
+                    <label>$VAR[value_plot]</label>
+                    <autoscroll delay="15000" time="2000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                    <include>Animation_Fade</include>
+                    <visible>[Control.HasFocus(562) + [IsEmpty(Control.GetLabel(1018)) + IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1))]] + Window.IsActive(videos) | [Control.HasFocus(562) + IsEmpty(Control.GetLabel(1017))] + [Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+                </control>
+                <control type="textbox">
+                    <!-- Addons -->
+                    <left>30</left>
+                    <top>615</top>
+                    <width>900</width>
+                    <height>352</height>
+                    <font>Font_18A</font>
+                    <label>$VAR[value_plot]</label>
+                    <autoscroll delay="15000" time="2000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                    <include>Animation_Fade</include>
+                    <visible>![Control.HasFocus(562) | Window.IsActive(videos) | Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+                </control>
+                <control type="textbox">
+                    <!-- Addons + foco no painel -->
+                    <left>30</left>
+                    <top>440</top>
+                    <width>900</width>
+                    <height>530</height>
+                    <font>Font_18A</font>
+                    <label>$VAR[value_plot]</label>
+                    <autoscroll delay="15000" time="2000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+                    <include>Animation_Fade</include>
+                    <visible>Control.HasFocus(562) + ![Window.IsActive(videos) | Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+                </control>
+                <control type="image">
+                    <left>15</left>
+                    <top>860</top>
+                    <width>930</width>
+                    <height>1</height>
+                    <texture>line.png</texture>
+                    <visible>![IsEmpty(Control.GetLabel(1018)) + IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1))] + Window.IsActive(videos) | !IsEmpty(Control.GetLabel(1017)) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+                </control>
+                <control type="image" id="1017">
+                    <!-- Logo Musicas -->
+                    <left>630</left>
+                    <top>867</top>
+                    <width>300</width>
+                    <height>108</height>
+                    <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                    <texture background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
+                    <fadetime>250</fadetime>
+                </control>
+                <control type="image" id="1018">
+                    <!-- clearlogo e clearart -->
+                    <left>630</left>
+                    <top>867</top>
+                    <width>300</width>
+                    <height>108</height>
+                    <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                    <texture background="true">$VAR[value_logoandclearart]</texture>
+                    <fadetime>250</fadetime>
+                    <visible>!Skin.HasSetting(noartwidevideo)</visible>
+                </control>
+                <control type="group">
+                    <!-- Linguagem de audio e legendas -->
+                    <left>30</left>
+                    <top>878</top>
+                    <include>AudioandSub</include>
+                    <visible>!Skin.HasSetting(nolanguageflags)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <top>15</top>
+                <animation effect="slide" start="1050,0" end="0,0" time="400" easing="inout" tween="cubic">Visible</animation>
+                <animation effect="slide" start="0,0" end="1050,0" time="400" easing="inout" tween="cubic">Hidden</animation>
+                <visible>Control.HasFocus(562)</visible>
+                <control type="image">
+                    <left>975</left>
+                    <top>420</top>
+                    <height>1</height>
+                    <width>930</width>
+                    <texture>line.png</texture>
+                </control>
+                <control type="label">
+                    <include>WideLabel</include>
+                    <top>0</top>
+                    <label>$VAR[value_ground11_label]</label>
+                </control>
+                <control type="label">
+                    <include>WideValue</include>
+                    <top>0</top>
+                    <label>$VAR[value_ground11_value]</label>
+                </control>
+                <control type="label">
+                    <include>WideLabel</include>
+                    <top>66</top>
+                    <label>$VAR[value_ground12_label]</label>
+                </control>
+                <control type="label">
+                    <include>WideValue</include>
+                    <top>66</top>
+                    <label>$VAR[value_ground12_value]</label>
+                </control>
+                <control type="label">
+                    <include>WideLabel</include>
+                    <top>132</top>
+                    <label>$VAR[value_ground13_label]</label>
+                </control>
+                <control type="label">
+                    <include>WideValue</include>
+                    <top>132</top>
+                    <label>$VAR[value_ground13_value]</label>
+                </control>
+                <control type="label">
+                    <include>WideLabel</include>
+                    <top>198</top>
+                    <label>$VAR[value_ground15_label]</label>
+                </control>
+                <control type="label">
+                    <include>WideValue</include>
+                    <top>198</top>
+                    <label>$VAR[value_ground15_value]</label>
+                </control>
+                <control type="label">
+                    <include>WideLabel</include>
+                    <top>264</top>
+                    <label>$VAR[value_ground16_label]</label>
+                    <visible>![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+                </control>
+                <control type="label">
+                    <include>WideValue</include>
+                    <top>264</top>
+                    <label>$VAR[value_ground16_value]</label>
+                    <visible>![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+                </control>
+                <control type="label">
+                    <include>WideLabel</include>
+                    <top>330</top>
+                    <label>$VAR[value_ground14_label]</label>
+                    <visible>!Container.Content(albums)</visible>
+                </control>
+                <control type="label">
+                    <include>WideValue</include>
+                    <top>330</top>
+                    <label>$VAR[value_ground14_value]</label>
+                    <visible>!Container.Content(albums)</visible>
+                </control>
+            </control>
+            <control type="scrollbar" id="80">
+                <include>ScrollBar_Vertical</include>
+                <left>8</left>
+                <top>102</top>
+                <height>870</height>
+                <onleft>9900</onleft>
+                <onright>59</onright>
+                <include>Animation_Fade</include>
+                <visible allowhiddenfocus="true">StringCompare(Container.Viewmode,WIDE) + Control.HasFocus(80)</visible>
+            </control>
+        </control>
+    </include>
+</includes>

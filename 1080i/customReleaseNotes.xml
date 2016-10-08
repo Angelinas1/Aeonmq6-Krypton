@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="6638" type="dialog">
+    <!-- Aeon MQ 6 -->
+    <defaultcontrol>9911</defaultcontrol>
+    <include>Animation_Fade</include>
+    <controls>
+        <control type="button" id="9911">
+            <include>InvisibleButton</include>
+            <onleft>Dialog.Close(6638)</onleft>
+            <onright>Dialog.Close(6638)</onright>
+            <onup>Dialog.Close(6638)</onup>
+            <ondown>Dialog.Close(6638)</ondown>
+        </control>
+        <control type="multiimage">
+            <include>HomeBG</include>
+            <imagepath background="true">$VAR[value_menutheme_settings]</imagepath>
+        </control>
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <texture>darkgrey.png</texture>
+            <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+            <animation effect="fade" end="95" condition="true">Conditional</animation>
+        </control>
+        <control type="group">
+            <!-- default group -->
+            <control type="label">
+                <left>30</left>
+                <top>38</top>
+                <width>1860</width>
+                <height>74</height>
+                <align>center</align>
+                <label>31948</label>
+                <font>Font_32</font>
+                <textcolor>FFFFFAF0</textcolor>
+            </control>
+            <control type="image">
+                <left>210</left>
+                <top>120</top>
+                <width>1500</width>
+                <height>3</height>
+                <align>left</align>
+                <texture flipx="true">divider.png</texture>
+            </control>
+            <control type="image">
+                <!-- Skin Logo -->
+                <posx>1647</posx>
+                <posy>32</posy>
+                <width>210</width>
+                <height>150</height>
+                <texture>aeonmq6_logo.png</texture>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+                <aspectratio align="center" aligny="top">keep</aspectratio>
+            </control>
+            <control type="label">
+                <!-- Versao -->
+                <left>1647</left>
+                <top>135</top>
+                <width>210</width>
+                <height>38</height>
+                <align>center</align>
+                <font>Font_18</font>
+                <textcolor>FFFFFAF0</textcolor>
+                <label>$VAR[SkinVersion]</label>
+            </control>
+            <control type="label">
+                <left>1647</left>
+                <top>165</top>
+                <width>210</width>
+                <height>38</height>
+                <align>center</align>
+                <font>Font_18A</font>
+                <textcolor>$VAR[value_headercolor]</textcolor>
+                <label>by MarcosQui</label>
+            </control>
+            <control type="textbox">
+                <left>210</left>
+                <top>210</top>
+                <width>1500</width>
+                <height>795</height>
+                <label>318477</label>
+                <font>Font_18A</font>
+                <align>justify</align>
+            </control>
+        </control>
+    </controls>
+</window>
