@@ -52,6 +52,8 @@
 	<!-- 70 -->
 	<include file="ViewsTotalArt.xml"/>
 	<!-- 71 -->
+	<include file="ViewsPosterZoom.xml"/>
+	<!-- 76 -->
 	<include file="ViewsMiddleList.xml"/>
 	<!-- 77 -->
 	<include file="ViewsCoverandBack.xml"/>
@@ -3331,6 +3333,16 @@
 				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_audio_mute),disable)">Skin.SetString(osd_audio_mute,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_audio_mute),disable)">Skin.Reset(osd_audio_mute,disable)</onclick>
 				<visible>[!SubString(skin.string(osd_audio_mute),disable) | Skin.HasSetting(customosd)]</visible>
+			</item>
+			<item id="28">
+				<!-- userrating-->
+				<label>-</label>
+				<property name="condition">$INFO[skin.string(osd_audio_userrating),disable)]</property>
+				<icon>osd_menu_teletext.png</icon>
+				<onclick condition="!Skin.HasSetting(customosd)">setrating</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_audio_userrating),disable)">Skin.SetString(osd_audio_userrating,disable)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_audio_userrating),disable)">Skin.Reset(osd_audio_userrating,disable)</onclick>
+				<visible>[!SubString(skin.string(osd_audio_userrating),disable) | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="1">
 				<!-- ajustes -->

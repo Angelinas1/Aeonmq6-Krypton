@@ -285,7 +285,7 @@
 						<onclick>ActivateWindow(PlayerSettings)</onclick>
 					</item>
 					<item id="109">
-						<!-- Ajustes da coleao -->
+						<!-- Ajustes da coleçao -->
 						<label>31365</label>
 						<label2>31366</label2>
 						<property name="MainLabel">31380</property>

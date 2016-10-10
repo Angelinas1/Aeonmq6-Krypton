@@ -270,15 +270,11 @@
                 <ondown>9001</ondown>
                 <control type="button" id="5">
                     <!-- Atualizacao automatica -->
-                    <label>31263</label>
+                    <label>10004</label>
                 </control>
                 <control type="button" id="9">
                     <!-- Procurar atualizacoes -->
                     <label>24034</label>
-                </control>
-                <control type="radiobutton" id="6">
-                    <!-- Ocultar notificacoes -->
-                    <label>31264</label>
                 </control>
                 <control type="radiobutton" id="7">
                     <!-- Ocultar desconhecidos -->

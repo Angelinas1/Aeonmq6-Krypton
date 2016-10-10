@@ -3,7 +3,7 @@
 	<!-- Aeon MQ 6 -->
 	<!--############################################################################### SUBMENU  - IR PARA ###############################################################################-->
 	<variable name="SkinVersion">
-		<value>6.6.6 MOD[COLOR=80FFFFFF] | [/COLOR]6/10/2016</value>
+		<value>6.6.59 MOD[COLOR=80FFFFFF] | [/COLOR]6/6/2016</value>
 	</variable>
 	<variable name="service_library">
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),dualwidget1)">plugin://service.library.data.provider?type=$INFO[Skin.String(widget1a)]+$INFO[Skin.String(widget1b)]&amp;reload=$INFO[Window(0).Property($INFO[Skin.String(widget1a)])]$INFO[Window(0).Property($INFO[Skin.String(widget1b)])]</value>
@@ -5858,6 +5858,13 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Integer.IsGreaterOrEqual(VideoPlayer.Rating,4)+Integer.IsLess(VideoPlayer.Rating,6)">subtitle_rating_3.png</value>
 		<value condition="Integer.IsGreaterOrEqual(VideoPlayer.Rating,6)+Integer.IsLess(VideoPlayer.Rating,8)">subtitle_rating_4.png</value>
 		<value condition="Integer.IsGreaterOrEqual(VideoPlayer.Rating,8)">subtitle_rating_5.png</value>
+	</variable>
+	<variable name="value_music_starrating">
+		<value condition="Integer.IsGreaterOrEqual(MusicPlayer.UserRating,0)+Integer.IsLess(MusicPlayer.UserRating,2)">subtitle_rating_1.png</value>
+		<value condition="Integer.IsGreaterOrEqual(MusicPlayer.UserRating,2)+Integer.IsLess(MusicPlayer.UserRating,4)">subtitle_rating_2.png</value>
+		<value condition="Integer.IsGreaterOrEqual(MusicPlayer.UserRating,4)+Integer.IsLess(MusicPlayer.UserRating,6)">subtitle_rating_3.png</value>
+		<value condition="Integer.IsGreaterOrEqual(MusicPlayer.UserRating,6)+Integer.IsLess(MusicPlayer.UserRating,8)">subtitle_rating_4.png</value>
+		<value condition="Integer.IsGreaterOrEqual(MusicPlayer.UserRating,8)">subtitle_rating_5.png</value>
 	</variable>
 	<variable name="value_510_starrating">
 		<value condition="Integer.IsGreaterOrEqual(Container(510).ListItem.Rating,0)+Integer.IsLess(Container(510).ListItem.Rating,2)">subtitle_rating_1.png</value>

@@ -2100,13 +2100,13 @@
                         <onclick>SetFocus(9100)</onclick>
                         <onclick>Notification($LOCALIZE[31656],$LOCALIZE[31237])</onclick>
                     </control>
-                    <control type="button" id="1223">
+                    <control type="radiobutton" id="1223">
                         <left>360</left>
                         <top>210</top>
                         <width>1560</width>
                         <height>30</height>
                         <label>Helper script rating extra</label>
-                        <onclick>Skin.ToggleSetting(extrarating)</onclick>
+						<onclick>Skin.ToggleSetting(extrarating)</onclick>
                         <selected>Skin.HasSetting(extrarating)</selected>
                     </control>
                 </control>
@@ -2143,6 +2143,8 @@
                             <colordiffuse>FFFFFFFF</colordiffuse>
                             <onfocus>Skin.SetString(colorflags,nocolor)</onfocus>
                             <onfocus>Skin.SetString(idcolorflags,451)</onfocus>
+							<onup>10007</onup>
+                            <ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown>
                             <onclick>SetFocus(9100)</onclick>
                         </control>
                         <control type="button" id="452">
@@ -2225,7 +2227,57 @@
                             <ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown>
                             <onclick>SetFocus(9100)</onclick>
                         </control>
-						<control type="button" id="460"><include>ButtonColor</include><label>31634</label><colordiffuse>FF556B2F</colordiffuse><onfocus>Skin.SetString(colorflags,olive)</onfocus><onfocus>Skin.SetString(idcolorflags,460)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="461"><include>ButtonColor</include><label>31637</label><colordiffuse>FFFF0000</colordiffuse><onfocus>Skin.SetString(colorflags,red)</onfocus><onfocus>Skin.SetString(idcolorflags,461)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="462"><include>ButtonColor</include><label>31626</label><colordiffuse>FFB20000</colordiffuse><onfocus>Skin.SetString(colorflags,blood)</onfocus><onfocus>Skin.SetString(idcolorflags,462)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="463"><include>ButtonColor</include><label>31627</label><colordiffuse>FF7D391F</colordiffuse><onfocus>Skin.SetString(colorflags,brown)</onfocus><onfocus>Skin.SetString(idcolorflags,463)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="464"><include>ButtonColor</include><label>31646</label><colordiffuse>FFC56520</colordiffuse><onfocus>Skin.SetString(colorflags,chocolate)</onfocus><onfocus>Skin.SetString(idcolorflags,464)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="465"><include>ButtonColor</include><label>31633</label><colordiffuse>FFF0DBA6</colordiffuse><onfocus>Skin.SetString(colorflags,lightyellow)</onfocus><onfocus>Skin.SetString(idcolorflags,465)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="466"><include>ButtonColor</include><label>31629</label><colordiffuse>FFDAA520</colordiffuse><onfocus>Skin.SetString(colorflags,goldyellow)</onfocus><onfocus>Skin.SetString(idcolorflags,466)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="467"><include>ButtonColor</include><label>31635</label><colordiffuse>FFFFA500</colordiffuse><onfocus>Skin.SetString(colorflags,orange)</onfocus><onfocus>Skin.SetString(idcolorflags,467)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="468"><include>ButtonColor</include><label>31641</label><colordiffuse>FF39ED92</colordiffuse><onfocus>Skin.SetString(colorflags,spring)</onfocus><onfocus>Skin.SetString(idcolorflags,468)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="469"><include>ButtonColor</include><label>31631</label><colordiffuse>FF004D00</colordiffuse><onfocus>Skin.SetString(colorflags,forest)</onfocus><onfocus>Skin.SetString(idcolorflags,469)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="470"><include>ButtonColor</include><label>31643</label><colordiffuse>FF8A2BE2</colordiffuse><onfocus>Skin.SetString(colorflags,violet)</onfocus><onfocus>Skin.SetString(idcolorflags,470)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="471"><include>ButtonColor</include><label>31636</label><colordiffuse>FF9370D8</colordiffuse><onfocus>Skin.SetString(colorflags,purple)</onfocus><onfocus>Skin.SetString(idcolorflags,471)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="472"><include>ButtonColor</include><label>31128</label><colordiffuse>FFFFFFFF</colordiffuse><onfocus>Skin.SetString(colorflags,white)</onfocus><onfocus>Skin.SetString(idcolorflags,472)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="473"><include>ButtonColor</include><label>31639</label><colordiffuse>FFC0C0C0</colordiffuse><onfocus>Skin.SetString(colorflags,silver)</onfocus><onfocus>Skin.SetString(idcolorflags,473)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="474"><include>ButtonColor</include><label>31644</label><colordiffuse>FF898A8C</colordiffuse><onfocus>Skin.SetString(colorflags,grey)</onfocus><onfocus>Skin.SetString(idcolorflags,474)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="475"><include>ButtonColor</include><label>31645</label><colordiffuse>FF101010</colordiffuse><onfocus>Skin.SetString(colorflags,graphite)</onfocus><onfocus>Skin.SetString(idcolorflags,475)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control></control>
+						<control type="button" id="460">
+							<include>ButtonColor</include>
+							<label>31634</label>
+							<colordiffuse>FF556B2F</colordiffuse>
+							<onfocus>Skin.SetString(colorflags,olive)</onfocus>
+							<onfocus>Skin.SetString(idcolorflags,460)</onfocus>
+							<onup>10007</onup>
+							<ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown>
+							<onclick>SetFocus(9100)</onclick>
+						</control>
+						<control type="button" id="461">
+							<include>ButtonColor</include>
+							<label>31637</label>
+							<colordiffuse>FFFF0000</colordiffuse>
+							<onfocus>Skin.SetString(colorflags,red)</onfocus>
+							<onfocus>Skin.SetString(idcolorflags,461)</onfocus>
+							<onup>10007</onup>
+							<ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown>
+							<onclick>SetFocus(9100)</onclick>
+						</control>
+						<control type="button" id="462">
+							<include>ButtonColor</include>
+							<label>31626</label>
+							<colordiffuse>FFB20000</colordiffuse>
+							<onfocus>Skin.SetString(colorflags,blood)</onfocus>
+							<onfocus>Skin.SetString(idcolorflags,462)</onfocus>
+							<onup>10007</onup>
+							<ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown>
+							<onclick>SetFocus(9100)</onclick>
+						</control>
+						<control type="button" id="463">
+							<include>ButtonColor</include>
+							<label>31627</label>
+							<colordiffuse>FF7D391F</colordiffuse>
+							<onfocus>Skin.SetString(colorflags,brown)</onfocus>
+							<onfocus>Skin.SetString(idcolorflags,463)</onfocus>
+							<onup>10007</onup>
+							<ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown>
+							<onclick>SetFocus(9100)</onclick>
+						</control>
+						<control type="button" id="464">
+							<include>ButtonColor</include>
+							<label>31646</label>
+							<colordiffuse>FFC56520</colordiffuse>
+							<onfocus>Skin.SetString(colorflags,chocolate)</onfocus>
+							<onfocus>Skin.SetString(idcolorflags,464)</onfocus>
+							<onup>10007</onup>
+							<ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown>
+							<onclick>SetFocus(9100)</onclick>
+						</control>
+						<control type="button" id="465"><include>ButtonColor</include><label>31633</label><colordiffuse>FFF0DBA6</colordiffuse><onfocus>Skin.SetString(colorflags,lightyellow)</onfocus><onfocus>Skin.SetString(idcolorflags,465)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="466"><include>ButtonColor</include><label>31629</label><colordiffuse>FFDAA520</colordiffuse><onfocus>Skin.SetString(colorflags,goldyellow)</onfocus><onfocus>Skin.SetString(idcolorflags,466)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="467"><include>ButtonColor</include><label>31635</label><colordiffuse>FFFFA500</colordiffuse><onfocus>Skin.SetString(colorflags,orange)</onfocus><onfocus>Skin.SetString(idcolorflags,467)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="468"><include>ButtonColor</include><label>31641</label><colordiffuse>FF39ED92</colordiffuse><onfocus>Skin.SetString(colorflags,spring)</onfocus><onfocus>Skin.SetString(idcolorflags,468)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="469"><include>ButtonColor</include><label>31631</label><colordiffuse>FF004D00</colordiffuse><onfocus>Skin.SetString(colorflags,forest)</onfocus><onfocus>Skin.SetString(idcolorflags,469)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="470"><include>ButtonColor</include><label>31643</label><colordiffuse>FF8A2BE2</colordiffuse><onfocus>Skin.SetString(colorflags,violet)</onfocus><onfocus>Skin.SetString(idcolorflags,470)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="471"><include>ButtonColor</include><label>31636</label><colordiffuse>FF9370D8</colordiffuse><onfocus>Skin.SetString(colorflags,purple)</onfocus><onfocus>Skin.SetString(idcolorflags,471)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="472"><include>ButtonColor</include><label>31128</label><colordiffuse>FFFFFFFF</colordiffuse><onfocus>Skin.SetString(colorflags,white)</onfocus><onfocus>Skin.SetString(idcolorflags,472)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="473"><include>ButtonColor</include><label>31639</label><colordiffuse>FFC0C0C0</colordiffuse><onfocus>Skin.SetString(colorflags,silver)</onfocus><onfocus>Skin.SetString(idcolorflags,473)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="474"><include>ButtonColor</include><label>31644</label><colordiffuse>FF898A8C</colordiffuse><onfocus>Skin.SetString(colorflags,grey)</onfocus><onfocus>Skin.SetString(idcolorflags,474)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control><control type="button" id="475"><include>ButtonColor</include><label>31645</label><colordiffuse>FF101010</colordiffuse><onfocus>Skin.SetString(colorflags,graphite)</onfocus><onfocus>Skin.SetString(idcolorflags,475)</onfocus><onup>10007</onup><ondown>SetFocus($INFO[skin.string(idcolorfloor)])</ondown><onclick>SetFocus(9100)</onclick></control></control>
                 </control>
                 <control type="group">
                     <!-- Grupo das cores -->

@@ -107,27 +107,29 @@
                     <scroll>true</scroll>
                 </control>
                 <control type="label">
-                    <!-- Rating -->
+                    <!-- Rating value -->
                     <left>165</left>
                     <top>135</top>
                     <width>210</width>
                     <height>38</height>
-                    <label>$LOCALIZE[563]:</label>
+                    <label>$LOCALIZE[24098]:</label>
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>Font_18</font>
                     <textcolor>$VAR[value_headercolor]</textcolor>
                 </control>
-                <control type="image">
-                    <!-- Rating value -->
-                    <left>352</left>
-                    <top>132</top>
-                    <width>240</width>
+                <control type="label">
+                    <!-- Rating -->
+                    <left>390</left>
+                    <top>135</top>
+                    <width>825</width>
                     <height>38</height>
-                    <aspectratio>keep</aspectratio>
+                    <label fallback="416">$INFO[ListItem.AddonDisclaimer]</label>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <texture>$INFO[ListItem.Addon.StarRating]</texture>
+                    <font>Font_18</font>
+                    <scrollout>false</scrollout>
+                    <pauseatend>2000</pauseatend>
                 </control>
                 <control type="label">
                     <!-- Summary -->

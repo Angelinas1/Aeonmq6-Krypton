@@ -12,7 +12,7 @@
 	<onload>SetProperty(SkinHelper.WidgetContainer,5801)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<allowoverlay>no</allowoverlay>
-	<views>51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,77,78,80,83,84</views>
+	<views>51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,76,77,78,80,83,84</views>
 	<controls>
 		<control type="multiimage">
 			<!-- Multi Fanart -->
@@ -166,8 +166,6 @@
 			<control type="group">
 				<!-- Grupo ocultar flags ou fanart -->
 				<top>45</top>
-				<include condition="Skin.HasSetting(view3dwall_video)">View3DWall</include>
-				<!-- 67,68 -->
 				<include>Animation_HiddenView</include>
 				<control type="image">
 					<left>0</left>
@@ -252,7 +250,7 @@
 				<visible>[StringCompare(Container.Viewmode,RIGHT LIST)+Skin.HasSetting(noartrightlisttitle) | StringCompare(Container.Viewmode,BANNER) | StringCompare(Container.Viewmode,BANNER INFO) 
 | StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,LOW LIST)+Skin.HasSetting(noartlowlisttitle) | StringCompare(Container.Viewmode,WALL) 
 | StringCompare(Container.Viewmode,CowerFlowandBack) | StringCompare(Container.Viewmode,COVERFLOW) | StringCompare(Container.Viewmode,SHOWART) | StringCompare(Container.Viewmode,MULTIPLEX) | StringCompare(Container.Viewmode,PANEL) 
-| StringCompare(Container.Viewmode,SHELF) | StringCompare(Container.Viewmode,LANDSCAPEX) | StringCompare(Container.Viewmode,SETS) | StringCompare(Container.Viewmode,SHOWCASE) | StringCompare(Container.Viewmode,WALL 3D) 
+| StringCompare(Container.Viewmode,SHELF) | StringCompare(Container.Viewmode,POSTERZOOM) | StringCompare(Container.Viewmode,LANDSCAPEX) | StringCompare(Container.Viewmode,SETS) | StringCompare(Container.Viewmode,SHOWCASE) | StringCompare(Container.Viewmode,WALL 3D) 
 | StringCompare(Container.Viewmode,WALL 3D) | StringCompare(Container.Viewmode,POSTERLITE)] + ![ControlGroup(9000).HasFocus | Control.HasFocus(9920) 
 | Control.IsVisible(9922) | Control.HasFocus(9940) | Window.IsActive(movieinformation) | Window.IsVisible(6621)]</visible>
 				<control type="image">
@@ -548,12 +546,16 @@
 				<!-- 65 -->
 				<include condition="Skin.HasSetting(viewshowcase_video)">ViewShowCaseVideo</include>
 				<!-- 66 -->
+				<include condition="Skin.HasSetting(view3dwall_video)">View3DWall</include>
+				<!-- 67,68 -->
 				<include condition="Skin.HasSetting(viewposterlite_video)">ViewPosterLite</include>
 				<!-- 69 -->
 				<include condition="Skin.HasSetting(viewposterlist_video)">ViewPosterList</include>
 				<!-- 70 -->
 				<include condition="Skin.HasSetting(viewtotalart_video)">ViewTotalArt</include>
 				<!-- 71 -->
+				<include condition="Skin.HasSetting(viewposterzoom_video)">ViewPosterZoom</include>
+				<!-- 76 -->
 				<include condition="Skin.HasSetting(viewmiddle_video)">ViewMiddleList</include>
 				<!-- 77 -->
 				<include condition="Skin.HasSetting(viewcoverback_video)">ViewCoverandBackVideo</include>

@@ -914,7 +914,7 @@
                 <top>310</top>
                 <width>300</width>
                 <height>38</height>
-                <texture fallback="subtitle_rating_0.png">$VAR[value_player_starrating]</texture>
+                <texture fallback="subtitle_rating_0.png">$VAR[value_music_starrating]</texture>
                 <colordiffuse>$VAR[value_headercolor]</colordiffuse>
                 <aspectratio align="left" aligny="bottom">keep</aspectratio>
             </control>
@@ -1262,7 +1262,7 @@
                 <top>310</top>
                 <width>300</width>
                 <height>38</height>
-                <texture fallback="subtitle_rating_0.png">$VAR[value_player_starrating]</texture>
+                <texture fallback="subtitle_rating_0.png">$VAR[value_music_starrating]</texture>
                 <colordiffuse>$VAR[value_headercolor]</colordiffuse>
                 <aspectratio align="left" aligny="bottom">keep</aspectratio>
             </control>

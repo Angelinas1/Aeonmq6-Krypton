@@ -148,10 +148,16 @@
                 <onfocus>SetFocus(14)</onfocus>
             </control>
             <control type="button" id="154">
-                <!-- VolumeDown -->
+                <!-- VolumeMute -->
                 <include>InvisibleButton</include>
                 <onfocus>Mute</onfocus>
                 <onfocus>SetFocus(15)</onfocus>
+            </control>
+            <control type="button" id="155">
+                <!-- UserRating -->
+                <include>InvisibleButton</include>
+                <onfocus>UserRating</onfocus>
+                <onfocus>SetFocus(28)</onfocus>
             </control>
             <control type="progress">
                 <left>45</left>

@@ -541,7 +541,7 @@
                     <texture>$INFO[VideoPlayer.AudioChannels,flags/audiochannels/,.png]</texture>
                 </control>
             </control>
-            <control type="group" id="616">
+            <control type="group" id="615">
                 <left>-1830</left>
                 <top>744</top>
                 <animation effect="slide" start="0,0" end="1920,0" time="400" tween="cubic" easing="inout" condition="Control.HasFocus(1000) | Control.HasFocus(1001)">Conditional</animation>
@@ -602,6 +602,12 @@
                         </control>
                     </focusedlayout>
                 </control>
+            </control>
+            <control type="group" id="616">
+                <left>-1830</left>
+                <top>744</top>
+                <animation effect="slide" start="0,0" end="1920,0" time="400" tween="cubic" easing="inout" condition="Control.HasFocus(1000) | Control.HasFocus(1001)">Conditional</animation>
+                <visible>Control.HasFocus(1001)+StringCompare(Window(Home).Property(SkinHelper.PVR.tmdb_type),tv)</visible>
                 <control type="list" id="1001">
                     <content>plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[Window(Home).Property(SkinHelper.PVR.tmdb_title)]</content>
                     <viewtype label="List">List Info</viewtype>
@@ -676,7 +682,7 @@
                 <colordiffuse>C3FFFFFF</colordiffuse>
             </control>
             <control type="group" id="617">
-                <visible>!Control.IsVisible(616)</visible>
+                <visible>![Control.HasFocus(1000) | Control.HasFocus(1001)]</visible>
                 <control type="image">
                     <left>60</left>
                     <top>746</top>
@@ -753,7 +759,7 @@
                 </control>
             </control>
             <control type="label">
-                <visible>Control.IsVisible(616)</visible>
+                <visible>Control.IsVisible(615) | Control.IsVisible(616)</visible>
                 <left>0</left>
                 <top>1020</top>
                 <height>60</height>
@@ -884,13 +890,13 @@
                             <!-- Cast -->
                             <label>Cast</label>
                             <onclick>SetFocus(1000,0)</onclick>
-                            <visible>IsEmpty(Window(Home).Property(SkinHelper.PVR.Characterart)) + !IsEmpty(Window(Home).Property(SkinHelper.PVR.Poster))</visible>
+                           <visible>StringCompare(Window(Home).Property(SkinHelper.PVR.tmdb_type),movie)</visible>
                         </item>
                         <item id="4">
                             <!-- Cast -->
                             <label>Cast TV</label>
                             <onclick>SetFocus(1001,0)</onclick>
-                            <visible>!IsEmpty(Window(Home).Property(SkinHelper.PVR.Characterart)) + !IsEmpty(Window(Home).Property(SkinHelper.PVR.Poster))</visible>
+                            <visible>StringCompare(Window(Home).Property(SkinHelper.PVR.tmdb_type),tv)</visible>
                         </item>
                         <item id="6">
                             <!-- Cinema Ex -->

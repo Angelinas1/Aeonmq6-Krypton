@@ -414,7 +414,7 @@
         <animation effect="slide" start="0,0" end="0,-30" time="300" tween="sine" easing="out" condition="Control.HasFocus(80)">Conditional</animation>
         <itemlayout width="200" height="1000" condition="StringCompare(Control.GetLabel(92132),poster)+!Control.IsVisible(69196)">
             <control type="group">
-                <left>-60</left>
+                <left>410</left>
                 <top>634</top>
                 <animation effect="zoom" center="auto" start="41" end="41" condition="true">Conditional</animation>
                 <include>PosFade</include>
@@ -426,7 +426,7 @@
         <focusedlayout width="570" height="768" condition="[StringCompare(Control.GetLabel(92132),noicon)|Control.IsVisible(69196)]"></focusedlayout>
         <itemlayout width="450" height="164" condition="StringCompare(Control.GetLabel(92132),landscape)+!Control.IsVisible(69196)">
             <control type="group">
-                <left>-600</left>
+                <left>400</left>
                 <top>825</top>
                 <animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
                 <include>PosFade</include>
@@ -435,7 +435,7 @@
         </itemlayout>
         <focusedlayout width="600" height="224" condition="StringCompare(Control.GetLabel(92132),landscape)">
             <control type="group">
-                <left>-458</left>
+                <left>458</left>
                 <top>758</top>
                 <animation effect="zoom" center="0,1023" start="74" end="100" time="480" tween="cubic" easing="inout" reversible="false">Focus</animation>
                 <animation effect="zoom" start="100" end="100" tween="cubic" easing="inout" reversible="false" condition="!Control.HasFocus(69)">Unfocus</animation>
@@ -515,7 +515,7 @@
         </focusedlayout>
         <itemlayout width="450" height="164" condition="StringCompare(Control.GetLabel(92132),banner)+!Control.IsVisible(69196)">
             <control type="group">
-                <left>-600</left>
+                <left>420</left>
                 <top>915</top>
                 <animation effect="zoom" center="auto" start="74" end="74" condition="true">Conditional</animation>
                 <include>PosFade</include>
@@ -526,7 +526,7 @@
         </itemlayout>
         <focusedlayout width="600" height="224" condition="StringCompare(Control.GetLabel(92132),banner)">
             <control type="group">
-                <left>-482</left>
+                <left>430</left>
                 <top>902</top>
                 <animation effect="zoom" center="0,951" start="74" end="100" time="480" tween="cubic" easing="inout" reversible="false">Focus</animation>
                 <animation effect="zoom" start="100" end="100" tween="cubic" easing="inout" reversible="false" condition="!Control.HasFocus(69)">Unfocus</animation>

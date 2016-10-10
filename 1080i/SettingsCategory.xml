@@ -32,7 +32,7 @@
 			<control type="label">
 				<include>SettingsContentTitle</include>
 				<label>31357</label>
-				<visible>System.HasPVRAddon</visible>
+				<visible>Window.IsActive(PVRSettings)</visible>
 			</control>
 			<control type="label">
 				<include>SettingsContentTitle</include>

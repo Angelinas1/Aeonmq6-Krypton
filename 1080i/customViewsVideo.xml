@@ -288,6 +288,16 @@
                     <selected>Skin.HasSetting(viewsets_video)</selected>
                     <visible>StringCompare(skin.string(videocontent),movies) | StringCompare(skin.string(videocontent),sets)</visible>
                 </control>
+                <control type="radiobutton" id="19276">
+                    <!-- Poster Zoom -->
+                    <!-- 77 -->
+                    <radioposx>1341</radioposx>
+                    <label>PosterZoom</label>
+                    <onclick>Skin.ToggleSetting(viewposterzoom_video)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewposterzoom_video)">Skin.SetString(setviewvideo,76)</onclick>
+                    <onclick condition="!Skin.HasSetting(viewposterzoom_video) + Skin.HasSetting(clickactivateview_video)">back</onclick>
+                    <selected>Skin.HasSetting(viewposterzoom_video)</selected>
+                </control>
                 <control type="radiobutton" id="19277">
                     <!-- Middle List -->
                     <!-- 77 -->
