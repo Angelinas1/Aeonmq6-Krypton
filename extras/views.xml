@@ -18,7 +18,8 @@
 	<view id="3DWall" value="67" languageid="31806" type="movies" />
     <view id="PosterLite" value="69" languageid="31815" type="movies,setmovies,tvshows,seasons,episodes" />
     <view id="PosterList" value="70" languageid="31814" type="movies,setmovies" />
-    <view id="Total Art" value="71" languageid="31816" type="movies" />	
+    <view id="Total Art" value="71" languageid="31816" type="movies" />
+    <view id="PosterZoom" value="76" languageid="31847" type="movies,setmovies,tvshows,seasons" />	
     <view id="Middle List" value="77" languageid="31823" type="movies,setmovies,tvshows" />
     <view id="CowerFlowBack" value="78" languageid="31824" type="movies,setmovies,tvshows,musicvideos,seasons,sets,artists" />
 	<view id="PVR MQ6" value="80" languageid="31825" type="tvchannels,tvrecordings" />
