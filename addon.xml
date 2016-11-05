@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<addon
-	id="skin.aeonmq6Krypton"
-	version="6.6.6"
-	name="Aeon MQ6 Krypton"
+	id="skin.aeonmq6KryptonMega"
+	version="6.6.61"
+	name="Aeon MQ6 Krypton-mega"
 	provider-name="MarcosQui">
 	<requires>
 	<import addon="xbmc.gui" version="5.12.0"/>
+	<import addon="service.skin.widgets" version="0.0.30"/>
+	<import addon="service.library.data.provider" version="0.0.9"/>
+	<import addon="service.nextup.notification" version="1.0.8"/>
+	<import addon="script.aeonmq6.extrapack" version="1.0.6"/>
+	<import addon="script.favourites" version="6.0.2"/>
+	<import addon="script.artwork.downloader" version="12.0.29"/>
+	<import addon="script.randomandlastitems" version="2.2.2"/>
+	<import addon="script.games.rom.collection.browser" version="2.1.2"/>
+	<import addon="script.artistslideshow" version="1.8.6"/>
+	<import addon="script.tv.show.next.aired" version="6.0.14"/>
+	<import addon="script.toolbox" version="1.1.0"/>
+	<import addon="script.globalsearch" version="5.0.0"/>
+	<import addon="resource.uisounds.aeonmq6" version="1.0.0"/>
 	<import addon="script.skin.helper.service" version="1.0.0"/>
 	<import addon="resource.images.studios.white" version="0.0.6"/>
 	<import addon="resource.images.studios.coloured" version="0.0.7"/>
