@@ -53,7 +53,7 @@
 		<control type="multiimage" id="5020">
 			<!-- Extra Fanart Movies/TvShows/MusicVideos/Sets -->
 			<include>InvisibleButton</include>
-			<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
+			 <imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
 			<visible>Container.Content(movies) + !Skin.HasSetting(trailers) + SubString(skin.string(moviesfanart),extra) | Container.Content(tvshows) + SubString(skin.string(tvshowsfanart),extra) | Container.Content(musicvideos) + SubString(skin.string(musicvideosfanart),extra) | Container.Content(sets) + SubString(skin.string(setsfanart),extra)</visible>
 		</control>
 		<control type="multiimage" id="5021">
@@ -250,7 +250,7 @@
 				<visible>[StringCompare(Container.Viewmode,RIGHT LIST)+Skin.HasSetting(noartrightlisttitle) | StringCompare(Container.Viewmode,BANNER) | StringCompare(Container.Viewmode,BANNER INFO) 
 | StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,LOW LIST)+Skin.HasSetting(noartlowlisttitle) | StringCompare(Container.Viewmode,WALL) 
 | StringCompare(Container.Viewmode,CowerFlowandBack) | StringCompare(Container.Viewmode,COVERFLOW) | StringCompare(Container.Viewmode,SHOWART) | StringCompare(Container.Viewmode,MULTIPLEX) | StringCompare(Container.Viewmode,PANEL) 
-| StringCompare(Container.Viewmode,SHELF) | StringCompare(Container.Viewmode,POSTERZOOM) | StringCompare(Container.Viewmode,LANDSCAPEX) | StringCompare(Container.Viewmode,SETS) | StringCompare(Container.Viewmode,SHOWCASE) | StringCompare(Container.Viewmode,WALL 3D) 
+| StringCompare(Container.Viewmode,SHELF) | StringCompare(Container.Viewmode,POSTER ZOOM) | StringCompare(Container.Viewmode,LANDSCAPEX) | StringCompare(Container.Viewmode,SETS) | StringCompare(Container.Viewmode,SHOWCASE) | StringCompare(Container.Viewmode,WALL 3D) 
 | StringCompare(Container.Viewmode,WALL 3D) | StringCompare(Container.Viewmode,POSTERLITE)] + ![ControlGroup(9000).HasFocus | Control.HasFocus(9920) 
 | Control.IsVisible(9922) | Control.HasFocus(9940) | Window.IsActive(movieinformation) | Window.IsVisible(6621)]</visible>
 				<control type="image">
@@ -270,7 +270,17 @@
 					<height>112</height>
 					<texture background="true">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
 					<aspectratio align="left" aligny="bottom">keep</aspectratio>
-					<visible>Container.Content(movies) + [StringCompare(Container.Viewmode,RIGHT LIST) | StringCompare(Container.Viewmode,BANNER) | StringCompare(Container.Viewmode,BANNER INFO) | StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,LOW LIST) | StringCompare(Container.Viewmode,WALL) | StringCompare(Container.Viewmode,CowerFlowandBack) | StringCompare(Container.Viewmode,COVERFLOW) | StringCompare(Container.Viewmode,SHOWART) | StringCompare(Container.Viewmode,MULTIPLEX) | StringCompare(Container.Viewmode,PANEL) | StringCompare(Container.Viewmode,SHELF) | StringCompare(Container.Viewmode,LANDSCAPEX) | StringCompare(Container.Viewmode,SETS) | StringCompare(Container.Viewmode,SHOWCASE) | StringCompare(Container.Viewmode,WALL 3D) | StringCompare(Container.Viewmode,WALL 3D) | StringCompare(Container.Viewmode,POSTERLITE)]</visible>
+					<visible>Container.Content(movies) + !SubString(ListItem.Path,videodb://movies/sets,left) + [StringCompare(Container.Viewmode,RIGHT LIST) | StringCompare(Container.Viewmode,POSTER ZOOM) | StringCompare(Container.Viewmode,BANNER) | StringCompare(Container.Viewmode,BANNER INFO) | StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,LOW LIST) | StringCompare(Container.Viewmode,WALL) | StringCompare(Container.Viewmode,CowerFlowandBack) | StringCompare(Container.Viewmode,COVERFLOW) | StringCompare(Container.Viewmode,SHOWART) | StringCompare(Container.Viewmode,MULTIPLEX) | StringCompare(Container.Viewmode,PANEL) | StringCompare(Container.Viewmode,SHELF) | StringCompare(Container.Viewmode,LANDSCAPEX) | StringCompare(Container.Viewmode,SETS) | StringCompare(Container.Viewmode,SHOWCASE) | StringCompare(Container.Viewmode,WALL 3D) | StringCompare(Container.Viewmode,WALL 3D) | StringCompare(Container.Viewmode,POSTERLITE)]</visible>
+				</control>
+				<control type="image">
+					<!-- Clearlogo -->
+					<left>0</left>
+					<top>75</top>
+					<width>112</width>
+					<height>112</height>
+					<texture background="true">$INFO[Window(Home).Property(SkinHelper.MovieSet.Studio),resource://resource.images.studios.coloured/,.png]</texture>
+					<aspectratio align="left" aligny="bottom">keep</aspectratio>
+					<visible>SubString(ListItem.Path,videodb://movies/sets,left) + [StringCompare(Container.Viewmode,RIGHT LIST) | StringCompare(Container.Viewmode,POSTER ZOOM) | StringCompare(Container.Viewmode,BANNER) | StringCompare(Container.Viewmode,BANNER INFO) | StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,LOW LIST) | StringCompare(Container.Viewmode,WALL) | StringCompare(Container.Viewmode,CowerFlowandBack) | StringCompare(Container.Viewmode,COVERFLOW) | StringCompare(Container.Viewmode,SHOWART) | StringCompare(Container.Viewmode,MULTIPLEX) | StringCompare(Container.Viewmode,PANEL) | StringCompare(Container.Viewmode,SHELF) | StringCompare(Container.Viewmode,LANDSCAPEX) | StringCompare(Container.Viewmode,SETS) | StringCompare(Container.Viewmode,SHOWCASE) | StringCompare(Container.Viewmode,WALL 3D) | StringCompare(Container.Viewmode,WALL 3D) | StringCompare(Container.Viewmode,POSTERLITE)]</visible>
 				</control>
 				<control type="grouplist">
 					<left>120</left>

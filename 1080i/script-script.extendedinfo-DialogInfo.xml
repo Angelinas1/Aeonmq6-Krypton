@@ -10,22 +10,20 @@
             <control type="multiimage">
                 <!-- Multi Fanart -->
                 <include>WindowBG</include>
-                <imagepath background="true">flags/black.png</imagepath>
+                <imagepath background="true">black.png</imagepath>
             </control>
-            <control type="multiimage">
+            <control type="image">
                 <!-- Multi Fanart -->
                 <left>0</left>
                 <top>0</top>
                 <width>1920</width>
                 <height>1080</height>
-                <timeperimage>6000</timeperimage>
-                <randomize>true</randomize>
                 <fadetime>FanartCrossFadeTime</fadetime>
                 <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan)">Conditional</animation>
                 <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan)">Conditional</animation>
-                <imagepath background="true">$INFO[Container(750).ListItem.Icon]</imagepath>
+                <texture background="true">$INFO[Window(home).Property(fanart)]</texture>
             </control>
             <include>LiveBG</include>
             <control type="image">
@@ -52,7 +50,7 @@
                 <width>1650</width>
                 <height>60</height>
                 <font>Font_40</font>
-                <label>$INFO[Window.Property(Title)]</label>
+                <label>$INFO[Window.Property(Label)]</label>
                 <textcolor>FFFFFAF0</textcolor>
                 <scroll>true</scroll>
             </control>
@@ -85,20 +83,20 @@
             </control>
             <control type="image">
                 <!-- Image -->
-                <left>1132</left>
-                <top>82</top>
-                <height>248</height>
-                <width>285</width>
-                <aspectratio>keep</aspectratio>
+                <left>1085</left>
+                <top>130</top>
+                <height>180</height>
+                <width>auto</width>
+                <aspectratio aligny="top">keep</aspectratio>
                 <texture background="true">$INFO[Container(750).ListItem(0).Icon]</texture>
             </control>
             <control type="image">
                 <!-- Image -->
-                <left>1132</left>
-                <top>261</top>
-                <height>248</height>
-                <width>285</width>
-                <aspectratio>keep</aspectratio>
+                <left>1085</left>
+                <top>315</top>
+                <height>180</height>
+                <width>auto</width>
+                <aspectratio aligny="top">keep</aspectratio>
                 <texture background="true">$INFO[Container(750).ListItem(1).Icon]</texture>
             </control>
             <control type="image">
@@ -150,7 +148,7 @@
                 <scrolltime>200</scrolltime>
                 <itemlayout height="30">
                     <control type="label">
-                        <left>-42</left>
+                        <left>-32</left>
                         <top>0</top>
                         <width>300</width>
                         <height>30</height>
@@ -295,25 +293,32 @@
                         <onclick>noop</onclick>
                         <visible>!IsEmpty(Window.Property(Deathday))</visible>
                     </item>
+                    <item>
+                        <label>Movies in Lybrary: </label>
+                        <!-- Deathday -->
+                        <label2>$INFO[Window.Property(DBMovies)]</label2>
+                        <onclick>noop</onclick>
+						<visible>!isEmpty(Window.Property(DBMovies))</visible>
+                    </item>
+                    <item>
+                        <label>Homepage (wwww): </label>
+                        <!-- Deathday -->
+                        <label2>$INFO[Window.Property(Homepage)]</label2>
+                        <onclick>noop</onclick>
+                        <visible>!IsEmpty(Window.Property(Homepage))</visible>
+                    </item>
                 </content>
             </control>
             <control type="image">
-                <left>308</left>
-                <top>120</top>
-                <height>345</height>
-                <width>3</width>
-                <texture>separator_v.png</texture>
-            </control>
-            <control type="image">
                 <left>0</left>
-                <top>204</top>
+                <top>210</top>
                 <height>3</height>
                 <width>1080</width>
                 <texture>separator.png</texture>
             </control>
             <control type="image">
                 <left>0</left>
-                <top>465</top>
+                <top>500</top>
                 <height>3</height>
                 <width>1480</width>
                 <texture>separator.png</texture>
@@ -321,9 +326,9 @@
             <control type="textbox">
                 <!-- Plot -->
                 <left>45</left>
-                <top>480</top>
+                <top>510</top>
                 <width>1402</width>
-                <height>200</height>
+                <height>180</height>
                 <align>justify</align>
                 <font>Font_18A</font>
                 <label fallback="No info available">$INFO[Window.Property(Biography)]</label>
@@ -331,10 +336,17 @@
                 <autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
             </control>
             <control type="image">
+                <left>308</left>
+                <top>120</top>
+                <height>380</height>
+                <width>3</width>
+                <texture>separator_v.png</texture>
+            </control>
+            <control type="image">
                 <left>1080</left>
                 <top>120</top>
                 <width>3</width>
-                <height>345</height>
+                <height>380</height>
                 <texture>separator_v.png</texture>
             </control>
             <control type="image">
@@ -682,7 +694,19 @@
                                 <include>Animation_CaseGlass</include>
                             </control>
                         </control>
-                    </itemlayout>
+							<control type="image">
+                                <left>150</left>
+                                <top>10</top>
+                                <width>40</width>
+                                <height>40</height>
+                                <aligny>center</aligny>
+                                <align>center</align>
+                                <aspectratio>keep</aspectratio>
+                                <texture>overlaywatched_1.png</texture>
+                                <colordiffuse>FF909090</colordiffuse>
+								<visible>!IsEmpty(ListItem.DBID)</visible>
+                            </control>
+				   </itemlayout>
                     <focusedlayout height="255" width="272">
                         <control type="group">
                             <!-- DVD CaseFocus -->
@@ -753,7 +777,19 @@
                                 <include>Animation_CaseGlass</include>
                             </control>
                         </control>
-                    </focusedlayout>
+							<control type="image">
+                                <left>150</left>
+                                <top>10</top>
+                                <width>40</width>
+                                <height>40</height>
+                                <aligny>center</aligny>
+                                <align>center</align>
+                                <aspectratio>keep</aspectratio>
+                                <texture>overlaywatched_1.png</texture>
+                                <colordiffuse>FF909090</colordiffuse>
+								<visible>!IsEmpty(ListItem.DBID)</visible>
+                            </control>
+					</focusedlayout>
                 </control>
                 <control type="list" id="250">
                     <!-- Similar 161 -->
@@ -1500,7 +1536,7 @@
                     <width>720</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <animation effect="rotate" start="0,0" end="-4.0.0" center="auto" delay="1000" easing="out" tween="back" time="600" condition="Control.HasFocus(160)">Conditional</animation>
                     <visible>Control.HasFocus(160) + [Skin.HasSetting(artistzoom) | Control.HasFocus(160) + Skin.HasSetting(oom)]</visible>
                 </control>
@@ -1531,7 +1567,7 @@
                     <width>720</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <visible>Skin.HasSetting(artistzoom)</visible>
                 </control>
             </control>
@@ -1547,7 +1583,7 @@
                     <width>720</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <animation effect="rotate" start="0,0" end="-4.0.0" center="auto" delay="1000" easing="out" tween="back" time="600" condition="Control.HasFocus(161)">Conditional</animation>
                     <visible>Control.HasFocus(161) + [Skin.HasSetting(artistzoom) | Control.HasFocus(161) + Skin.HasSetting(oom)]</visible>
                 </control>
@@ -1578,7 +1614,7 @@
                     <width>720</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <visible>Skin.HasSetting(artistzoom)</visible>
                 </control>
             </control>
@@ -1594,7 +1630,7 @@
                     <width>720</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <animation effect="rotate" start="0,0" end="-4.0.0" center="auto" delay="1000" easing="out" tween="back" time="600" condition="Control.HasFocus(162)">Conditional</animation>
                     <visible>Control.HasFocus(162) + [Skin.HasSetting(artistzoom) | Control.HasFocus(162) + Skin.HasSetting(oom)]</visible>
                 </control>
@@ -1625,7 +1661,7 @@
                     <width>720</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <visible>Skin.HasSetting(artistzoom)</visible>
                 </control>
             </control>
@@ -1641,7 +1677,7 @@
                     <width>720</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <animation effect="rotate" start="0,0" end="-4.0.0" center="auto" delay="1000" easing="out" tween="back" time="600" condition="Control.HasFocus(163)">Conditional</animation>
                     <visible>Control.HasFocus(163) + [Skin.HasSetting(artistzoom) | Control.HasFocus(163) + Skin.HasSetting(oom)]</visible>
                 </control>
@@ -1672,7 +1708,7 @@
                     <width>720</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <visible>Skin.HasSetting(artistzoom)</visible>
                 </control>
             </control>
@@ -1688,7 +1724,7 @@
                     <width>720</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <animation effect="rotate" start="0,0" end="-4.0.0" center="auto" delay="1000" easing="out" tween="back" time="600" condition="Control.HasFocus(164)">Conditional</animation>
                     <visible>Control.HasFocus(164) + [Skin.HasSetting(artistzoom) | Control.HasFocus(164) + Skin.HasSetting(oom)]</visible>
                 </control>
@@ -1719,7 +1755,7 @@
                     <width>720</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <visible>Skin.HasSetting(artistzoom)</visible>
                 </control>
             </control>
@@ -1735,7 +1771,7 @@
                     <width>1470</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <animation effect="rotate" start="0,0" end="-6.0.0" center="auto" delay="1000" easing="out" tween="back" time="600" condition="Control.HasFocus(165)">Conditional</animation>
                     <visible>Control.HasFocus(165) + [Skin.HasSetting(artistzoom) | Control.HasFocus(165) + Skin.HasSetting(oom)]</visible>
                 </control>
@@ -1754,7 +1790,7 @@
                     <width>1470</width>
                     <height>1050</height>
                     <align>center</align>
-                    <texture>border.png</texture>
+                    <texture>actor_border.png</texture>
                     <visible>Skin.HasSetting(artistzoom)</visible>
                 </control>
             </control>

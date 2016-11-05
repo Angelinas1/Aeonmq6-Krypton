@@ -211,6 +211,18 @@
                         <label>$VAR[value_ground16_value]</label>
                     </control>
                 </control>
+                    <control type="image">
+                        <left>1575</left>
+						<top>300</top>
+                        <width>335</width>
+                        <height>335</height>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Music.DiscArt)]</texture>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
+                        <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                        <include>Animation_ViewsCDart</include>
+                        <visible>Container.Content(artists)|Container.Content(albums)|Container.Content(songs)</visible>
+                    </control>
                 <control type="group">
                     <!-- CDART VIDEO -->
                     <left>1095</left>
@@ -422,6 +434,8 @@
                 </control>
                 <control type="group">
                     <!-- MUSICA -->
+                    <left>1056</left>
+                    <top>132</top>
                     <include>Animation_Fade</include>
                     <visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(noaudiomediacase)</visible>
                     <control type="image">
@@ -449,14 +463,16 @@
                 </control>
                 <control type="group">
                     <!-- MUSICA ESTOJO -->
+					<left>1095</left>
+                    <top>112</top>
                     <include>Animation_Fade</include>
                     <visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(noaudiomediacase)</visible>
                     <control type="image">
                         <!-- Musica/Estojo reflexo-->
                         <left>27</left>
-                        <top>630</top>
-                        <width>345</width>
-                        <height>345</height>
+                        <top>430</top>
+                        <width>445</width>
+                        <height>445</height>
                         <fadetime>FanartCrossFadeTime</fadetime>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture flipy="true" diffuse="thumb_box_diffuse_reflect.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -464,17 +480,17 @@
                     <control type="image">
                         <!-- Estojo reflexo -->
                         <left>-30</left>
-                        <top>627</top>
-                        <width>417</width>
-                        <height>364</height>
+                        <top>427</top>
+                        <width>517</width>
+                        <height>464</height>
                         <texture flipy="true" diffuse="thumb_box_reflect.png">thumb_box_cd.png</texture>
                     </control>
                     <control type="image">
                         <!-- Musica -->
                         <left>27</left>
-                        <top>291</top>
-                        <width>345</width>
-                        <height>345</height>
+                        <top>91</top>
+                        <width>445</width>
+                        <height>445</height>
                         <fadetime>FanartCrossFadeTime</fadetime>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture diffuse="thumb_box_diffuse.png" fallback="DefaultAudioCover.png" background="true">$INFO[ListItem.Icon]</texture>
@@ -482,9 +498,9 @@
                     <control type="image">
                         <!-- Estojo -->
                         <left>-30</left>
-                        <top>285</top>
-                        <width>417</width>
-                        <height>364</height>
+                        <top>85</top>
+                        <width>517</width>
+                        <height>464</height>
                         <texture>thumb_box_cd.png</texture>
                         <colordiffuse>DEFFFFFF</colordiffuse>
                     </control>
@@ -499,6 +515,16 @@
                     <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
                     <fadetime>FanartCrossFadeTime</fadetime>
                     <visible>!Skin.HasSetting(noartglasslistvideo)</visible>
+                </control>
+                <control type="image">
+                    <!-- Logo -->
+                    <left>1585</left>
+                    <top>90</top>
+                    <height>218</height>
+                    <width>285</width>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$INFO[Window(Home).Property(SkinHelper.Music.ClearLogo)]</texture>
+                    <fadetime>FanartCrossFadeTime</fadetime>
                 </control>
                 <control type="image">
                     <!-- ClearArt -->

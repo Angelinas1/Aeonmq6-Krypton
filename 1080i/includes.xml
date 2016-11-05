@@ -1041,7 +1041,7 @@
 			<!-- Estudio -->
 			<height>68</height>
 			<include>FlagImage</include>
-			<texture>$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
 			<visible>!IsEmpty(Control.GetLabel(557))</visible>
 		</control>
 		<control type="image">
@@ -1051,7 +1051,7 @@
 		<control type="image">
 			<!-- Mpaa -->
 			<include>FlagImage</include>
-			<texture>$VAR[value_mpaa]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_mpaa]</texture>
 			<visible>!IsEmpty(ListItem.Mpaa)</visible>
 		</control>
 		<control type="image">
@@ -1082,7 +1082,7 @@
 		<control type="image">
 			<!-- Codec de video -->
 			<include>FlagImage</include>
-			<texture>$VAR[value_videocodec]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_videocodec]</texture>
 			<visible>!IsEmpty(ListItem.VideoCodec)</visible>
 		</control>
 		<control type="image">
@@ -1092,7 +1092,7 @@
 		<control type="image">
 			<!-- Recordlabel -->
 			<include>FlagImage</include>
-			<texture>$INFO[ListItem.Property(Album_Label)resource://resource.images.mediaicons.white/recordlabel/,.png]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$INFO[ListItem.Property(Album_Label)resource://resource.images.recordlabels.white/,.png]</texture>
 			<visible>!IsEmpty(ListItem.Property(Album_Label))</visible>
 		</control>
 		<control type="image">
@@ -1102,7 +1102,7 @@
 		<control type="image">
 			<!-- Resolucao -->
 			<include>FlagImage</include>
-			<texture>$VAR[value_videoresolution]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_videoresolution]</texture>
 			<visible>!IsEmpty(ListItem.VideoResolution)</visible>
 		</control>
 		<control type="image">
@@ -1112,7 +1112,7 @@
 		<control type="image">
 			<!-- Aspecto -->
 			<include>FlagImage</include>
-			<texture>$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
 			<visible>!IsEmpty(ListItem.VideoAspect)</visible>
 		</control>
 		<control type="image">
@@ -1122,7 +1122,7 @@
 		<control type="image">
 			<!-- Codec de audio -->
 			<include>FlagImage</include>
-			<texture>$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</texture>
 			<visible>!IsEmpty(ListItem.AudioCodec)</visible>
 		</control>
 		<control type="image">
@@ -1132,7 +1132,7 @@
 		<control type="image">
 			<!-- Canais -->
 			<include>FlagImage</include>
-			<texture>$VAR[value_audiochannels]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_audiochannels]</texture>
 			<visible>!IsEmpty(ListItem.AudioChannels)</visible>
 		</control>
 		<control type="image">
@@ -1222,7 +1222,7 @@
 		<control type="image">
 			<!-- Codec de video -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kvideocodec0]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kvideocodec0]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1231,7 +1231,7 @@
 		<control type="image">
 			<!-- Aspecto -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_ksar0]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_ksar0]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1240,7 +1240,7 @@
 		<control type="image">
 			<!-- Codec de video -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kvideoresolution0]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kvideoresolution0]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1249,7 +1249,7 @@
 		<control type="image">
 			<!-- Codec de audio -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kaudiocodec0]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kaudiocodec0]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1258,7 +1258,7 @@
 		<control type="image">
 			<!-- Audio Channels -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kaudiochannels0]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kaudiochannels0]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1285,7 +1285,7 @@
 		<control type="image">
 			<!-- Codec de video -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kvideocodec1]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kvideocodec1]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1294,7 +1294,7 @@
 		<control type="image">
 			<!-- Aspecto -->
 			<include>FlagLabel</include>
-			<texture>$VAR[value_ksar1]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_ksar1]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1303,7 +1303,7 @@
 		<control type="image">
 			<!-- Codec de video -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kvideoresolution1]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kvideoresolution1]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1312,7 +1312,7 @@
 		<control type="image">
 			<!-- Codec de audio -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kaudiocodec1]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kaudiocodec1]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1321,7 +1321,7 @@
 		<control type="image">
 			<!-- Audio Channels -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kaudiochannels1]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kaudiochannels1]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1347,7 +1347,7 @@
 		<control type="image">
 			<!-- Codec de video -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kvideocodec2]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kvideocodec2]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1356,7 +1356,7 @@
 		<control type="image">
 			<!-- Aspecto -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_ksar2]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_ksar2]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1365,7 +1365,7 @@
 		<control type="image">
 			<!-- Codec de video -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kvideoresolution2]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kvideoresolution2]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1374,7 +1374,7 @@
 		<control type="image">
 			<!-- Codec de audio -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kaudiocodec2]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kaudiocodec2]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1383,7 +1383,7 @@
 		<control type="image">
 			<!-- Audio Channels -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kaudiochannels2]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kaudiochannels2]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1410,7 +1410,7 @@
 		<control type="image">
 			<!-- Codec de video -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kvideocodec3]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kvideocodec3]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1419,7 +1419,7 @@
 		<control type="image">
 			<!-- Aspecto -->
 			<include>FlagLabel</include>
-			<texture>$VAR[value_ksar3]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_ksar3]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1428,7 +1428,7 @@
 		<control type="image">
 			<!-- Codec de video -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kvideoresolution3]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kvideoresolution3]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1437,7 +1437,7 @@
 		<control type="image">
 			<!-- Codec de audio -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kaudiocodec3]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kaudiocodec3]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -1446,7 +1446,7 @@
 		<control type="image">
 			<!-- Audio Channels -->
 			<include>FlagImageHelper</include>
-			<texture>$VAR[value_kaudiochannels3]</texture>
+			<texture fallback="flags/casecodec/no_codec.png">$VAR[value_kaudiochannels3]</texture>
 		</control>
 		<control type="image">
 			<include>FlagSeparator</include>
@@ -2333,7 +2333,7 @@
 			<animation effect="slide" start="0,-105" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">Visible</animation>
 			<animation effect="slide" start="0,0" end="0,-105" time="300" easing="inout" tween="cubic">Hidden</animation>
 			<animation effect="slide" end="0,-105" time="500" tween="sine" easing="out" condition="StringCompare(Container.Viewmode,PHOTOSHOW)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-105" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(volumebar) | Window.IsVisible(notification) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(614) | Window.IsVisible(6621) | Window.IsVisible(6625) | Window.IsVisible(6626) | Window.IsActive(PVR) + [Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-105" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(volumebar) | Window.IsVisible(notification) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(614) | Window.IsVisible(6621) | Window.IsVisible(6625) | Window.IsVisible(6626) | Window.IsActive(TVChannels) + [Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-105" time="50" tween="cubic" easing="in" condition="Control.HasFocus(160)">Conditional</animation>
 			<control type="image">
 				<left>1170</left>
@@ -4183,4 +4183,54 @@
 			</control>
 		</control>
 	</include>
-</includes>
+    <include name="ZoomDisc">
+        <width>120</width>
+        <height>120</height>
+        <fadetime>FanartCrossFadeTime</fadetime>
+        <aspectratio align="center" aligny="center">keep</aspectratio>
+        <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+        <include>Animation_ViewsCDart</include>
+    </include>
+	<include name="line1">
+		<width>900</width>
+		<height>600</height>
+		<font>lyr1</font>
+		<align>center</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="line3">
+		<left>-100</left>
+		<top>0</top>
+		<width>950</width>
+		<height>600</height>
+		<label>[CAPITALIZE]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]</label>
+		<shadowcolor>black</shadowcolor>
+		<font>lyr3</font>
+		<align>center</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="line5">
+		<left>0</left>
+		<top>0</top>
+		<width>900</width>
+		<height>600</height>
+		<font>dem5</font>
+		<shadowcolor>black</shadowcolor>
+		<align>center</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="line7">
+		<width>970</width>
+		<height>600</height>
+		<label>$INFO[Container(110).ListItem.Label]</label>
+		<align>center</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="line9">
+		<width>900</width>
+		<height>600</height>
+		<font>lyr9</font>
+		<align>center</align>
+		<aligny>center</aligny>
+	</include>
+	</includes>

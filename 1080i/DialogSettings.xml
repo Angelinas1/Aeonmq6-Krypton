@@ -30,7 +30,6 @@
                 <width>1500</width>
                 <height>1080</height>
                 <texture>darkgrey.png</texture>
-                <include>Animation_DefaultGlass</include>
             </control>
             <control type="image">
                 <left>210</left>
@@ -47,7 +46,7 @@
                 <width>1278</width>
                 <height>45</height>
                 <label>-</label>
-                <font>Font_titlesettings</font>
+                <font>Font_18</font>
                 <textcolor>FFFFFAF0</textcolor>
                 <align>center</align>
                 <aligny>center</aligny>
@@ -64,7 +63,7 @@
                 <onup>28</onup>
                 <ondown>28</ondown>
             </control>
-            <control type="button" id="7"></control>
+
             <control type="radiobutton" id="8">
                 <radioposx>1341</radioposx>
             </control>

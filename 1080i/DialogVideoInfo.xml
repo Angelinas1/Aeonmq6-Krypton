@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="2003">
     <!-- Aeon MQ 6 -->
-    <defaultcontrol always="true">149</defaultcontrol>
-    <onload condition="Skin.HasSetting(ontvtunes) + System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
+	<onload condition="Skin.HasSetting(ontvtunes) + System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
     <onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
+    <defaultcontrol always="true">149</defaultcontrol>
     <controls>
         <control type="group">
             <!-- default group -->
@@ -16,12 +16,12 @@
             <control type="image">
                 <!-- Single Fanart -->
                 <include>WindowBG</include>
-                <texture background="true">$VAR[value_defaultvideofanart]</texture>
+                <texture fallback="Empty.png" background="true">$VAR[value_defaultvideofanart]</texture>
             </control>
             <control type="multiimage" id="5020">
                 <!-- Extra Fanart Movies/TvShows/MusicVideos -->
                 <include>InvisibleButton</include>
-                <imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
+                 <imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
                 <visible>Container.Content(movies) + !Skin.HasSetting(trailers) + SubString(skin.string(moviesfanart),extra) | Container.Content(tvshows) + SubString(skin.string(tvshowsfanart),extra) | Container.Content(musicvideos) + SubString(skin.string(musicvideosfanart),extra)</visible>
             </control>
             <control type="multiimage" id="5021">
@@ -33,7 +33,7 @@
             <control type="multiimage" id="5022">
                 <!-- Extra Fanart Episodes -->
                 <include>InvisibleButton</include>
-                <imagepath background="true">$INFO[ListItem.Path,,../extrafanart/]</imagepath>
+                 <imagepath background="true">$INFO[ListItem.Path,,../extrafanart/]</imagepath>
                 <visible>Container.Content(episodes) + SubString(skin.string(episodesfanart),extra)</visible>
             </control>
             <control type="image" id="5023">
@@ -56,7 +56,7 @@
             <control type="image" id="557">
                 <!-- Controle estudio -->
                 <include>InvisibleButton</include>
-                <texture>$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
+                <texture fallback="Empty.png">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
             </control>
             <include>LiveBG</include>
             <control type="image">
@@ -155,8 +155,22 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>Font_24A</font>
+                <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.Year)]</label>
+                <textcolor>FFFFFAF0</textcolor>
+				<visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+            </control>
+            <control type="label">
+                <!-- Year -->
+                <left>330</left>
+                <top>120</top>
+                <height>60</height>
+                <width>165</width>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>Font_24A</font>
                 <label>$INFO[ListItem.Year]</label>
                 <textcolor>FFFFFAF0</textcolor>
+				<visible>!SubString(ListItem.Path,videodb://movies/sets,left)</visible>
             </control>
             <control type="label">
                 <!-- Genre -->
@@ -267,6 +281,7 @@
                         <!-- Original Title/Movies - Premiered/TvShows -->
                         <label2>$VAR[value_videoinfo_value1] / $INFO[ListItem.Status]</label2>
                         <onclick>noop</onclick>
+						<visible>!SubString(ListItem.Path,videodb://movies/sets,left)</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[574]</label>
@@ -280,6 +295,7 @@
                         <!-- Director/Written -->
                         <label2>$INFO[ListItem.Director]/$INFO[ListItem.Writer]</label2>
                         <onclick>SendClick(2003,13)</onclick>
+						<visible>!SubString(ListItem.Path,videodb://movies/sets,left)</visible>
                     </item>
                     <item>
                         <label>$LOCALIZE[572]</label>
@@ -321,7 +337,65 @@
                         <!-- Path -->
                         <label2>$INFO[Window(Home).Property(SkinHelper.RottenTomatoesConsensus)]</label2>
                         <onclick>noop</onclick>
-                        <visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesConsensus),N/A)</visible>
+                        <visible>!StringCompare(Window(Home).Property(SkinHelper.RottenTomatoesConsensus),N/A)+!SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+                    </item>
+
+					<item>
+                        <label>No:</label>
+                        <!-- Title -->
+                        <label2>Total movies $INFO[Window(Home).Property(SkinHelper.MovieSet.Count)] UnWatched Count: $INFO[Window(Home).Property(SkinHelper.MovieSet.UnWatchedCount)] </label2>
+                        <onclick>noop</onclick>
+                        <visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+                    </item>
+					
+					<item>
+                        <label>Duration</label>
+                        <!-- Duration -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.MovieSet.Duration.Hours)] Hours $INFO[Window(Home).Property(SkinHelper.MovieSet.Duration.Minutes)] Minutes</label2>
+                        <onclick>noop</onclick>
+                        <visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+                    </item>
+					<item>
+                        <label>Directors</label>
+                        <!-- Directors -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.MovieSet.Director)]</label2>
+                        <onclick>noop</onclick>
+                        <visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+                    </item>
+					<item>
+                        <label>Writer</label>
+                        <!-- Writer -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.MovieSet.Writer)]</label2>
+                        <onclick>noop</onclick>
+                        <visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+                    </item>
+					<item>
+                        <label>Genre</label>
+                        <!-- Directors -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.MovieSet.Genre)]</label2>
+                        <onclick>noop</onclick>
+                        <visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+                    </item>
+					<item>
+                        <label>Country</label>
+                        <!-- Directors -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.MovieSet.Country)]</label2>
+                        <onclick>noop</onclick>
+                        <visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+                    </item>
+					<item>
+                        <label>Studio</label>
+                        <!-- Directors -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.MovieSet.Studio)]</label2>
+                        <onclick>noop</onclick>
+                        <visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+                    </item>
+					<item>
+                        <label>Years</label>
+                        <!-- Directors -->
+                        <label2>$INFO[Window(Home).Property(SkinHelper.MovieSet.Years)]</label2>
+                        <onclick>noop</onclick>
+                        <visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
                     </item>
                 </content>
             </control>
@@ -368,6 +442,19 @@
                 <autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
                 <visible>!Container.Content(episodes)</visible>
             </control>
+			<control type="textbox">
+                <!-- Plot -->
+                <left>45</left>
+                <top>480</top>
+                <width>1402</width>
+                <height>200</height>
+                <align>justify</align>
+                <font>Font_18A</font>
+                <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.Plot)]</label>
+                <textcolor>FFFFFAF0</textcolor>
+                <autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
+                <visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+			</control>
             <control type="textbox">
                 <!-- Plot -->
                 <left>45</left>
@@ -522,6 +609,65 @@
                 <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
                 <include>Animation_DefaultGlass</include>
             </control>
+            <control type="list" id="50">
+                <viewtype label="List">List Info</viewtype>
+                <left>45</left>
+                <top>738</top>
+                <width>1830</width>
+                <height>330</height>
+                <onup>149</onup>
+				<content condition="SubString(ListItem.Path,videodb://movies/sets,left)">plugin://script.skin.helper.service/?action=getcast&amp;movieset=$INFO[ListItem.Title]&amp;downloadthumbs=true</content>
+                <ondown>Skin.Reset(coverzoom)</ondown>
+                <ondown>SetFocus(160)</ondown>
+                <ondown>Skin.SetBool(artistzoom)</ondown>
+                <orientation>horizontal</orientation>
+                <scrolltime>400</scrolltime>
+                <focusposition>3</focusposition>
+                <itemlayout height="255" width="272">
+                    <control type="image">
+                        <left>0</left>
+                        <top>8</top>
+                        <width>195</width>
+                        <height>270</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <aspectratio>keep</aspectratio>
+                        <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <bordertexture border="-2">black.png</bordertexture>
+                        <colordiffuse>FF909090</colordiffuse>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="255" width="272">
+                    <control type="image">
+                        <left>0</left>
+                        <top>8</top>
+                        <width>195</width>
+                        <height>270</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <aspectratio>keep</aspectratio>
+                        <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <bordertexture border="-2">black.png</bordertexture>
+                        <colordiffuse>FF909090</colordiffuse>
+                        <include>Animation_Fade</include>
+                        <visible>!Control.HasFocus(50)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>8</top>
+                        <width>195</width>
+                        <height>270</height>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <aspectratio>keep</aspectratio>
+                        <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <bordertexture border="-2">grey.png</bordertexture>
+                        <include>Animation_Fade</include>
+                        <visible>Control.HasFocus(50)</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+
             <control type="list" id="50">
                 <viewtype label="List">List Info</viewtype>
                 <left>45</left>

@@ -301,7 +301,7 @@
 					<!-- Live TV -->
 					<include>TopMenuButton</include>
 					<label>31006</label>
-					<onclick>ActivateWindow(tv)</onclick>
+					<onclick>ActivateWindow(TVChannels)</onclick>
 					<onclick>Skin.Reset(windowbg)</onclick>
 					<visible>!Container.Content(LiveTV) + PVR.HasTVChannels</visible>
 				</control>
@@ -489,6 +489,13 @@
 					<onclick>Skin.ToggleSetting(noartwidevideo)</onclick>
 					<selected>!Skin.HasSetting(noartwidevideo)</selected>
 					<visible>StringCompare(Container.Viewmode,WIDE)</visible>
+				</control>
+				<control type="radiobutton" id="9211">
+					<include>TopMenuRadioButton</include>
+					<label>31486</label>
+					<onclick>Skin.ToggleSetting(nowidevideocasezoom)</onclick>
+					<selected>!Skin.HasSetting(nowidevideocasezoom)</selected>
+					<visible>StringCompare(Container.Viewmode,POSTER ZOOM)</visible>
 				</control>
 				<!-- Banner -->
 				<control type="radiobutton" id="9215">
@@ -2014,7 +2021,7 @@
 					<!-- Live TV -->
 					<include>TopMenuButton</include>
 					<label>31006</label>
-					<onclick>ActivateWindow(tv)</onclick>
+					<onclick>ActivateWindow(TVChannels)</onclick>
 					<visible>!Container.Content(LiveTV) + PVR.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108">
@@ -2554,7 +2561,7 @@
 					<!-- Live TV -->
 					<include>TopMenuButton</include>
 					<label>31006</label>
-					<onclick>ActivateWindow(tv)</onclick>
+					<onclick>ActivateWindow(TVChannels)</onclick>
 					<visible>!Container.Content(LiveTV) + PVR.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108">
@@ -2766,7 +2773,7 @@
 					<!-- Live TV -->
 					<include>TopMenuButton</include>
 					<label>31006</label>
-					<onclick>ActivateWindow(tv)</onclick>
+					<onclick>ActivateWindow(TVChannels)</onclick>
 					<visible>!Container.Content(LiveTV) + PVR.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108">
@@ -2991,7 +2998,7 @@
 					<!-- Live TV -->
 					<include>TopMenuButton</include>
 					<label>31006</label>
-					<onclick>ActivateWindow(tv)</onclick>
+					<onclick>ActivateWindow(TVChannels)</onclick>
 					<visible>!Container.Content(LiveTV) + PVR.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108">
@@ -3361,7 +3368,7 @@
 					<!-- Live TV -->
 					<include>TopMenuButton</include>
 					<label>31006</label>
-					<onclick>ActivateWindow(tv)</onclick>
+					<onclick>ActivateWindow(TVChannels)</onclick>
 					<visible>!Container.Content(LiveTV) + PVR.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108">
@@ -3661,7 +3668,7 @@
 					<!-- Live TV -->
 					<include>TopMenuButton</include>
 					<label>31006</label>
-					<onclick>ActivateWindow(tv)</onclick>
+					<onclick>ActivateWindow(TVChannels)</onclick>
 					<visible>!Container.Content(LiveTV) + PVR.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108">
@@ -3997,7 +4004,7 @@
 					<!-- Live TV -->
 					<include>TopMenuButton</include>
 					<label>31006</label>
-					<onclick>ActivateWindow(tv)</onclick>
+					<onclick>ActivateWindow(TVChannels)</onclick>
 					<visible>!Container.Content(LiveTV) + PVR.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108">

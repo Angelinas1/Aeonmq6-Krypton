@@ -38,7 +38,7 @@
             <control type="multiimage" id="5033">
                 <!-- Extra Fanart Song -->
                 <include>WindowBG</include>
-                <imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
+                 <imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
                 <visible>Container.Content(songs) + SubString(skin.string(musicfanart),extra)</visible>
             </control>
             <control type="image">
@@ -706,7 +706,7 @@
                 <fadetime>FanartCrossFadeTime</fadetime>
                 <aspectratio align="center">keep</aspectratio>
                 <imagepath fallback="DefaultAudioCover.png" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-                <visible>IsEmpty(ListItem.Thumb) + Skin.HasSetting(artistzoom)</visible>
+                <visible>Player.HasAudio + IsEmpty(ListItem.Thumb) + Skin.HasSetting(artistzoom)</visible>
             </control>
         </control>
         <control type="group">
@@ -746,15 +746,14 @@
      </control>
     
         <control type="group">
-		<visible>Container.Content(albums)| Container.Content(artists)|String.Contains(ListItem.Property(Type),albums)|String.Contains(ListItem.Property(Type),artists)</visible>
+		<visible>Container.Content(albums)| Container.Content(artists)|String.Contains(ListItem.Property(Type),albums)|String.Contains(ListItem.Property(Type),artists) | Window.IsActive(visualisation)</visible>
             <!-- default group -->
             <include>Animation_Window</include>
-            <animation effect="slide" start="0" end="-1920" time="400" tween="cubic" easing="inout" condition="StringCompare(Window.Property(script.extendedinfo.isactive),1)">Conditional</animation>
-            <animation effect="slide" start="0" end="-1920" time="400" tween="cubic" easing="inout" condition="Window.IsActive(visualisation)">Conditional</animation>
+
             <control type="multiimage">
                 <!-- Multi Fanart -->
                 <include>WindowBG</include>
-                <imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
+                <imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$INFO[Skin.String(ArtistsLogosPath)]$VAR[value_music_title,,/extrafanart/]</imagepath>
             </control>
             <control type="image">
                 <!-- Single Fanart -->
@@ -764,13 +763,13 @@
             <control type="multiimage" id="5032">
                 <!-- Extra Fanart Artist/Album -->
                 <include>WindowBG</include>
-                <imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
+                <imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$VAR[value_music_title,,/extrafanart/]</imagepath>
                 <visible>[Container.Content(artists) | Container.Content(albums)] + SubString(skin.string(musicfanart),extra)</visible>
             </control>
             <control type="multiimage" id="5033">
                 <!-- Extra Fanart Song -->
                 <include>WindowBG</include>
-                <imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
+                 <imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
                 <visible>Container.Content(songs) + SubString(skin.string(musicfanart),extra)</visible>
             </control>
             <control type="image">
@@ -1061,7 +1060,7 @@
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>Font_18A</font>
-                    <label>$INFO[Container(6010).ListItem.Property(Label)]</label>
+                    <label>$INFO[Container(6010).ListItem.Label]</label>
                     <textcolor>FFFFFAF0</textcolor>
                     <scroll>true</scroll>
                     <scrollout>false</scrollout>
@@ -1086,7 +1085,7 @@
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>Font_18A</font>
-                    <label>$INFO[Container(6010).ListItem.Property(artist)]</label>
+                    <label>$INFO[ListItem.artist]</label>
                     <textcolor>FFFFFAF0</textcolor>
                     <scroll>true</scroll>
                     <scrollout>false</scrollout>
@@ -1136,7 +1135,7 @@
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>Font_18A</font>
-                    <label>$INFO[Container(6010).ListItem.Property(Speed)] $INFO[Container(6010).ListItem.Property(Mood)]$INFO[Container(6010).ListItem.Property(Speed)]</label>
+                    <label>$INFO[Container(6010).ListItem.Property(Speed)] $INFO[Container(6010).ListItem.Property(Mood)]</label>
                     <textcolor>FFFFFAF0</textcolor>
                     <scroll>true</scroll>
                     <scrollout>false</scrollout>
@@ -1150,7 +1149,7 @@
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>Font_18A</font>
-                    <label>$VAR[value_audioinfo_label4]</label>
+                    <label>Type and Theme</label>
                     <textcolor>$VAR[value_headercolor]</textcolor>
                 </control>
                 <control type="label">
@@ -1161,7 +1160,7 @@
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>Font_18A</font>
-                    <label>$INFO[Container(6010).ListItem.Property(Type)]</label>
+                    <label>$INFO[Container(6010).ListItem..Property(Type)] $INFO[Container(6010).ListItem..Property(Theme)]</label>
                     <textcolor>FFFFFAF0</textcolor>
                     <scroll>true</scroll>
                     <scrollout>false</scrollout>
@@ -1268,7 +1267,7 @@
                     <height>195</height>
                     <width>195</width>
                     <aspectratio align="center" aligny="top">stretch</aspectratio>
-                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Container(6010).ListItem.Icon]</texture>
+                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Container(6010).ListItem.Property(thumb)]</texture>
                     <visible>IsEmpty(Container(6010).ListItem.Property(cdart))</visible>
                 </control>
                 <control type="image">
@@ -1277,6 +1276,20 @@
                     <height>195</height>
                     <width>195</width>
                     <texture>$INFO[Container(6010).ListItem.Property(cdart)]</texture>
+                </control>
+                <control type="image">
+                    <left>735</left>
+                    <top>210</top>
+                    <height>195</height>
+                    <width>50</width>
+                    <texture>$INFO[Container(6010).ListItem.Property(spine)]</texture>
+                </control>
+                <control type="image">
+                    <left>735</left>
+                    <top>410</top>
+                    <height>195</height>
+                    <width>195</width>
+                    <texture>$INFO[Container(6010).ListItem.Property(thumbback)]</texture>
                 </control>
                 <control type="image">
                     <left>0</left>
@@ -1293,7 +1306,7 @@
                     <height>262</height>
                     <align>justify</align>
                     <font>Font_18A</font>
-                    <label>$INFO[Container(6010).ListItem.Property(Description)]</label>
+                    <label>$INFO[Container(6010).ListItem.Property(Description)]$INFO[Container(6010).ListItem.Property(Album_Description)]$INFO[Container(6010).ListItem.Property(Artist_Description)]</label>
                     <textcolor>FFFFFAF0</textcolor>
                     <autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
                 </control>
@@ -1306,13 +1319,12 @@
                 <height>90</height>
                 <aspectratio>keep</aspectratio>
                 <texture>$INFO[Window(Home).Property(SkinHelper.Music.ClearLogo)]</texture>
-                <visible>!IsEmpty(Window(home).Property(Logo))+Skin.HasSetting(music_artlogo)</visible>
             </control>
             <control type="image">
                 <!-- Thumb cd fake-->
                 <include condition="Skin.HasSetting(music_case)">LeftMusicDiscCase</include>
                 <include condition="!Skin.HasSetting(music_case)">LeftMusicADiscNoCase</include>
-                <texture diffuse="cdart_diffuse.png" background="true">$INFO[Listitem.Icon]</texture>
+                <texture>$INFO[Window(home).Property(discart)]</texture>
                 <fadetime>FanartCrossFadeTime</fadetime>
                 <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="6000" loop="true" reversible="false" condition="!Player.HasAudio">Conditional</animation>
                 <include>Animation_ViewsCDart</include>
@@ -1365,26 +1377,12 @@
             </control>
             <control type="image">
                 <!-- Banner -->
-                <left>1088</left>
+                <left>1050</left>
                 <top>8</top>
                 <aspectratio>keep</aspectratio>
                 <width>490</width>
                 <height>100</height>
-                <texture background="true">$INFO[Window(Home).Property(SkinHelper.Music.Banner)]</texture>
-                <visible>!IsEmpty(Window(Home).Property(SkinHelper.Music.Banner))</visible>
-            </control>
-            <control type="multiimage">
-                <!-- Artist -->
-                <left>1030</left>
-                <top>120</top>
-                <height>579</height>
-                <width>844</width>
-                <timeperimage>5000</timeperimage>
-                <randomize>true</randomize>
-                <fadetime>FanartCrossFadeTime</fadetime>
-                <aspectratio align="left">keep</aspectratio>
-                <imagepath fallback="DefaultAudioCover.png" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-                <visible>IsEmpty(ListItem.Thumb)</visible>
+                <texture background="true">$INFO[Window(home).Property(Banner)]</texture>
             </control>
             <control type="image">
                 <left>1029</left>
@@ -1441,7 +1439,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>Font_15</font>
-                <label>$LOCALIZE[31941]: 50 $LOCALIZE[31040]</label>
+                <label>$LOCALIZE[31941]:  $LOCALIZE[31040]</label>
                 <textcolor>$VAR[value_flagscolor]</textcolor>
                 <visible>Container.Content(artists)</visible>
             </control>
@@ -1535,7 +1533,7 @@
                 <control type="list" id="6010">
                     <visible>SubString(skin.string(sextendalbum_list),6010)</visible>
                     <viewtype label="List">List Info</viewtype>
-                    <content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+                    <content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$VAR[value_music_title]</content>
                     <left>78</left>
                     <top>738</top>
                     <width>1842</width>
@@ -1577,7 +1575,7 @@
                             <top>8</top>
                             <width>270</width>
                             <height>270</height>
-                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Property(thumb)]</texture>
                         </control>
                     </itemlayout>
                     <focusedlayout height="255" width="372">
@@ -1613,7 +1611,7 @@
                             <aligny>center</aligny>
                             <align>left</align>
                             <aspectratio>scale</aspectratio>
-                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Property(thumb)]</texture>
                             <bordertexture border="-2">black.png</bordertexture>
                             <colordiffuse>FF909090</colordiffuse>
                             <include>Animation_Fade</include>
@@ -1627,7 +1625,7 @@
                             <aligny>center</aligny>
                             <align>left</align>
                             <aspectratio>scale</aspectratio>
-                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="DefaultAudio.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[ListItem.Property(thumb)]</texture>
                             <bordertexture border="-2">grey.png</bordertexture>
                             <include>Animation_Fade</include>
                             <visible>Control.HasFocus(6010)</visible>
@@ -1635,10 +1633,10 @@
                     </focusedlayout>
                     <include condition="Player.HasAudio + system.hasaddon(script.artistslideshow)">AlbumContent</include>
                 </control>
-                <control type="list" id="7010">
+                 <control type="list" id="7010">
                     <visible>SubString(skin.string(sextendalbum_list),7010)</visible>
                     <viewtype label="List">List Info</viewtype>
-                    <content>plugin://script.extendedinfo?info=mostlovedtracks&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+                    <content>plugin://script.extendedinfo?info=mostlovedtracks&amp;&amp;artistname=$VAR[value_music_title]</content>
                     <left>78</left>
                     <top>738</top>
                     <width>1800</width>
@@ -1707,7 +1705,6 @@
                     <ondown>Skin.Reset(artistzoom)</ondown>
                     <ondown>SetFocus(160)</ondown>
                     <ondown>Skin.SetBool(coverzoom)</ondown>
-                    <onclick>plugin://script.extendedinfo?info=artistevents&amp;&amp;artistname=$INFO[Container(5010).ListItem.Label]</onclick>
                     <orientation>horizontal</orientation>
                     <scrolltime>400</scrolltime>
                     <focusposition>2</focusposition>
@@ -1756,10 +1753,11 @@
                     </focusedlayout>
                     <include condition="Player.HasAudio + system.hasaddon(script.artistslideshow)">AlbumContent</include>
                 </control>
-                <control type="list" id="10010">
+ 
+				<control type="list" id="10010">
                     <viewtype label="List">List Info</viewtype>
                     <visible>SubString(skin.string(sextendalbum_list),10010)</visible>
-                    <content>plugin://script.extendedinfo?info=youtubesearch&amp;&amp;id=$INFO[ListItem.Artist]</content>
+                    <content>plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$VAR[value_music_title]</content>
                     <left>78</left>
                     <top>738</top>
                     <width>1800</width>
@@ -1970,7 +1968,7 @@
                         <item id="8">
                             <!-- Artist Info -->
                             <label>31885</label>
-                            <onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Artist])</onclick>
+                            <onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$VAR[value_music_title])</onclick>
                             <visible>System.HasAddon(script.extendedinfo)</visible>
                         </item>
                         <item id="9">
@@ -1985,7 +1983,7 @@
                             <label>31950</label>
                             <onclick>Dialog.Close(2001)</onclick>
                             <onclick>Skin.SetBool(musictrailers)</onclick>
-                            <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Artist],return)</onclick>
+                            <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$VAR[value_music_title],return)</onclick>
                         </item>
                         <item id="11">
                             <!-- Song Video Clip -->
@@ -1997,7 +1995,7 @@
                         <item id="12">
                             <!-- Artist Info -->
                             <label>Artist as Actor</label>
-                            <onclick>RunScript(script.metadata.actors,$INFO[Listitem.Artist])</onclick>
+                            <onclick>RunScript(script.metadata.actors,$VAR[value_music_title])</onclick>
                             <visible>System.HasAddon(script.metadata.actors)</visible>
                         </item>
                     </content>

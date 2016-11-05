@@ -921,7 +921,7 @@
         <fadetime>FanartCrossFadeTime</fadetime>
         <aspectratio align="center">keep</aspectratio>
         <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo+![SubString(ListItem.Path,videodb://movies/sets,left)+Skin.HasSetting(plopencase)]">Conditional</animation>
-        <animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="Player.HasVideo+!Player.Paused+![SubString(ListItem.Path,videodb://movies/sets,left)+Skin.HasSetting(plopencase)]">Conditional</animation>
+        <animation effect="rotate" end="-360" center="auto" time="60000" loop="true" reversible="false" condition="Player.HasVideo+!Player.Paused+![SubString(ListItem.Path,videodb://movies/sets,left)+Skin.HasSetting(plopencase)]">Conditional</animation>
     </include>
     <include name="PLcdAn">
         <animation type="WindowOpen">

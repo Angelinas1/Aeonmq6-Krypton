@@ -3,205 +3,830 @@
     <!-- Aeon MQ 6 -->
     <!-- ######################################################################### Letras layout estilo default ######################################################################### -->
     <include name="LyricsDefault">
-        <control type="group">
-            <animation effect="slide" start="-1950,0" end="0,0" time="700" tween="sine" easing="inout" delay="1000">WindowOpen</animation>
-            <animation effect="slide" start="-1950,0" end="0,0" time="700" tween="sine" easing="inout" delay="1000">Visible</animation>
-            <animation effect="slide" start="0,0" end="-1950,0" time="400" tween="sine" easing="inout">WindowClose</animation>
-            <animation effect="slide" start="0,0" end="-1950,0" time="400" tween="sine" easing="inout">Hidden</animation>
+		<control type="group">
+			<animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="4000">WindowOpen</animation>
+			<animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="1000">Visible</animation>
             <visible>Player.HasAudio + ![Window.IsVisible(musicosd) | Window.IsVisible(visualisationpresetlist) | Window.IsVisible(5600) | Skin.HasSetting(nolyrics_on) | Skin.HasSetting(novisfurniture)]</visible>
-            <control type="image">
-                <!-- Fundo -->
-                <left>0</left>
-                <top>30</top>
-                <width>1920</width>
-                <height>600</height>
-                <texture>details_back.png</texture>
-                <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
-                <include>Animation_HomeGlass</include>
-            </control>
-            <control type="label">
-                <left>60</left>
-                <top>54</top>
-                <width>618</width>
-                <height>44</height>
-                <font>Font_21</font>
-                <label>31723</label>
-                <scroll>true</scroll>
-                <scrollout>false</scrollout>
-                <align>left</align>
-                <aligny>center</aligny>
-                <textcolor>FFFFFAF0</textcolor>
-                <include>Animation_Widgets</include>
-            </control>
-            <control type="image">
-                <left>45</left>
-                <top>96</top>
-                <width>618</width>
-                <height>3</height>
-                <align>left</align>
-                <texture flipx="true">divider.png</texture>
-            </control>
-            <control type="button">
-                <!-- Para proximas faixas -->
-                <left>38</left>
-                <top>519</top>
-                <width>375</width>
-                <height>30</height>
-                <label>31325</label>
-                <font>Font_18A</font>
-                <align>left</align>
-                <textoffsetx>60</textoffsetx>
-                <onclick>ActivateWindow(5600)</onclick>
-                <textcolor>80FFFAF0</textcolor>
-                <focusedcolor>FFFFFAF0</focusedcolor>
-                <texturefocus diffuse="gradient_button.png">settings_button_focus.png</texturefocus>
-                <visible>![IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks_on)]</visible>
-            </control>
-            <control type="image">
-                <left>60</left>
-                <top>518</top>
-                <width>30</width>
-                <height>30</height>
-                <texture>arrow_left.png</texture>
-                <colordiffuse>80FFFAF0</colordiffuse>
-                <include>Animation_Fade</include>
-                <visible>![IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks_on)]</visible>
-            </control>
-            <control type="button">
-                <!-- Para Menu -->
-                <left>1508</left>
-                <top>519</top>
-                <width>375</width>
-                <height>30</height>
-                <label>31238</label>
-                <font>Font_18A</font>
-                <align>right</align>
-                <textoffsetx>60</textoffsetx>
-                <onclick>ActivateWindow(musicosd)</onclick>
-                <textcolor>80FFFAF0</textcolor>
-                <focusedcolor>FFFFFAF0</focusedcolor>
-                <texturefocus flipx="true" diffuse="gradient_button.png">settings_button_focus.png</texturefocus>
-                <texturenofocus>-</texturenofocus>
-            </control>
-            <control type="image">
-                <left>1830</left>
-                <top>518</top>
-                <width>30</width>
-                <height>30</height>
-                <texture flipx="true">arrow_left.png</texture>
-                <colordiffuse>80FFFAF0</colordiffuse>
-                <include>Animation_Fade</include>
-            </control>
-            <control type="label" id="200">
-                <!-- Scraper -->
-                <visible>false</visible>
-            </control>
-            <!-- ** Required ** Do not change <id> or <type> -->
-            <control type="list" id="110">
-                <left>150</left>
-                <top>105</top>
-                <width>1620</width>
-                <height>405</height>
-                <onleft condition="![IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks_on)]">ActivateWindow(5600)</onleft>
-                <onright>ActivateWindow(musicosd)</onright>
-                <onup>999</onup>
-                <ondown>110</ondown>
-                <viewtype label="535">list</viewtype>
-                <pagecontrol>111</pagecontrol>
-                <scrolltime>200</scrolltime>
-                <itemlayout height="52">
-                    <control type="label">
-                        <left>0</left>
-                        <top>4</top>
-                        <width>1620</width>
-                        <height>33</height>
-                        <info>ListItem.Label</info>
-                        <font>Font_21</font>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <textcolor>80FFFAF0</textcolor>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="52">
-                    <control type="image">
-                        <left>0</left>
-                        <top>4</top>
-                        <width>1620</width>
-                        <height>52</height>
-                        <texture>gradient_focus.png</texture>
-                        <colordiffuse>$VAR[value_headercolor]</colordiffuse>
-                        <visible>Control.HasFocus(110)</visible>
-                    </control>
-                    <control type="label">
-                        <left>-82</left>
-                        <top>4</top>
-                        <width>1770</width>
-                        <height>33</height>
-                        <info>ListItem.Label</info>
-                        <font>Font_30</font>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <textcolor>$VAR[value_headercolor]</textcolor>
-                    </control>
-                </focusedlayout>
-            </control>
-            <control type="spincontrol" id="111">
-                <visible>false</visible>
-            </control>
-            <!-- ** Required ** Do not change <id> or <type> -->
-            <control type="list" id="120">
-                <left>150</left>
-                <top>105</top>
-                <width>1620</width>
-                <height>405</height>
-                <onleft condition="![IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks_on)]">ActivateWindow(5600)</onleft>
-                <onright>ActivateWindow(musicosd)</onright>
-                <onup>120</onup>
-                <ondown>120</ondown>
-                <viewtype label="535">list</viewtype>
-                <pagecontrol>121</pagecontrol>
-                <scrolltime>200</scrolltime>
-                <itemlayout height="52">
-                    <control type="label">
-                        <left>0</left>
-                        <top>4</top>
-                        <width>1620</width>
-                        <height>33</height>
-                        <info>ListItem.Label</info>
-                        <font>Font_21</font>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <textcolor>80FFFAF0</textcolor>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="52">
-                    <control type="image">
-                        <left>0</left>
-                        <top>4</top>
-                        <width>1620</width>
-                        <height>52</height>
-                        <texture>gradient_focus.png</texture>
-                        <colordiffuse>$VAR[value_headercolor]</colordiffuse>
-                        <visible>Control.HasFocus(120)</visible>
-                    </control>
-                    <control type="label">
-                        <left>-82</left>
-                        <top>4</top>
-                        <width>1620</width>
-                        <height>33</height>
-                        <info>ListItem.Label</info>
-                        <font>Font_30</font>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <textcolor>$VAR[value_headercolor]</textcolor>
-                    </control>
-                </focusedlayout>
-            </control>
-            <control type="spincontrol" id="121">
-                <visible>false</visible>
-            </control>
-        </control>
-    </include>
+			<!-- Para proximas faixas -->
+			<control type="button">	
+				<left>38</left>
+				<top>519</top>
+				<width>375</width>
+				<height>30</height>
+				<label>31325</label>
+				<font>Font_22</font>
+				<align>left</align>
+				<textoffsetx>60</textoffsetx>
+				<onclick>ActivateWindow(5600)</onclick>
+				<textcolor>80FFFAF0</textcolor>
+				<focusedcolor>CCFFFAF0</focusedcolor>
+				<texturefocus diffuse="gradient_button.png">grey.png</texturefocus>
+				<visible>![IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks_on)]</visible>
+			</control>
+			<control type="image">
+				<left>60</left>
+				<top>518</top>
+				<width>30</width>
+				<height>30</height>
+				<texture>arrow_left.png</texture>
+				<colordiffuse>80FFFAF0</colordiffuse>
+				<include>Animation_Fade</include>
+				<visible>![IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks_on)]</visible>
+			</control>
+			<!-- Para Menu -->
+			<control type="button">	
+				<left>1508</left>
+				<top>519</top>
+				<width>375</width>
+				<height>30</height>
+				<label>31238</label>
+				<font>Font_22</font>
+				<align>right</align>
+				<textoffsetx>60</textoffsetx>
+				<onclick>ActivateWindow(120)</onclick>
+				<textcolor>80FFFAF0</textcolor>
+				<focusedcolor>CCFFFAF0</focusedcolor>
+				<texturefocus flipx="true" diffuse="gradient_button.png">grey.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+			</control>
+			<!-- Scraper -->
+			<control type="label" id="200">	
+				<visible>true</visible>
+			</control>
+			<control type="group">
+				<visible>IsEmpty(Window(Home).Property(culrc.islrc)) + SubString(Container(110).Currentitem,1,Right) + !IntegerGreaterThan(MusicPlayer.Time,45)</visible>
+				<control type="image">
+					<animation effect="rotate" center="auto" start="-90" end="-90" condition="true">Conditional</animation>
+					<animation effect="fade" start="0" end="100" pulse="true" time="1000" condition="true">Conditional</animation>
+					<left>25</left>
+					<top>50</top>
+					<width>40</width>
+					<height>40</height>
+					<texture>arrow_left.png</texture>
+					<colordiffuse>$INFO[Skin.String(colorheader)]</colordiffuse>
+				</control>
+				<control type="image">
+					<animation effect="rotate" center="auto" start="90" end="90" condition="true">Conditional</animation>
+					<animation effect="fade" start="100" end="0" pulse="true" time="1000" condition="true">Conditional</animation>
+					<left>25</left>
+					<top>90</top>
+					<width>40</width>
+					<height>40</height>
+					<texture>arrow_left.png</texture>
+					<colordiffuse>$INFO[Skin.String(colorheader)]</colordiffuse>
+				</control>			
+			</control>
+			
+						
+	<control type="group">
+				<!--LINEA 2-->
+		<control type="group">
+			<control type="grouplist">
+					<left>1</left>
+					<top>200</top>
+					<width>1920</width>
+					<height>100</height>
+					<itemgap>3</itemgap>
+					<scrolltime>0</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>true</visible>
+					<align>center</align>
+				<control type="label">
+					<visible>SubString(Container(110).Currentitem,2,Right)</visible>
+					<animation type="Visible">
+					 	<effect type="slide" start="-200,0" end="0,0" tween="back" easing="out" time="300" reversible="false"/>
+						<effect type="zoom" start="25" end="100" tween="back" easing="out" time="500" reversible="false"/>
+					</animation>
+					<width>auto</width>
+					<height>100</height>
+					<label> $INFO[Container(110).ListItem.Property(part1)]</label>
+					<font>dem1a</font>
+					<shadowcolor>black</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>ff15d219</textcolor>
+					</control>
+				<control type="label">
+					<animation type="Visible">
+					 	<effect type="slide" start="-200,0" end="0,0" tween="back" easing="out" time="600" reversible="false"/>
+						<effect type="zoom" start="25" end="100" tween="back" easing="out" time="800" reversible="false"/>
+					</animation>
+					<visible>SubString(Container(110).Currentitem,2,Right)</visible>
+					<width>auto</width>
+					<height>100</height>
+					<label> $INFO[Container(110).ListItem.Property(part2)]</label>
+					<font>dem1b</font>
+					<shadowcolor>black</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>ffff7f00</textcolor>
+				</control>
+				<control type="label">
+					<visible>SubString(Container(110).Currentitem,2,Right)</visible>
+					<animation type="Visible">
+					 	<effect type="slide" start="-200,0" end="0,0" tween="back" easing="out" time="900" reversible="false"/>
+						<effect type="zoom" start="25" end="100" tween="back" easing="out" time="1100" reversible="false"/>
+					</animation>
+					<width>auto</width>
+					<height>100</height>
+					<label> $INFO[Container(110).ListItem.Property(part3)]</label>
+					<font>dem1a</font>
+					<shadowcolor>black</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>ffb000b1</textcolor>
+				</control>
+			</control>
+				<control type="group">
+				<left>510</left>
+				<top>230</top>
+				<visible>SubString(Container(110).Currentitem,2,Right)</visible>
+				<animation type="Visible">
+					 	<effect type="slide" delay="600" start="-600,0" end="0,0" tween="back" easing="out" time="500" reversible="false"/>
+				</animation>
+				<animation effect="rotatey" center="960,0" start="-10" end="10" time="1500" pulse="true" tween="sine" easing="inout" condition="true">Conditional</animation>
+				<control type="textbox">
+					<left>0</left>
+					<top>76</top>
+					<width>900</width>
+					<height>600</height>
+					<label>$INFO[Container(110).ListItem.Property(part4)]</label>
+					<font>dem2a</font>
+					<shadowcolor>black</shadowcolor>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>ff15d219</textcolor>
+				</control>
+			</control>
+		</control>
+			<!--LINEA 4-->
+		<control type="group">
+				<top>1</top>
+				<left>171</left>
+				<control type="label">
+					<visible>SubString(Container(110).Currentitem,4,Right)</visible>
+					<animation type="Visible">
+						<effect type="slide" start="1000,0" end="0,0" time="350" tween="back" easing="out" reversible="false"/>
+						<effect type="slide" delay="900" start="0,0" end="-200,0" time="350" tween="back" easing="out" reversible="false"/>
+					</animation>
+					<left>50</left>
+					<top>145</top>
+					<width>925</width>
+					<height>125</height>
+					<label> $INFO[Container(110).ListItem.Property(part1)]</label>
+					<font>dem10a</font>
+					<shadowcolor>black</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<textcolor>ffee82ee</textcolor>
+				</control>
+				<control type="label">
+					<left>50</left>
+					<visible>SubString(Container(110).Currentitem,4,Right)</visible>
+					<animation type="Visible">
+						<effect type="slide" delay="150" start="1000,0" end="0,0" time="350" tween="back" easing="out" reversible="false"/>
+						<effect type="slide" delay="900" start="0,0" end="-200,0" time="350" tween="back" easing="out" reversible="false"/>
+					</animation>
+					<top>270</top>
+					<width>925</width>
+					<height>125</height>
+					<label> $INFO[Container(110).ListItem.Property(part2)]</label>
+					<font>dem10b</font>
+					<shadowcolor>black</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<textcolor>ff40e0d0</textcolor>
+				</control>
+				<control type="label">
+					<visible>SubString(Container(110).Currentitem,4,Right)</visible>
+					<animation type="Visible">
+						<effect type="slide" delay="300" start="1000,0" end="0,0" time="350" tween="back" easing="out" reversible="false"/>
+						<effect type="slide" delay="900" start="0,0" end="-200,0" time="350" tween="back" easing="out" reversible="false"/>
+					</animation>
+					<left>50</left>
+					<top>395</top>
+					<width>925</width>
+					<height>125</height>
+					<label> $INFO[Container(110).ListItem.Property(part3)]</label>
+					<font>dem10a</font>
+					<shadowcolor>black</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<textcolor>ffffff00</textcolor>
+				</control>
+				<control type="textbox">
+					<left>800</left>
+					<top>30</top>
+					<width>700</width>
+					<height>600</height>
+					<visible>SubString(Container(110).Currentitem,4,Right)</visible>
+					<animation type="Visible">
+						<effect type="slide" delay="900" start="0,-400" end="0,0" time="350" tween="back" easing="out" reversible="false"/>
+					</animation>
+					<label>$INFO[Container(110).ListItem.Property(part4)]</label>
+					<font>matrix1</font>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>fffffaf0</textcolor>
+				</control>
+			</control>
+				<!--LINEA 6-->
+		<control type="group">
+				<control type="grouplist">
+					<left>1</left>
+					<top>200</top>
+					<width>1920</width>
+					<height>100</height>
+					<itemgap>3</itemgap>
+					<scrolltime>0</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>true</visible>
+					<align>center</align>
+			<control type="label">
+				<visible>SubString(Container(110).Currentitem,6,Right)</visible>
+				<animation type="Visible">
+					 	<effect type="slide" start="0,-200" end="0,0" tween="back" easing="out" time="300" reversible="false"/>
+					<effect type="zoom" start="350" end="100" tween="back" easing="out" time="300" reversible="false"/>
+				</animation>
+				<width>auto</width>
+				<height>100</height>
+				<label> $INFO[Container(110).ListItem.Property(part1)]</label>
+				<font>dem1a</font>
+				<shadowcolor>black</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>ffea4863</textcolor>
+			</control>
+			<control type="label">
+				<animation type="Visible">
+					 	<effect type="slide" start="0,-200" end="0,0" tween="back" easing="out" time="600" reversible="false"/>
+					<effect type="zoom" start="350" end="100" tween="back" easing="out" time="600" reversible="false"/>
+				</animation>
+				<visible>SubString(Container(110).Currentitem,6,Right)</visible>
+				<width>auto</width>
+				<height>100</height>
+				<label> $INFO[Container(110).ListItem.Property(part2)]  </label>
+				<font>dem1b</font>
+				<shadowcolor>black</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>fff2f511</textcolor>
+			</control>
+			<control type="label">
+				<visible>SubString(Container(110).Currentitem,6,Right)</visible>
+				<animation type="Visible">
+					 	<effect type="slide" start="0,-200" end="0,0" tween="back" easing="out" time="900" reversible="false"/>
+					<effect type="zoom" start="350" end="100" tween="back" easing="out" time="900" reversible="false"/>
+				</animation>
+				<width>auto</width>
+				<height>100</height>
+				<label>$INFO[Container(110).ListItem.Property(part3)]</label>
+				<font>dem1a</font>
+				<shadowcolor>black</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>ff92cade</textcolor>
+			</control>
+				</control>
+				<control type="group">
+				<left>510</left>
+				<top>230</top>
+				<visible>SubString(Container(110).Currentitem,6,Right)</visible>
+				<animation type="Visible">
+					 	<effect type="slide" delay="600" start="-600,0" end="0,0" tween="back" easing="out" time="500" reversible="false"/>
+				</animation>
+				<animation effect="rotatey" center="960,0" start="-10" end="10" time="1500" pulse="true" tween="sine" easing="inout" condition="true">Conditional</animation>
+				<control type="textbox">
+					<left>0</left>
+					<top>76</top>
+					<width>900</width>
+					<height>600</height>
+					<label>$INFO[Container(110).ListItem.Property(part4)]</label>
+					<font>dem2a</font>
+					<shadowcolor>black</shadowcolor>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>ff15d219</textcolor>
+				</control>
+			</control>
+				</control>
+				<!--LINEA 0-->
+		<control type="group">
+				<top>201</top>
+				<left>1</left>
+				<animation effect="rotate" center="960,0" start="4" end="4" condition="true">Conditional</animation>
+				<control type="label">
+					<visible>SubString(Container(110).Currentitem,0,Right)</visible>
+					<animation type="Visible">
+						<effect type="zoom" center="auto" start="400" end="100" tween="back" easing="out" time="350" reversible="false"/>
+						<effect type="slide" delay="800" start="0,0" end="0,-200" time="350" tween="back" easing="out" reversible="false"/>
+					</animation>
+					<left>0</left>
+					<top>145</top>
+					<width>1920</width>
+					<height>115</height>
+					<label> $INFO[Container(110).ListItem.Property(part1)]</label>
+					<font>dem0a</font>
+					<shadowcolor>black</shadowcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>ffff781f</textcolor>
+				</control>
+				<control type="grouplist">
+					<left>0</left>
+					<top>260</top>
+					<width>1920</width>
+					<height>125</height>
+					<itemgap>25</itemgap>
+					<scrolltime>0</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>true</visible>
+					<align>center</align>
+					<control type="label">
+						<visible>SubString(Container(110).Currentitem,0,Right)</visible>
+						<animation type="Visible">
+							<effect type="zoom" center="auto" start="400" end="100" tween="back" easing="out" time="550" reversible="false"/>
+							<effect type="slide" delay="800" start="0,0" end="0,-200" time="350" tween="back" easing="out" reversible="false"/>
+						</animation>
+						<width>auto</width>
+						<height>125</height>
+						<label> $INFO[Container(110).ListItem.Property(part2)]</label>
+						<font>dem0a</font>
+						<shadowcolor>black</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>fffffaf0</textcolor>
+					</control>
+					<control type="label">
+						<visible>SubString(Container(110).Currentitem,0,Right)</visible>
+						<animation type="Visible">
+							<effect type="zoom" center="auto" start="400" end="100" tween="back" easing="out" time="750" reversible="false"/>
+							<effect type="slide" delay="800" start="0,0" end="0,-200" time="350" tween="back" easing="out" reversible="false"/>
+						</animation>
+						<width>auto</width>
+						<height>125</height>
+						<label>$INFO[Container(110).ListItem.Property(part3)]</label>
+						<font>dem0a</font>
+						<shadowcolor>black</shadowcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>ff00ccff</textcolor>
+					</control>
+				</control>
+				<control type="textbox">
+					<left>610</left>
+					<top>192</top>
+					<width>700</width>
+					<height>600</height>
+					<visible>SubString(Container(110).Currentitem,0,Right)</visible>
+					<animation type="Visible">
+						<effect type="zoom" center="960,540" delay="800" start="0" end="100" time="350" tween="sine" easing="out" reversible="false"/>
+					</animation>
+					<label> $INFO[Container(110).ListItem.Property(part4)]</label>
+					<font>dem0b</font>
+					<shadowcolor>black</shadowcolor>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>ffff41ac</textcolor>
+				</control>
+			</control>
+				<!--LINEA 8-->
+		<control type="group">
+					<left>20</left>
+					<top>-20</top>
+					<animation effect="rotatey" center="960,540" start="10" end="-15" time="10000" pulse="true" easing="inout" condition="true">Conditional</animation>
+					<animation effect="slide" start="-600,0" end="0,0" time="200" tween="cubic" easing="out" reversible="false">Visible</animation>
+					<animation effect="rotate" center="auto" start="4" end="4" time="0" condition="true">Conditional</animation>
+						<control type="label">
+							<visible>SubString(Container(110).Currentitem,8,Right)</visible>
+							<animation type="Visible">
+								<effect type="slide" start="-700,0" end="0,0" time="350" tween="back" easing="out" reversible="false"/>
+							</animation>
+						<left>0</left>
+						<top>145</top>
+						<width>880</width>
+						<height>125</height>
+						<label> $INFO[Container(110).ListItem.Property(part1)]</label>
+						<font>matrix1</font>
+						<shadowcolor>black</shadowcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<textcolor>ff15d219</textcolor>
+						</control>
+				<control type="label">
+					<left>0</left>
+					<visible>SubString(Container(110).Currentitem,8,Right)</visible>
+					<animation type="Visible">
+						 	<effect type="slide" delay="150" start="-700,0" end="0,0" time="350" tween="back" easing="out" reversible="false"/>
+					</animation>
+					<top>270</top>
+					<width>880</width>
+					<height>125</height>
+					<label> $INFO[Container(110).ListItem.Property(part2)]</label>
+					<font>matrix1</font>
+					<shadowcolor>black</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<textcolor>fffffaf0</textcolor>
+				</control>
+				<control type="label">
+					<visible>SubString(Container(110).Currentitem,8,Right)</visible>
+					<animation type="Visible">
+						 	<effect type="slide" delay="300" start="-700,0" end="0,0" time="350" tween="back" easing="out" reversible="false"/>
+					</animation>
+					<left>0</left>
+					<top>395</top>
+					<width>880</width>
+					<height>125</height>
+					<label> $INFO[Container(110).ListItem.Property(part3)]</label>
+					<font>dem8a</font>
+					<shadowcolor>black</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<textcolor>ffff7f00</textcolor>
+				</control>
+				<control type="textbox">
+					<left>910</left>
+					<top>30</top>
+					<width>700</width>
+					<height>600</height>
+					<visible>SubString(Container(110).Currentitem,8,Right)</visible>
+					<animation type="Visible">
+						<effect type="slide" delay="900" start="0,-400" end="0,0" time="350" tween="back" easing="out" reversible="false"/>
+					</animation>
+					<animation effect="rotatex" center="110,0" start="-15" end="15" time="1500" pulse="true" tween="sine" easing="inout" condition="true">Conditional</animation>
+					<label> $INFO[Container(110).ListItem.Property(part4)]</label>
+					<font>dem8a</font>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>ffba47dc</textcolor>
+				</control>
+			</control>
+	</control>
+	<control type="group">
+				<!--LINEA 1-->
+		<control type="group">
+					<left>510</left>
+					<top>10</top>
+					<animation effect="rotatey" center="960,540" start="10" end="-15" time="10000" pulse="true" easing="inout" condition="true">Conditional</animation>
+					<visible>SubString(Container(110).Currentitem,1,Right)</visible>
+					<animation effect="slide" start="-600,0" end="0,0" time="200" tween="cubic" easing="out" reversible="false">Visible</animation>
+					<animation effect="rotate" center="auto" start="4" end="4" time="0" condition="true">Conditional</animation>
+					<control type="textbox">
+						<left>-1</left>
+						<top>-1</top>
+						<include>line1</include>
+						<label>[CAPITALIZE]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]</label>
+						<textcolor>ff15d219</textcolor>
+					</control>
+					<control type="textbox">
+						<left>2</left>
+						<top>2</top>
+						<include>line1</include>
+						<label>[CAPITALIZE]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]</label>
+						<textcolor>ffb000b1</textcolor>
+					</control>
+					<control type="textbox">
+						<left>0</left>
+						<top>0</top>
+						<include>line1</include>
+						<shadowcolor>black</shadowcolor>
+						<label>[CAPITALIZE][COLOR=FFef9b0f]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] [/COLOR][COLOR=ffffba00]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=FFffd800]$INFO[Container(110).ListItem.Property(part3)] [/COLOR][COLOR=FFffff00]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>
+					</control>
+				</control>
+				<!--LINEA 3-->
+		<control type="group">
+					<left>585</left>
+					<top>10</top>
+					<visible>SubString(Container(110).Currentitem,3,Right)</visible>
+					<animation effect="slide" start="0,-600" end="0,0" time="250" tween="sine" easing="inout" reversible="false">Visible</animation>
+					<animation effect="rotate" center="960,540" start="4" end="4" time="0" condition="true">Conditional</animation>
+					<control type="textbox">
+						<left>-101</left>
+						<top>-1</top>
+						<width>950</width>
+						<height>600</height>
+						<label>[CAPITALIZE]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]</label>
+						<font>lyr3</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>ffff7f00</textcolor>
+					</control>
+					<control type="textbox">
+						<left>-97</left>
+						<top>3</top>
+						<width>950</width>
+						<height>600</height>
+						<label>[CAPITALIZE]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]</label>
+						<font>lyr3</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="textbox">
+						<include>line3</include>
+						<textcolor>ff15d219</textcolor>
+					</control>
+					<control type="textbox">
+						<animation effect="fade" delay="1000" start="0" end="100" time="4000" pulse="true" condition="true">Conditional</animation>
+						<include>line3</include>
+						<textcolor>FFFFFAF0</textcolor>
+					</control>
+					<control type="textbox">
+						<animation effect="fade" delay="2000" start="0" end="100" time="3000" pulse="true" condition="true">Conditional</animation>
+						<include>line3</include>
+						<textcolor>ff2384c6</textcolor>
+					</control>
+					<control type="textbox">
+						<animation effect="fade" delay="3000" start="0" end="100" time="2000" pulse="true" condition="true">Conditional</animation>
+						<include>line3</include>
+						<textcolor>ffea4863</textcolor>
+					</control>
+				</control>
+				<!--LINEA 5-->
+		<control type="group">
+					<left>510</left>
+					<top>10</top>
+					<animation effect="rotate" center="auto" start="4" end="4" time="0" condition="true">Conditional</animation>
+					<control type="textbox">
+						<visible>SubString(Container(110).Currentitem,5,Right)</visible>
+						<animation effect="zoom" center="auto" start="0" end="100" time="250" reversible="false">Visible</animation>
+						<left>-1</left>
+						<top>-1</top>
+						<width>900</width>
+						<height>600</height>
+						<label>[CAPITALIZE]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]</label>
+						<font>dem5</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(Container(110).Currentitem,5,Right) | [SubString(Container(110).Currentitem,0,Right) + IsEmpty(Container(110).ListItem.Property(part4))] | [SubString(Container(110).Currentitem,0,Right) + !IsEmpty(Window(Home).Property(culrc.islrc)) + !IntegerGreaterThan(Container(110).ListItem.Property(duration),1499)]</visible>
+						<animation effect="zoom" center="auto" start="0" end="100" time="250" reversible="false">Visible</animation>
+						<left>2</left>
+						<top>2</top>
+						<width>900</width>
+						<height>600</height>
+						<label>[CAPITALIZE]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]</label>
+						<font>dem5</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(Container(110).Currentitem,5,Right) | [SubString(Container(110).Currentitem,0,Right) + IsEmpty(Container(110).ListItem.Property(part4))] | [SubString(Container(110).Currentitem,0,Right) + !IsEmpty(Window(Home).Property(culrc.islrc)) + !IntegerGreaterThan(Container(110).ListItem.Property(duration),1499)]</visible>
+						<animation effect="zoom" center="auto" start="0" end="100" time="250" reversible="false">Visible</animation>
+						<include>line5</include>
+						<label>[CAPITALIZE][COLOR=FFfa442c]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] [/COLOR][COLOR=ff15d219]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=FFFFFAF0]$INFO[Container(110).ListItem.Property(part3)] [/COLOR][COLOR=FF00ccff]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>
+					</control>
+				</control>
+				<!--LINEA 7-->
+		<control type="group">
+					<left>475</left>
+					<top>40</top>
+					<visible>SubString(Container(110).Currentitem,7,Right)</visible>
+					<animation effect="rotate" center="auto" start="4" end="4" time="250" condition="true">Conditional</animation>
+					<animation effect="slide" start="0,-600" end="0,0" time="250" tween="sine" easing="inout" reversible="false">Visible</animation>
+					<control type="textbox">
+						<include>line7</include>
+						<font>lyr7a</font>
+						<left>-1</left>
+						<top>-1</top>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="textbox">
+						<include>line7</include>
+						<font>lyr7a</font>
+						<left>3</left>
+						<top>3</top>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(MusicPlayer.Time,1,Right) | SubString(MusicPlayer.Time,6,Right)</visible>
+						<include>line7</include>
+						<font>lyr7a</font>
+						<left>0</left>
+						<top>0</top>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>ffff781f</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(MusicPlayer.Time,2,Right) | SubString(MusicPlayer.Time,7,Right)</visible>
+						<include>line7</include>
+						<font>lyr7a</font>
+						<left>0</left>
+						<top>0</top>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>fffffaf0</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(MusicPlayer.Time,3,Right) | SubString(MusicPlayer.Time,8,Right)</visible>
+						<include>line7</include>
+						<font>lyr7a</font>
+						<left>0</left>
+						<top>0</top>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>ff00ccff</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(MusicPlayer.Time,4,Right) | SubString(MusicPlayer.Time,9,Right)</visible>
+						<include>line7</include>
+						<font>lyr7a</font>
+						<left>0</left>
+						<top>0</top>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>ffff41ac</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(MusicPlayer.Time,5,Right) | SubString(MusicPlayer.Time,0,Right)</visible>
+						<include>line7</include>
+						<font>lyr7a</font>
+						<left>0</left>
+						<top>0</top>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>ff15d219</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(MusicPlayer.Time,2,Right) | SubString(MusicPlayer.Time,7,Right)</visible>
+						<include>line7</include>
+						<font>lyr7b</font>
+						<left>0</left>
+						<top>0</top>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>ffff781f</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(MusicPlayer.Time,3,Right) | SubString(MusicPlayer.Time,8,Right)</visible>
+						<include>line7</include>
+						<font>lyr7b</font>
+						<left>0</left>
+						<top>0</top>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>fffffaf0</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(MusicPlayer.Time,4,Right) | SubString(MusicPlayer.Time,9,Right)</visible>
+						<include>line7</include>
+						<font>lyr7b</font>
+						<left>0</left>
+						<top>0</top>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>ff00ccff</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(MusicPlayer.Time,5,Right) | SubString(MusicPlayer.Time,0,Right)</visible>
+						<include>line7</include>
+						<font>lyr7b</font>
+						<left>0</left>
+						<top>0</top>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>ffff41ac</textcolor>
+					</control>
+					<control type="textbox">
+						<visible>SubString(MusicPlayer.Time,1,Right) | SubString(MusicPlayer.Time,6,Right)</visible>
+						<include>line7</include>
+						<font>lyr7b</font>
+						<left>0</left>
+						<top>0</top>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>ff15d219</textcolor>
+					</control>
+				</control>
+				<!--LINEA 9-->	
+		<control type="group">
+					<left>510</left>
+					<top>10</top>
+					<visible>SubString(Container(110).Currentitem,9,Right)</visible>
+					<animation type="Visible">
+						<effect type="rotate" center="960,270" start="720" end="7" time="350" tween="sine" easing="out" reversible="false"/>
+						<effect type="zoom" center="960,270" start="0" end="100" time="350" reversible="false"/>
+					</animation>
+					<animation effect="rotatey" center="960,540" start="10" end="-15" time="10000" pulse="true" easing="inout" condition="true">Conditional</animation>
+					<control type="textbox">
+						<label>[CR][CAPITALIZE]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]$VAR[swash]</label>
+						<include>line9</include>
+						<left>-1</left>
+						<top>-1</top>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="textbox">
+						<label>[CR][CAPITALIZE]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]$VAR[swash]</label>
+						<include>line9</include>
+						<left>3</left>
+						<top>3</top>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="textbox">
+						<label>[CR][CAPITALIZE][COLOR=FF008c8d]$INFO[Container(110).ListItem.Property(part1)][/CAPITALIZE] [/COLOR][COLOR=ff01a9ac]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=FF54c9d3]$INFO[Container(110).ListItem.Property(part3)] [/COLOR][COLOR=FFb8e4e7]$INFO[Container(110).ListItem.Property(part4)]$VAR[swash][/COLOR]</label>
+						<include>line9</include>
+						<left>0</left>
+						<top>0</top>
+						<shadowcolor>black</shadowcolor>
+					</control>
+				</control>
+	</control>	
+			<!-- ** Required ** Do not change <id> or <type> -->
+			<control type="list" id="110">
+				<left>60</left>
+				<top>30</top>
+				<width>1620</width>
+				<height>470</height>
+				<onleft condition="![IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks_on)]">ActivateWindow(5600)</onleft>
+				<onright>ActivateWindow(120)</onright>
+				<onup>999</onup>
+				<ondown>110</ondown>
+				<viewtype label="535">list</viewtype>
+				<pagecontrol>111</pagecontrol>
+				<scrolltime>10</scrolltime>
+				<itemlayout height="52">
+					<control type="label">	
+						<left>0</left>
+						<top>10</top>
+						<width>1600</width>
+						<height>52</height>
+						<aligny>center</aligny>
+						<align>left</align>
+						<visible>false</visible>
+						<textcolor>01e6e6e6</textcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="52">
+					<control type="label">	
+						<left>0</left>
+						<top>10</top>
+						<width>1600</width>
+						<height>52</height>
+						<aligny>center</aligny>
+						<align>left</align>
+						<visible>false</visible>
+						<textcolor>01e6e6e6</textcolor>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="button">
+						<left>-30</left>
+						<top>-30</top>
+						<width>1</width>
+						<height>1</height>
+						<onfocus condition="IntegerGreaterThan(Container(110).Currentitem,1) + IsEmpty(Container(110).ListItem.Label) + Container(110).OnNext + IsEmpty(Window(Home).Property(culrc.islrc))">Control.Move(110,1)</onfocus>
+						<onfocus condition="IntegerGreaterThan(Container(110).Currentitem,1) + IsEmpty(Container(110).ListItem.Label) + Container(110).OnPrevious + IsEmpty(Window(Home).Property(culrc.islrc))">Control.Move(110,-1)</onfocus>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="spincontrol" id="111">
+				<visible>false</visible>
+			</control>
+			<!-- ** Required ** Do not change <id> or <type> -->
+			<control type="list" id="120">
+				<left>150</left>
+				<top>105</top>
+				<width>1620</width>
+				<height>405</height>
+				<onleft condition="![IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks_on)]">ActivateWindow(5600)</onleft>
+				<onright>ActivateWindow(120)</onright>
+				<onup>120</onup>
+				<ondown>120</ondown>
+				<viewtype label="535">list</viewtype>
+				<pagecontrol>121</pagecontrol>
+				<scrolltime>10</scrolltime>
+				<itemlayout height="52">
+					<control type="label">
+						<visible>false</visible>
+						<left>0</left>
+						<top>4</top>
+						<width>1620</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>Font_38</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>80FFFAF0</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="52">
+					<control type="label">
+						<visible>false</visible>
+						<left>-82</left>
+						<top>4</top>
+						<width>1620</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>Font_45</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>$INFO[Skin.String(colorheader)]</textcolor>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="spincontrol" id="121">
+				<visible>false</visible>
+			</control>
+		</control>
+	</include>
+
     <!-- ######################################################################### Letras em modo karaoke ######################################################################### -->
     <include name="LyricsKaraoke">
         <control type="group">

@@ -1963,6 +1963,16 @@
 					<include>DefaultReset</include>
 				</item>
 				<item>
+					<label>31023</label>
+					<!-- Audio Nodes -->
+					<!-- 6300 -->
+					<label2>31123</label2>
+					<property name="id">custom</property>
+					<onclick>Skin.SetString($INFO[skin.string(custom_master)],anodes)</onclick>
+					<onclick>Skin.SetPath($INFO[Skin.String(custom_path)],library://music/)</onclick>
+					<include>DefaultReset</include>
+				</item>
+				<item>
 					<label>$VAR[value_addon13]</label>
 					<!-- Favorito -->
 					<!-- 6400 -->
@@ -2146,7 +2156,7 @@
 					<!-- 6044 -->
 					<label2>31067</label2>
 					<property name="id">tvshows</property>
-					<onclick>Skin.SetString($INFO[skin.string(custom_master)],tvguide)</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_master)],tvshowguide)</onclick>
 					<onclick>Skin.SetString($INFO[skin.string(custom_action)],RunScript(script.tv.show.next.aired))</onclick>
 					<include>DefaultReset</include>
 				</item>
@@ -2848,6 +2858,16 @@
 					<include>DefaultReset</include>
 				</item>
 				<item>
+					<label>$LOCALIZE[31002]-$LOCALIZE[31092]</label>
+					<!-- Audio playlists -->
+					<!-- 6029 -->
+					<label2>$LOCALIZE[31001]-$LOCALIZE[31092]</label2>
+					<property name="id">music</property>
+					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicplaylist)</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musicplaylist))</onclick>
+					<include>DefaultReset</include>
+				</item>
+				<item>
 					<label>$LOCALIZE[31001]-$LOCALIZE[31231]</label>
 					<label2>$LOCALIZE[31001]-$LOCALIZE[31231]</label2>
 					<property name="id">video</property>
@@ -2885,6 +2905,16 @@
 					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(videos,files))</onclick>
 					<include>DefaultReset</include>
 				</item>
+				<item>
+					<label>31033</label>
+					<!-- Search -->
+					<!-- 6034 -->
+					<label2>Search</label2>
+					<property name="id">video</property>
+					<onclick>Skin.SetString($INFO[skin.string(custom_master)],Search)</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],RunScript(script.globalsearch))</onclick>
+					<include>DefaultReset</include>
+				</item>		
 			</content>
 		</control>
 		<control type="scrollbar" id="81">

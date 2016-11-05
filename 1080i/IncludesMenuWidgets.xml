@@ -31,6 +31,17 @@
 		<include>Animation_Widgets</include>
 		<itemlayout width="152" height="285">
 			<control type="image">
+				<!-- poster dimmer -->
+				<left>6</left>
+				<top>-60</top>
+				<width>148</width>
+				<height>148</height>
+				<colordiffuse>FF505050</colordiffuse>
+				<texture diffuse="thumb_poster_diffuse.png" background="true">http://localhost:52307/getmusicart&amp;artist=$INFO[Container(510).Listitem.Artist]&amp;album=$INFO[Container(510).Listitem.Album]&amp;type=banner,clearlogo,discart</texture>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<visible>SubString(Container(9000).ListItem.Property(widgets),music.)</visible>
+			</control>
+			<control type="image">
 				<!-- reflexo video -->
 				<left>6</left>
 				<top>222</top>
@@ -2111,7 +2122,7 @@
 	<include name="widgets_common">
 		<control type="panel" id="510">
 			<include>panel_layout</include>
-			<content target="video">$VAR[value_widgetsvideo]</content>
+			<content target="$VAR[value_target]">$VAR[value_widgetsvideo]</content>
 			<visible>Control.IsVisible(8003) + StringCompare(Container(9000).ListItem.Property(target),video)</visible>
 		</control>
 		<control type="panel" id="510">
@@ -2122,12 +2133,12 @@
 			<include condition="SubString(skin.string(m_panel_layout),panel_layout_clearart)">panel_layout_clearart</include>
 			<include condition="SubString(skin.string(m_panel_layout),panel_layout_clearlogo)">panel_layout_clearlogo</include>
 			<include condition="SubString(skin.string(m_panel_layout),panel_layout_shelf)">panel_layout_shelf</include>
-			<content target="video">$VAR[value_widgetsvideo]</content>
+			<content target="videos">$VAR[value_widgetsvideo]</content>
 			<visible>Control.IsVisible(8003) + !SubString(skin.string(m_panel_layout),panel_zoom) + StringCompare(Container(9000).ListItem.Property(target),video1)</visible>
 		</control>
 		<control type="fixedlist" id="510">
 			<include condition="SubString(skin.string(m_panel_layout),panel_zoom)">panel_zoom</include>
-			<content target="video">$VAR[value_widgetsvideo]</content>
+			<content target="videos">$VAR[value_widgetsvideo]</content>
 			<visible>Control.IsVisible(8003) + SubString(skin.string(m_panel_layout),panel_zoom) + StringCompare(Container(9000).ListItem.Property(target),video1)</visible>
 		</control>
 		<control type="panel" id="510">
@@ -2138,12 +2149,12 @@
 			<include condition="SubString(skin.string(tv_panel_layout),panel_layout_clearart)">panel_layout_cleararttv</include>
 			<include condition="SubString(skin.string(tv_panel_layout),panel_layout_clearlogo)">panel_layout_clearlogotv</include>
 			<include condition="SubString(skin.string(tv_panel_layout),panel_layout_shelf)">panel_layout_shelf</include>
-			<content target="video">$VAR[value_widgetsvideo]</content>
+			<content target="videos">$VAR[value_widgetsvideo]</content>
 			<visible>Control.IsVisible(8003) + StringCompare(Container(9000).ListItem.Property(target),video2)</visible>
 		</control>
 		<control type="panel" id="510">
 			<include>panel_layout</include>
-			<content target="video">$VAR[value_widgetsplaylistvideo]</content>
+			<content target="videos">$VAR[value_widgetsplaylistvideo]</content>
 			<visible>Control.IsVisible(8003) + StringCompare(Container(9000).ListItem.Property(target),playlistvideo)</visible>
 		</control>
 		<control type="panel" id="510">
@@ -2163,11 +2174,11 @@
 		</control>
 		<control type="panel" id="510">
 			<include>panel_layout_epgposter</include>
-			<content target="video">$VAR[value_widgetsplus]</content>
+			<content target="videos">$VAR[value_widgetsplus]</content>
 			<visible>Control.IsVisible(8003) + StringCompare(Container(9000).ListItem.Property(target),plus_poster)</visible>
 		</control>
 		<control type="list" id="510">
-			<content target="video">$VAR[value_widgetsplus]</content>
+			<content target="$VAR[value_target]">$VAR[value_widgetsplus]</content>
 			<visible>Control.IsVisible(8003) + StringCompare(Container(9000).ListItem.Property(target),plus_group)</visible>
 			<posx>150</posx>
 			<posy>488</posy>
@@ -2203,7 +2214,7 @@
 		</control>
 		<control type="list" id="510">
 			<visible>Control.IsVisible(8003) + StringCompare(Container(9000).ListItem.Property(target),plus_epg)</visible>
-			<content target="video">$VAR[value_widgetsplus]</content>
+			<content target="videos">$VAR[value_widgetsplus]</content>
 			<viewtype label="19031">list</viewtype>
 			<left>0</left>
 			<top>570</top>
@@ -2394,14 +2405,6 @@
 					<include>listcolor</include>
 					<info>ListItem.NextTitle</info>
 				</control>
-				<control type="image">
-					<left>855</left>
-					<top>270</top>
-					<width>60</width>
-					<height>60</height>
-					<aspectratio>keep</aspectratio>
-					<texture>ListItem.PlotOutline</texture>
-				</control>
 			</focusedlayout>
 		</control>
 		<control type="scrollbar" id="71">
@@ -2441,7 +2444,7 @@
 		</control>
 		<control type="panel" id="510">
 			<include>panel_layout</include>
-			<content target="video">$VAR[value_widgetshelper]</content>
+			<content target="videos">$VAR[value_widgetshelper]</content>
 			<visible>Control.IsVisible(8003) + StringCompare(Container(9000).ListItem.Property(target),extras.helper)</visible>
 		</control>
 		<control type="panel" id="510">
@@ -2450,12 +2453,12 @@
 			<include condition="SubString(skin.string(extra_panel_layout),panel_layoutfanartbig)">panel_layoutfanartbig</include>
 			<include condition="SubString(skin.string(extra_panel_layout),panel_layout_case)">panel_layout_case</include>
 			<include condition="SubString(skin.string(extra_panel_layout),panel_layout_shelf)">panel_layout_shelf</include>
-			<content target="video">$VAR[value_widgetsextras]</content>
+			<content target="videos">$VAR[value_widgetsextras]</content>
 			<visible>Control.IsVisible(8003) + StringCompare(Container(9000).ListItem.Property(target),extras)</visible>
 		</control>
 		<control type="panel" id="510">
 			<include>panel_layoutfanart</include>
-			<content target="video">$VAR[value_widgetsextras2]</content>
+			<content target="videos">$VAR[value_widgetsextras2]</content>
 			<visible>Control.IsVisible(8003) + StringCompare(Container(9000).ListItem.Property(target),extras2)</visible>
 		</control>
 	</include>
@@ -2635,19 +2638,19 @@
 		<control type="panel" id="510">
 			<!-- Dual widget 1 -->
 			<include>panel_layout</include>
-			<content target="video">$VAR[service_library]</content>
+			<content target="videos">$VAR[service_library]</content>
 			<visible>StringCompare(Container(9000).ListItem.Property(widgets),dualwidget1)</visible>
 		</control>
 		<control type="panel" id="510">
 			<!-- Dual widget 2 -->
 			<include>panel_layout</include>
-			<content target="video">$VAR[service_library]</content>
+			<content target="videos">$VAR[service_library]</content>
 			<visible>StringCompare(Container(9000).ListItem.Property(widgets),dualwidget2)</visible>
 		</control>
 		<control type="panel" id="510">
 			<!-- Dual widget 3 -->
 			<include>panel_layout</include>
-			<content target="video">plugin://service.library.data.provider?type=$INFO[Skin.String(widget3a)]+$INFO[Skin.String(widget3b)]&amp;reload=$INFO[Window(0).Property($INFO[Skin.String(widget3a)])]$INFO[Window(0).Property($INFO[Skin.String(widget3b)])]</content>
+			<content target="videos">plugin://service.library.data.provider?type=$INFO[Skin.String(widget3a)]+$INFO[Skin.String(widget3b)]&amp;reload=$INFO[Window(0).Property($INFO[Skin.String(widget3a)])]$INFO[Window(0).Property($INFO[Skin.String(widget3b)])]</content>
 			<visible>StringCompare(Container(9000).ListItem.Property(widgets),dualwidget3)</visible>
 		</control>
 	</include>

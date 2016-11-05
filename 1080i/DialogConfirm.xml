@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="100">
     <!-- Aeon MQ 6 -->
-    <defaultcontrol>10</defaultcontrol>
+    <defaultcontrol>11</defaultcontrol>
     <controls>
         <control type="group">
             <include>Animation_TopDialogPopup</include>

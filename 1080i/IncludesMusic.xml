@@ -10,7 +10,7 @@
         <onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
         <onunload>ClearProperty(Banner,home)</onunload>
         <allowoverlay>no</allowoverlay>
-        <views>51,54,55,56,58,59,62,78,53</views>
+        <views>51,54,55,56,57,58,59,62,78,53</views>
         <controls>
             <control type="multiimage">
                 <!-- Multi Fanart -->
@@ -45,7 +45,7 @@
             <control type="multiimage" id="5033">
                 <!-- Extra Fanart Song -->
                 <include>WindowBG</include>
-                <imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
+                 <imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
                 <visible>Container.Content(songs) + SubString(skin.string(musicfanart),extra)</visible>
             </control>
             <control type="group">
@@ -251,6 +251,8 @@
                     <!-- 55 -->
                     <include condition="Skin.HasSetting(viewwall_music)">ViewWallAudio</include>
                     <!-- 56 -->
+					<include condition="Skin.HasSetting(viewglasslist_video)">ViewGlassList</include>
+					<!-- 57 -->		
                     <include condition="Skin.HasSetting(viewcoverflow_music)">ViewCoverFlowAudio</include>
                     <!-- 58 -->
                     <include condition="Skin.HasSetting(viewwide_music)">ViewWide</include>

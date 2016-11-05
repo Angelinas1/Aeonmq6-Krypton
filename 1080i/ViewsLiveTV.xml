@@ -145,22 +145,11 @@
             <posy>878</posy>
             <width>240</width>
             <height>180</height>
-            <texture>$INFO[ListItem.PlotOutline]</texture>
-            <bordertexture border="-12">musicframe.png</bordertexture>
-            <fadetime>FanartCrossFadeTime</fadetime>
-            <aspectratio>keep</aspectratio>
-            <visible>!IsEmpty(ListItem.PlotOutline)</visible>
-        </control>
-        <control type="image">
-            <posx>1635</posx>
-            <posy>878</posy>
-            <width>240</width>
-            <height>180</height>
             <texture background="true">$INFO[Window(Home).Property(SkinHelper.PVR.Thumb)]</texture>
             <bordertexture border="-12">musicframe.png</bordertexture>
             <fadetime>FanartCrossFadeTime</fadetime>
             <aspectratio>keep</aspectratio>
-            <visible>IsEmpty(ListItem.PlotOutline) + IsEmpty(Window(Home).Property(SkinHelper.PVR.Fanart)) + !Window.IsActive(PVRGuideSearch)</visible>
+            <visible>IsEmpty(Window(Home).Property(SkinHelper.PVR.Fanart)) + !Window.IsActive(PVRGuideSearch)</visible>
         </control>
         <control type="image">
             <posx>1635</posx>
@@ -171,7 +160,7 @@
             <bordertexture border="-12">musicframe.png</bordertexture>
             <fadetime>FanartCrossFadeTime</fadetime>
             <aspectratio>keep</aspectratio>
-            <visible>IsEmpty(ListItem.PlotOutline) + !IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape)) + !Window.IsActive(PVRGuideSearch)</visible>
+            <visible>!IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape)) + !Window.IsActive(PVRGuideSearch)</visible>
         </control>
         <control type="image">
             <posx>1635</posx>
@@ -182,7 +171,7 @@
             <bordertexture border="-12">musicframe.png</bordertexture>
             <fadetime>FanartCrossFadeTime</fadetime>
             <aspectratio>keep</aspectratio>
-            <visible>IsEmpty(ListItem.PlotOutline) + IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape)) + !Window.IsActive(PVRGuideSearch)</visible>
+            <visible>IsEmpty(Window(Home).Property(SkinHelper.PVR.Landscape)) + !Window.IsActive(PVRGuideSearch)</visible>
         </control>
         <control type="image">
             <posx>1635</posx>
@@ -328,13 +317,6 @@
                         <aspectratio>stretch</aspectratio>
                         <colordiffuse>50FFFAF0</colordiffuse>
                         <texture>settings_button_focus.png</texture>
-                    </control>
-                    <control type="image" id="99">
-                        <posx>0</posx>
-                        <posy>1</posy>
-                        <height>56</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture border="3">$INFO[ListItem.PlotOutline]</texture>
                     </control>
                     <control type="image" id="2">
                         <left>0</left>
@@ -766,13 +748,6 @@
                         <aspectratio>stretch</aspectratio>
                         <colordiffuse>50FFFAF0</colordiffuse>
                         <texture>settings_button_focus.png</texture>
-                    </control>
-                    <control type="image" id="99">
-                        <posx>0</posx>
-                        <posy>1</posy>
-                        <height>56</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture border="3">$INFO[ListItem.PlotOutline]</texture>
                     </control>
                     <control type="image" id="2">
                         <left>0</left>
@@ -1818,45 +1793,6 @@
                             <textcolor>$VAR[value_flagscolor]</textcolor>
                             <label>$VAR[value_drive]</label>
                         </control>
-                        <control type="image">
-                            <left>188</left>
-                            <include>FlagSeparator</include>
-                        </control>
-                    </control>
-                    <control type="image">
-                        <!-- Trailer -->
-                        <include>FlagImage</include>
-                        <texture>flags/trailer.png</texture>
-                        <visible>!IsEmpty(ListItem.Trailer)</visible>
-                    </control>
-                    <control type="image">
-                        <include>FlagSeparator</include>
-                        <visible>!IsEmpty(ListItem.Trailer) + !StringCompare(ListItem.PercentPlayed,0)</visible>
-                    </control>
-                    <control type="group">
-                        <!-- % Played -->
-                        <width>188</width>
-                        <visible>!StringCompare(ListItem.PercentPlayed,0)</visible>
-                        <control type="image">
-                            <include>FlagImage</include>
-                            <texture>flags/percentplayed.png</texture>
-                        </control>
-                        <control type="label">
-                            <left>18</left>
-                            <top>2</top>
-                            <width>134</width>
-                            <height>75</height>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <font>Font_20B</font>
-                            <textcolor>$VAR[value_flagscolor]</textcolor>
-                            <label>$INFO[ListItem.PercentPlayed]%</label>
-                        </control>
-                    </control>
-                    <control type="label" id="556">
-                        <!-- Hard Disk -->
-                        <include>InvisibleButton</include>
-                        <label>$VAR[value_drive]</label>
                     </control>
                 </control>
             </control>
@@ -2256,15 +2192,7 @@
                             <posy>8</posy>
                             <height>150</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>$INFO[ListItem.PlotOutline]</texture>
-                        </control>
-                        <control type="image">
-                            <right>8</right>
-                            <posy>8</posy>
-                            <height>150</height>
-                            <aspectratio>keep</aspectratio>
                             <texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Icon]</texture>
-                            <visible>IsEmpty(ListItem.PlotOutline)</visible>
                         </control>
                     </itemlayout>
                     <focusedlayout condition="Control.IsVisible(5735)" width="450" height="292">
@@ -2282,15 +2210,7 @@
                             <posy>8</posy>
                             <height>150</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>$INFO[ListItem.PlotOutline]</texture>
-                        </control>
-                        <control type="image">
-                            <right>8</right>
-                            <posy>8</posy>
-                            <height>150</height>
-                            <aspectratio>keep</aspectratio>
                             <texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Icon]</texture>
-                            <visible>IsEmpty(ListItem.PlotOutline)</visible>
                         </control>
                         <control type="label">
                             <posx>0</posx>
@@ -2352,7 +2272,6 @@
             <onright>5735</onright>
             <onup>5736</onup>
             <ondown>5736</ondown>
-            <onclick>SetFocus(5736)</onclick>
             <focuspostion>1</focuspostion>
             <orientation>vertical</orientation>
             <scrolltime>440</scrolltime>
@@ -2722,13 +2641,7 @@
                     <colordiffuse>$VAR[value_texturecolor]</colordiffuse>
                     <animation effect="fade" end="85" condition="true">Conditional</animation>
                 </control>
-                <control type="image">
-                    <left>0</left>
-                    <top>900</top>
-                    <width>1920</width>
-                    <height>45</height>
-                    <texture>shadow_h.png</texture>
-                </control>
+
                 <control type="image">
                     <left>0</left>
                     <top>690</top>
@@ -2809,17 +2722,13 @@
                     <scroll>true</scroll>
                     <scrollout>false</scrollout>
                 </control>
-                <control type="label">
+                <control type="image">
                     <!-- Genre -->
                     <left>300</left>
-                    <top>930</top>
-                    <width>308</width>
-                    <height>38</height>
-                    <font>Font_21</font>
-                    <textcolor>FFFFFAF0</textcolor>
-                    <label>[COLOR=$VAR[value_headercolor]][/COLOR]$VAR[value_ground6_value]$VAR[value_genres_epg][COLOR=50FFFAF0] | [/COLOR]]</label>
-                    <scroll>true</scroll>
-                    <scrollout>false</scrollout>
+                    <top>934</top>
+                    <width>120</width>
+                    <height>30</height>
+                    <texture>$VAR[value_genres_epg]</texture>
                 </control>
                 <control type="label">
                     <!-- Ano/genero menor -->
@@ -2888,16 +2797,6 @@
                     <top>780</top>
                     <width>150</width>
                     <height>150</height>
-                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Listitem.PlotOutline]</texture>
-                    <aspectratio align="center" aligny="center">stretch</aspectratio>
-                    <visible>Player.HasMedia + !IsEmpty(ListItem.PlotOutline)</visible>
-                </control>
-                <control type="image">
-                    <include>Animation_CDart</include>
-                    <left>135</left>
-                    <top>780</top>
-                    <width>150</width>
-                    <height>150</height>
                     <texture>$INFO[Window(Home).Property(SkinHelper.PVR.DiscArt)]</texture>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                 </control>
@@ -2910,7 +2809,7 @@
                     <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
                     <colordiffuse>FF909090</colordiffuse>
                     <aspectratio align="center" aligny="bottom">stretch</aspectratio>
-                    <visible>Player.HasMedia + !IsEmpty(ListItem.PlotOutline)</visible>
+                    <visible>Player.HasMedia</visible>
                 </control>
                 <control type="image">
                     <!-- Poster com estojo -->

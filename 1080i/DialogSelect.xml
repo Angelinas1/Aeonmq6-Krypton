@@ -53,7 +53,7 @@
                     <fadetime>FanartCrossFadeTime</fadetime>
                     <texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_dialogselect_icon]</texture>
                     <aspectratio aligny="bottom">keep</aspectratio>
-                    <bordertexture border="-2">black.png</bordertexture>
+                  
                 </control>
                 <control type="image">
                     <left>1260</left>

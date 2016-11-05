@@ -119,8 +119,10 @@
 			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),movie.recommended)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.recommendedmovies)</onclick>
 			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.recommendedmovies)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video)</onclick>
 			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.recommendedmovies)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,movie.sets)</onclick>
-			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.nextepisodes)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video2)</onclick>
-			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.nextepisodes)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,tvshow.random)</onclick>
+			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.nextepisodes)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.unairedepisodes)</onclick>
+			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.unairedepisodes)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,extras.helper.nextairedtvshows)</onclick>
+			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.nextairedtvshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,video2)</onclick>
+			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.nextairedtvshows)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,tvshow.random)</onclick>
 			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),tvshow.random)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,tvshow.recommended)</onclick>
 			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),tvshow.recommended)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].widgets,tvshow.recent)</onclick>
 			<onclick condition="StringCompare(Container(9000).ListItem.Property(widgets),tvshow.recent)">Skin.SetString($INFO[Container(9000).ListItem.Property(name)].target,extras.helper)</onclick>
@@ -1432,14 +1434,31 @@
 							<!-- Cinema ex -->
 							<include>Widgets_Button</include>
 							<label>$VAR[button_widget_info_label]</label>
-							<onclick condition="StringCompare(skin.string(button_widget_info),trailer)">PlayMedia($INFO[Container(510).ListItem.Trailer])</onclick>
-							<onclick condition="StringCompare(skin.string(button_widget_info),helper)+[StringCompare(Container(510).ListItem.Property(Type),episode)|StringCompare(Container(510).ListItem.Property(Type),random episode)]">RunScript(script.skin.helper.service,action=showinfo,episodeid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
-							<onclick condition="StringCompare(skin.string(button_widget_info),helper)+StringCompare(Container(510).ListItem.Property(Type),tvshow)">RunScript(script.skin.helper.service,action=showinfo,tvshowid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
-							<onclick condition="StringCompare(skin.string(button_widget_info),helper)+StringCompare(Container(510).ListItem.Property(Type),movie)">RunScript(script.skin.helper.service,action=showinfo,movieid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
-							<onclick condition="StringCompare(skin.string(button_widget_info),helper)+IsEmpty(Container(510).ListItem.Property(Type))">RunScript(script.skin.helper.service,action=showinfo</onclick>
-							<onclick condition="StringCompare(skin.string(button_widget_info),extended)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(510).ListItem.Title],imdb_id=$INFO[Container(510).ListItem.IMDBNumber])</onclick>
-							<onclick condition="StringCompare(skin.string(button_widget_info),youtube)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(510).ListItem.Title],return)</onclick>
-							<onclick condition="StringCompare(skin.string(button_widget_info),cinemavision)">RunScript(script.cinemavision,experience,name=$INFO[Container(510).ListItem.Title])</onclick>
+							<onclick condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),trailer)">PlayMedia($INFO[Container(510).ListItem.Trailer])</onclick>
+							<onclick condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),helper)+[StringCompare(Container(510).ListItem.Property(Type),episode)|StringCompare(Container(510).ListItem.Property(Type),random episode)]">RunScript(script.skin.helper.service,action=showinfo,episodeid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
+							<onclick condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),helper)+StringCompare(Container(510).ListItem.Property(Type),tvshow)">RunScript(script.skin.helper.service,action=showinfo,tvshowid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
+							<onclick condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),helper)+StringCompare(Container(510).ListItem.Property(Type),movie)">RunScript(script.skin.helper.service,action=showinfo,movieid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
+							<onclick condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),helper)+IsEmpty(Container(510).ListItem.Property(Type))">RunScript(script.skin.helper.service,action=showinfo</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),movie.)+StringCompare(skin.string(button_widget_info),extended)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(510).ListItem.Title],dbid=$INFO[Container(510).ListItem.IMDBNumber])</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),tvshow.)+StringCompare(skin.string(button_widget_info),extended)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(510).ListItem.TVShowTitle],dbid=$INFO[Container(510).ListItem.DBID])</onclick>
+							<onclick condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),youtube)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(510).ListItem.Title],return)</onclick>
+							<onclick condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),cinemavision)">RunScript(script.cinemavision,experience,name=$INFO[Container(510).ListItem.Title])</onclick>
+							
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),music.)+StringCompare(skin.string(button_widget_info_music),helper)+IsEmpty(Container(510).ListItem.Property(Type))">RunScript(script.skin.helper.service,action=showinfo</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),music.)+StringCompare(skin.string(button_widget_info_music),extended)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(510).ListItem.Artist])</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),music.)+StringCompare(skin.string(button_widget_info_music),youtube)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(510).ListItem.Label],return)</onclick>
+							
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),trailer)">PlayMedia($INFO[Container(510).ListItem.Trailer])</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),helper)+[StringCompare(Container(510).ListItem.Property(Type),episode)|StringCompare(Container(510).ListItem.Property(Type),random episode)]">RunScript(script.skin.helper.service,action=showinfo,episodeid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),helper)+StringCompare(Container(510).ListItem.Property(Type),tvshow)">RunScript(script.skin.helper.service,action=showinfo,tvshowid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),helper)+StringCompare(Container(510).ListItem.Property(Type),movie)">RunScript(script.skin.helper.service,action=showinfo,movieid=$INFO[Container(510).ListItem.Property(DBID)])</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),helper)+IsEmpty(Container(510).ListItem.Property(Type))">RunScript(script.skin.helper.service,action=showinfo</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),extended)+![StringCompare(Container(510).ListItem.Property(Type),episode)|StringCompare(Container(510).ListItem.Property(Type),tvshow)]">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(510).ListItem.Title],dbid=$INFO[Container(510).ListItem.IMDBNumber])</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),extended)+StringCompare(Container(510).ListItem.Property(Type),episode)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(510).ListItem.TVShowTitle],dbid=$INFO[Container(510).ListItem.DBID])</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),extended)+StringCompare(Container(510).ListItem.Property(Type),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[Container(510).ListItem.Title],dbid=$INFO[Container(510).ListItem.DBID])</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),youtube)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[Container(510).ListItem.Title],return)</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),cinemavision)">RunScript(script.cinemavision,experience,name=$INFO[Container(510).ListItem.Title])</onclick>
+
 						</control>
 						<control type="button" id="516">
 							<!-- Play Mini Video -->
@@ -1457,8 +1476,11 @@
 							<!-- Play Mini Video -->
 							<include>Widgets_Button</include>
 							<label>Set Widget Button</label>
-							<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=button_widget_info,header=Button Widget)</onclick>
-							<visible>SubString(Container(9000).ListItem.Property(id),movie) + Control.HasFocus(517) | Control.HasFocus(518)</visible>
+							<onclick condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]">RunScript(script.skin.helper.service,action=setskinsetting,setting=button_widget_info,header=Button Widget)</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),music.)">RunScript(script.skin.helper.service,action=setskinsetting,setting=button_widget_info_music,header=Button Widget)</onclick>
+							<onclick condition="SubString(Container(9000).ListItem.Property(widgets),extras.)">RunScript(script.skin.helper.service,action=setskinsetting,setting=button_widget_info_extras,header=Button Widget)</onclick>
+
+							<visible>Control.HasFocus(517) | Control.HasFocus(518)</visible>
 						</control>
 					</control>
 					<control type="grouplist">
@@ -2130,7 +2152,7 @@
 							<width>540</width>
 							<height>360</height>
 							<aspectratio align="left">keep</aspectratio>
-							<texture fallback="new_pvr/separator3.png">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(510).ListItem.Title]&amp;type=fanart</texture>
+							<texture fallback="new_pvr/separator3.png">http://localhost:52307/getpvrthumb&amp;title=$INFO[Container(510).ListItem.Title]&amp;type=landscape,fanart&amp;fallback=defaultextrathumbs.png</texture>
 							<fadetime>FanartCrossFadeTime</fadetime>
 						</control>
 					</control>
@@ -3303,7 +3325,7 @@
 				<visible>Control.HasFocus(9000) + [SubString(Container(9000).ListItem.Property(id),movie) + Library.HasContent(Movies) 
 | SubString(Container(9000).ListItem.Property(id),tvshow) + Library.HasContent(TVShows) | SubString(Container(9000).ListItem.Property(id),concert) 
 + Library.HasContent(MusicVideos) | SubString(Container(9000).ListItem.Property(id),music) + Library.HasContent(Music) 
-| SubString(Container(9000).ListItem.Property(id),favourites) | SubString(Container(9000).ListItem.Property(id),program) 
+| SubString(Container(9000).ListItem.Property(id),favourites) | SubString(Container(9000).ListItem.Property(id),pictures) | SubString(Container(9000).ListItem.Property(id),live) | SubString(Container(9000).ListItem.Property(id),radio) | SubString(Container(9000).ListItem.Property(id),program) 
 + !IsEmpty(Window(0).Property(Favourite.1.Name)) | SubString(Container(9000).ListItem.Property(id),vpl) 
 | SubString(Container(9000).ListItem.Property(id),apl)] + ![Player.HasMedia + [System.IdleTime(8) | 
 Skin.HasSetting(highermainmenu)] | Skin.HasSetting(nohometotals) | Skin.HasSetting(highertotals) + [Window.IsVisible(volumebar) 

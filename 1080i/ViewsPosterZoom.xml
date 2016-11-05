@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Aeon MQ 6 -->
+    <!--###############################################################################   VISTA BANNER INFO - ID 76   ###############################################################################-->
+    <include name="zoomInfoLabel">
+	<left>0</left>
+	<height>30</height>
+	<width>560</width>
+	<font>Font_18A</font>
+	<aligny>top</aligny>
+	<align>left</align>
+	<textcolor>$VAR[value_headercolor]</textcolor>
+	<textoffsetx>0</textoffsetx>
+	<textoffsety>0</textoffsety>
+	<scroll>true</scroll>
+    </include>
+    <include name="ViewPosterZoom">
+	<control type="group">
+	<animation effect="fade" time="400">VisibleChange</animation>
+	<include>ViewBack</include>
+	<!-- Fundo -->
+	<visible>StringCompare(Container.Viewmode,POSTER ZOOM)</visible>
+	<control type="image">
+	<!-- Fundo -->
+	<left>0</left>
+	<top>390</top>
+	<width>1920</width>
+	<height>405</height>
+	<texture>details_back.png</texture>
+	<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+	<include>Animation_HomeGlass</include>
+	<include>Animation_Fade</include>
+	</control>
+	<control type="group">
+	<visible>Control.HasFocus(76)</visible>
+	<control type="textbox">
+	<left>15</left>
+	<top>795</top>
+	<width>1200</width>
+	<height>180</height>
+	<font>Font_20A</font>
+	<textcolor>FFFFFFFF</textcolor>
+	<shadowcolor>FFDAA520</shadowcolor>
+	<label>$VAR[value_plot]</label>
+	<autoscroll delay="8000" time="2000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
+	<include>Animation_Fade</include>
+	</control>
+	<control type="image">
+	<left>1470</left>
+	<top>360</top>
+	<width>375</width>
+	<height>175</height>
+	<aspectratio>keep</aspectratio>
+	<texture background="true">$INFO[ListItem.Art(clearart)]</texture>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	<animation effect="slide" start="0,0" end="0,-20" time="400" condition="!Skin.HasSetting(nowidevideocasezoom)">Conditional</animation>	
+	<visible>Control.HasFocus(76)</visible>
+	</control>
+	</control>
+        <control type="grouplist">
+	<left>460</left>
+	<top>300</top>
+            <orientation>horizontal</orientation>
+            <align>left</align>
+            <itemgap>-112</itemgap>
+         <animation type="WindowOpen">
+            <effect type="slide" start="-150,0" end="0,0" time="2500" delay="700" tween="cubic" easing="out" />
+            <effect type="fade" start="0" end="100" time="500" delay="700" />
+        </animation>
+        <animation type="Visible">
+            <effect type="slide" start="-150,0" end="0,0" time="500" delay="700" tween="cubic" easing="out" />
+            <effect type="fade" start="0" end="100" time="500" delay="700" />
+        </animation>
+        <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+        <animation type="Hidden">
+            <effect type="slide" start="0,0" end="-150,0" time="300" tween="cubic" easing="out" />
+            <effect type="fade" start="100" end="0" time="200" />
+        </animation>
+		<visible>Control.HasFocus(76)</visible>
+        <control type="image">
+            <include>PLDisc</include>
+            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.0.DiscArt)]</texture>
+        </control>
+        <control type="image">
+            <include>PLDisc</include>
+            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.1.DiscArt)]</texture>
+        </control>
+        <control type="image">
+            <include>PLDisc</include>
+            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.2.DiscArt)]</texture>
+        </control>
+        <control type="image">
+            <include>PLDisc</include>
+            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.3.DiscArt)]</texture>
+        </control>
+        <control type="image">
+            <include>PLDisc</include>
+            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.4.DiscArt)]</texture>
+        </control>
+        <control type="image">
+            <include>PLDisc</include>
+            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.5.DiscArt)]</texture>
+        </control>
+        <control type="image">
+            <include>PLDisc</include>
+            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.6.DiscArt)]</texture>
+        </control>
+        <control type="image">
+            <include>PLDisc</include>
+            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.7.DiscArt)]</texture>
+        </control>
+        <control type="image">
+            <include>PLDisc</include>
+            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.8.DiscArt)]</texture>
+        </control>
+        <control type="image">
+            <include>PLDisc</include>
+            <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(SkinHelper.MovieSet.9.DiscArt)]</texture>
+        </control>
+    </control>
+
+	<control type="wraplist" id="76">
+	<!-- Zoom Info -->
+	<viewtype label="31847">list</viewtype>
+	<left>45</left>
+	<top>510</top>
+	<width>1880</width>
+	<height>1620</height>
+	<onup>9900</onup>
+	<ondown>1000</ondown>
+	<onleft>76</onleft>
+	<onright>76</onright>
+	<orientation>horizontal</orientation>
+	<pagecontrol>80</pagecontrol>
+	<scrolltime>450</scrolltime>	   
+	<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+	<itemlayout width="152" height="285" condition="Skin.HasSetting(nowidevideocasezoom)">
+	<control type="group">
+	<visible>![Control.HasFocus(1000)|Control.HasFocus(5804)]</visible>
+	<!-- reflexo video -->
+	<control type="image">
+	<left>6</left>
+	<top>249</top>
+	<width>145</width>
+	<height>248</height>
+	<texture flipy="true" fallback="DefaultVideoPoster.png" diffuse="thumb_poster_reflect.png" background="true">$VAR[value_poster]</texture>
+	<colordiffuse>97FFFFFF</colordiffuse>
+	<aspectratio align="center" aligny="top">keep</aspectratio>
+	<animation effect="fade" start="100" end="25" time="400" condition="Control.HasFocus(76)">Conditional</animation>	
+	</control>
+	<!-- poster -->
+	<control type="image">
+	<left>6</left>
+	<top>0</top>
+	<width>145</width>
+	<height>248</height>
+	<texture fallback="DefaultVideoPoster.png" diffuse="thumb_poster_diffuse.png" background="true">$VAR[value_poster]</texture>
+	<aspectratio align="center" aligny="bottom">keep</aspectratio>
+	<animation effect="fade" start="100" end="85" time="400" condition="Control.HasFocus(76)">Conditional</animation>
+	</control>
+	<control type="progress">
+	<left>14</left>
+	<top>255</top>
+	<width>130</width>
+	<height>8</height>
+	<info>ListItem.PercentPlayed</info>
+	<animation effect="fade" start="100" end="25" time="400" condition="Control.HasFocus(76)">Conditional</animation>
+	<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+	</control>
+	<control type="image">
+	<left>114</left>
+	<top>177</top>
+	<width>38</width>
+	<height>38</height>
+	<texture>OverlayWatched.png</texture>
+	<colordiffuse>$INFO[Skin.String(colorwatched)]</colordiffuse>
+	<aspectratio align="center" aligny="bottom">keep</aspectratio>
+	<animation effect="fade" start="100" end="25" time="400" condition="Control.HasFocus(76)">Conditional</animation>
+	<visible>IntegerGreaterThan(ListItem.PercentPlayed,90)</visible>
+	</control>
+	</control>
+	</itemlayout>
+	<itemlayout width="178" height="285" condition="!Skin.HasSetting(nowidevideocasezoom)">
+	<control type="group">
+	<visible>![Control.HasFocus(1000)|Control.HasFocus(5804)]</visible>
+	<!-- reflexo video -->
+	<control type="image">
+	<left>6</left>
+	<top>259</top>
+	<width>150</width>
+	<height>248</height>
+	<texture flipy="true" fallback="DefaultVideoPoster.png" diffuse="thumb_poster_reflect.png" background="true">$VAR[value_poster]</texture>
+	<colordiffuse>97FFFFFF</colordiffuse>
+	<aspectratio align="center" aligny="top">keep</aspectratio>
+	<animation effect="fade" start="100" end="25" time="400" condition="Control.HasFocus(76)">Conditional</animation>	
+	</control>
+	<!-- poster -->
+	<control type="image">
+	<left>6</left>
+	<top>15</top>
+	<width>150</width>
+	<height>248</height>
+	<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+	<aspectratio align="center" aligny="bottom">keep</aspectratio>
+	<animation effect="fade" start="100" end="85" time="400" condition="Control.HasFocus(76)">Conditional</animation>
+	</control>
+	<control type="image">
+	<left>-10</left>
+	<top>0</top>
+	<width>186</width>
+	<height>280</height>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+	<texture background="true">$VAR[value_videocase0]</texture>
+	<visible>!Skin.HasSetting(nowidevideocasezoom)</visible>
+	<include>Animation_CaseGlass</include>
+	</control>
+	<control type="image">
+	<left>60</left>
+	<top>5</top>
+	<width>40</width>
+	<height>40</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<aspectratio>keep</aspectratio>
+	<texture background="true">$VAR[PLCodec]</texture>
+	<visible>!Skin.HasSetting(nowidevideocasezoom)</visible>
+	</control>
+	<control type="image">
+	<left>60</left>
+	<top>5</top>
+	<width>40</width>
+	<height>40</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<aspectratio>keep</aspectratio>
+	<texture fallback="logo_trailer.png">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
+	<visible>!IsEmpty(ListItem.Art(fanart))+[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+	</control>
+	<control type="progress">
+	<left>14</left>
+	<top>255</top>
+	<width>130</width>
+	<height>8</height>
+	<info>ListItem.PercentPlayed</info>
+	<animation effect="fade" start="100" end="25" time="400" condition="Control.HasFocus(76)">Conditional</animation>
+	<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+	</control>
+	<control type="image">
+	<left>114</left>
+	<top>177</top>
+	<width>38</width>
+	<height>38</height>
+	<texture>OverlayWatched.png</texture>
+	<colordiffuse>$INFO[Skin.String(colorwatched)]</colordiffuse>
+	<aspectratio align="center" aligny="bottom">keep</aspectratio>
+	<animation effect="fade" start="100" end="25" time="400" condition="Control.HasFocus(76)">Conditional</animation>
+	<visible>IntegerGreaterThan(ListItem.PercentPlayed,90)</visible>
+	</control>
+	</control>
+	</itemlayout>
+	<focusedlayout width="450" height="310">
+	<control type="group">
+	<animation effect="zoom" center="0,248" start="100" end="255" time="400" tween="cubic" easing="out" condition="Control.HasFocus(76)|Control.HasFocus(1000)|Control.HasFocus(5804)">Conditional</animation>	
+	<control type="group">
+	<animation type="Focus" reversible="false" condition="true">
+	<effect type="slide" start="0,0" end="70,0" time="1000" delay="1500" tween="cubic" easing="out" />
+	<effect type="fade" start="0" end="100" time="300" delay="1000" />
+	</animation>
+	<animation effect="slide" start="0,0" end="20,0" time="0" tween="cubic" easing="out" condition="!Control.HasFocus(1000)|Control.HasFocus(5804)">Conditional</animation>
+	<animation effect="slide" time="0" start="0,0" end="0,-190" tween="cubic" easing="out" condition="true">Conditional</animation>
+	<control type="image">
+	<left>10</left>
+	<top>220</top>
+	<width>120</width>
+	<height>120</height>
+	<texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Art(discart)]</texture>
+	<aspectratio align="right" aligny="top">keep</aspectratio>
+	<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="2500" loop="true" reversible="false" condition="true">Conditional</animation>
+	</control>
+	</control>
+	<!-- reflexo -->
+	<control type="image">	
+	<left>0</left>
+	<top>258</top>
+	<width>166</width>
+	<height>222</height>
+	<texture flipy="true" fallback="DefaultVideoPoster.png" diffuse="thumb_poster_reflect.png" background="true">$VAR[value_poster]</texture>
+	<colordiffuse>CCFFFFFF</colordiffuse>
+	<aspectratio align="center" aligny="top">keep</aspectratio>
+	</control>
+	<!-- poster -->
+	<control type="image">	
+	<left>0</left>
+	<top>27</top>
+	<width>166</width>
+	<height>220</height>
+	<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+	<aspectratio align="center" aligny="bottom">keep</aspectratio>
+	</control>
+	<control type="image">
+	<left>125</left>
+	<top>25</top>
+	<width>38</width>
+	<height>38</height>
+	<texture background="true">$VAR[value_watchedstyle]</texture>
+	<colordiffuse>$INFO[Skin.String(colorwatched)]</colordiffuse>
+	<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+	<visible>!Skin.HasSetting(nooverlays) + IntegerGreaterThan(ListItem.Playcount,0)</visible>
+	</control>
+	<control type="image">
+	<left>-6</left>
+	<top>-10</top>
+	<width>186</width>
+	<height>280</height>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+	<texture background="true">$VAR[value_videocase0]</texture>
+	<visible>!Skin.HasSetting(nowidevideocasezoom)</visible>
+	<include>Animation_CaseGlass</include>
+	</control>
+	<control type="image">	
+	<left>-6</left>
+	<top>240</top>
+	<width>186</width>
+	<height>280</height>
+	<texture flipy="true" diffuse="thumb_poster_reflect.png" background="true">$VAR[value_videocase0]</texture>
+	<colordiffuse>CCFFFFFF</colordiffuse>
+	<aspectratio align="center" aligny="top">keep</aspectratio>
+	<visible>!Skin.HasSetting(nowidevideocasezoom)</visible>
+	</control>
+	<control type="image">
+	<left>70</left>
+	<top>-5</top>
+	<width>40</width>
+	<height>40</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<aspectratio>keep</aspectratio>
+	<texture background="true">$VAR[PLCodec]</texture>
+	<visible>!Skin.HasSetting(nowidevideocasezoom)</visible>
+	</control>
+	<control type="image">
+	<left>70</left>
+	<top>-5</top>
+	<width>40</width>
+	<height>40</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<aspectratio>keep</aspectratio>
+	<texture fallback="logo_trailer.png">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
+	<visible>!IsEmpty(ListItem.Art(fanart))+[Container.Content(tvshows) | Container.Content(seasons)]</visible>
+	</control>
+	<control type="progress">
+	<left>20</left>
+	<top>255</top>
+	<width>140</width>
+	<height>6</height>
+	<info>ListItem.PercentPlayed</info>
+	<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+	</control>
+	</control>
+	</focusedlayout>
+	</control>
+	<!-- Cast panel list -->
+	<control type="group" id="5801">
+	<left>1250</left>
+	<top>790</top>
+	<include condition="Control.HasFocus(1000)">Animation_HomePanel</include>
+	<animation effect="slide" start="0,260" end="0,0" condition="Control.HasFocus(76) | Control.HasFocus(1000)|Control.HasFocus(5804)">Conditional</animation>
+	<control type="list" id="1000">
+	<content>$VAR[value_zoom_cast]</content>
+	<viewtype label="List">List Info</viewtype>
+	<top>0</top>
+	<left>0</left>
+	<width>675</width>
+	<height>330</height>
+	<onleft>SetFocus(5804)</onleft>
+	<onright>1000</onright>
+	<onup>SetFocus(76)</onup>
+	<ondown>SetFocus(5804)</ondown>
+	<orientation>horizontal</orientation>
+	<scrolltime>400</scrolltime>
+	<focusposition>3</focusposition>
+	<itemlayout height="172" width="135">
+	<control type="image">
+	<left>0</left>
+	<top>8</top>
+	<width>127</width>
+	<height>165</height>
+	<aligny>center</aligny>
+	<align>center</align>
+	<aspectratio>stretch</aspectratio>
+	<texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+	<bordertexture border="-2">black.png</bordertexture>
+	<colordiffuse>FF909090</colordiffuse>
+	</control>
+	</itemlayout>
+	<focusedlayout height="172" width="135">
+	<control type="image">
+	<left>0</left>
+	<top>8</top>
+	<width>127</width>
+	<height>165</height>
+	<aligny>center</aligny>
+	<align>center</align>
+	<aspectratio>stretch</aspectratio>
+	<texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+	<bordertexture border="-2">black.png</bordertexture>
+	<colordiffuse>FF909090</colordiffuse>
+	<include>Animation_Fade</include>
+	<visible>!Control.HasFocus(1000)</visible>
+	</control>
+	<control type="image">
+	<left>0</left>
+	<top>8</top>
+	<width>127</width>
+	<height>165</height>
+	<aligny>center</aligny>
+	<align>center</align>
+	<aspectratio>stretch</aspectratio>
+	<texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+	<bordertexture border="-2">grey.png</bordertexture>
+	<include>Animation_Fade</include>
+	<visible>Control.HasFocus(1000)|Control.HasFocus(5804)</visible>
+	</control>
+	</focusedlayout>
+	</control>
+	</control>
+	<!-- Actor image, Text list and ratings -->
+	<control type="group" id="5802">
+	<left>1920</left>
+	<top>0</top>
+	<animation effect="slide" start="0,0" end="-1920,0" time="400" tween="cubic" easing="inout" condition="Control.HasFocus(1000)">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(1000)">Conditional</animation>
+	<control type="image">
+	<left>750</left>
+	<top>190</top>
+	<width>407</width>
+	<height>600</height>
+	<align>center</align>
+	<texture>actor_border.png</texture>
+	<animation effect="rotate" start="0,0" end="-2.0.0" center="auto" delay="1000" easing="out" tween="back" time="600" condition="Control.HasFocus(1000)">Conditional</animation>
+	</control>
+	<control type="image">
+	<left>772</left>
+	<top>218</top>
+	<width>363</width>
+	<height>544</height>
+	<aspectratio>scale</aspectratio>
+	<texture fallback="DefaultActor.png" background="true">$INFO[Container(1000).ListItem.Icon]</texture>
+	<fadetime>FanartCrossFadeTime</fadetime>
+	</control>
+	<control type="image">
+	<left>750</left>
+	<top>190</top>
+	<width>407</width>
+	<height>600</height>
+	<align>center</align>
+	<texture>actor_border.png</texture>
+	</control>
+	<control type="image">
+	<left>1230</left>
+	<top>170</top>
+	<width>650</width>
+	<height>50</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<aspectratio>stretch</aspectratio>
+	<texture flipy="true">gradient_focus.png</texture>
+	<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+	<visible>!IsEmpty(Container(1000).ListItem.Label)</visible>
+	</control>
+	<control type="label">
+	<left>0</left>
+	<top>150</top>
+	<width>1920</width>
+	<height>40</height>
+	<font>Font_32</font>
+	<label>$INFO[Container(1000).ListItem.Label] as $INFO[Container(1000).ListItem.Label2]</label>
+	<align>center</align>
+	<textcolor>$VAR[value_headercolor]</textcolor>
+	</control>
+	<control type="grouplist">
+	<left>1230</left>
+	<top>220</top>
+	<control type="textbox">
+	<!-- Elenco menor -->
+	<width>650</width>
+	<height>260</height>
+	<label>$VAR[value_plot]</label>
+	<textcolor>FFFFFAF0</textcolor>
+	<font>Font_18A</font>
+	<autoscroll delay="20000" time="3000" repeat="20000">!Skin.HasSetting(noallowscroll)</autoscroll>
+	</control>
+	<control type="image">
+	<left>1230</left>
+	<top>820</top>
+	<width>650</width>
+	<height>50</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<aspectratio>stretch</aspectratio>
+	<texture flipy="true">gradient_focus.png</texture>
+	<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+	<visible>!IsEmpty(Container(1000).ListItem.Label)</visible>
+	</control>
+	<control type="textbox">
+	<width>650</width>
+	<height>220</height>
+	<font>Font_18A</font>
+	<label>$INFO[Window(Home).Property(SkinHelper.ListItemCast)]</label>
+	<autoscroll delay="8000" time="2000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
+	<include>Animation_Fade</include>
+	</control>
+	</control>
+	<control type="grouplist">
+	<left>1530</left>
+	<top>540</top>
+	<orientation>vertical</orientation>
+	<itemgap>33</itemgap>
+	<visible>!SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+	<control type="group">				
+	<control type="image">
+	<left>0</left>
+	<width>90</width>
+	<height>100</height>
+	<aspectratio>keep</aspectratio>
+	<texture>flags/imdb_250.png</texture>
+	</control>
+	<control type="label">
+	<left>100</left>
+	<width>300</width>
+	<height>110</height>
+	<label>[B]$INFO[Window(Home).Property(SkinHelper.IMDB.Rating.Percent)] %[/B][B] 	- [COLOR=$VAR[value_headercolor]]$INFO[Window(Home).Property(SkinHelper.IMDB.Votes)][/B][/COLOR] Votes</label>
+	</control>
+	</control>
+	<control type="group">				
+	<control type="image">
+	<left>0</left>
+	<width>90</width>
+	<height>100</height>
+	<aspectratio>keep</aspectratio>
+	<include>FlagImageHelper</include>
+	<texture>flags/fli.png</texture>
+	</control>
+	<control type="label">
+	<left>100</left>
+	<width>300</width>
+	<height>110</height>
+	<label>[B]$INFO[Window(Home).Property(SkinHelper.RottenTomatoesAudienceMeter)] %[/B][B] 	- [COLOR=$VAR[value_headercolor]]$INFO[Window(Home).Property(SkinHelper.RottenTomatoesAudienceReviews)][/B][/COLOR] Votes</label>
+	</control>
+	</control>	
+            <control type="group">				
+	<control type="image">
+	<left>0</left>
+	<width>90</width>
+	<height>100</height>
+	<aspectratio>keep</aspectratio>
+				<include>FlagImageHelper</include>
+				<texture>flags/rot.png</texture>
+			</control>
+	<control type="label">
+	<left>100</left>
+	<width>300</width>
+	<height>110</height>
+				<label>[B]$INFO[Window(Home).Property(SkinHelper.RottenTomatoesMeter)] %[/B][B] 	- [COLOR=$VAR[value_headercolor]]$INFO[Window(Home).Property(SkinHelper.RottenTomatoesReviews)][/B][/COLOR] Votes</label>
+				</control>
+</control>	
+            <control type="group">				
+	<control type="image">
+	<left>0</left>
+	<top>10</top>
+	<width>90</width>
+	<height>90</height>
+	<aspectratio>keep</aspectratio>
+	<texture>flags/met.png</texture>
+	</control>
+	<control type="label">
+	<left>100</left>
+	<width>300</width>
+	<height>110</height>
+	<label>[B]$INFO[Window(Home).Property(SkinHelper.MetaCritic.Rating)] %[/B][B] 	- [COLOR=$VAR[value_headercolor]]$INFO[Window(Home).Property(SkinHelper.MetaCritic)][/B][/COLOR] Votes</label>
+	</control>	
+	</control>
+	</control>	
+	</control>
+	<!-- MovieSet panel list -->
+	<control type="group" id="5803">
+	<left>-1920</left>
+	<top>800</top>
+	<animation effect="slide" start="0,0" end="1920,0" time="400" tween="cubic" easing="inout" condition="Control.HasFocus(1000)|Control.HasFocus(5804)">Conditional</animation>
+	<animation effect="fade" start="100" end="80" time="0" condition="!Control.HasFocus(5804)">Conditional</animation>
+	<visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+            <control type="list" id="5804">
+                <viewtype>list</viewtype>
+                <left>25</left>
+                <top>0</top>
+                <width>1200</width>
+                <height>200</height>
+                <onup>76</onup>
+                <ondown>1000</ondown>
+                <orientation>horizontal</orientation>
+                <scrolltime>350</scrolltime>
+                <focusposition>1</focusposition>
+                <itemlayout height="165" width="156">
+                    <!-- Com disco -->
+                    <control type="image">
+                        <left>43</left>
+                        <top>15</top>
+                        <width>97</width>
+                        <height>97</height>
+                        <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Property(Disc)]</texture>
+                        <fadetime>FanartCrossFadeTime</fadetime>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
+                        <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                        <include>Animation_ViewsCDart</include>
+                        <visible>!IsEmpty(ListItem.Property(Disc))</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>279</top>
+                        <width>94</width>
+                        <height>135</height>
+                        <aspectratio align="center" aligny="top">keep</aspectratio>
+                        <texture flipy="true" diffuse="thumb_reflect.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <bordertexture flipy="true" diffuse="thumb_reflect.png" border="-2">black.png</bordertexture>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>8</top>
+                        <width>94</width>
+                        <height>135</height>
+                        <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                        <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <bordertexture border="-2">black.png</bordertexture>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="165" width="156">
+                    <!-- Com disco -->
+                    <control type="group">
+                        <animation effect="zoom" start="100" end="115" center="94,135" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+                        <control type="image">
+                            <left>43</left>
+                            <top>15</top>
+                            <width>97</width>
+                            <height>97</height>
+                            <texture diffuse="cdart_diffuse.png" background="true">$INFO[ListItem.Property(Disc)]</texture>
+                            <fadetime>FanartCrossFadeTime</fadetime>
+                            <aspectratio align="center" aligny="center">keep</aspectratio>
+                            <animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
+                            <include>Animation_ViewsCDart</include>
+                            <visible>!IsEmpty(ListItem.Property(Disc))</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>280</top>
+                            <width>94</width>
+							<height>135</height>
+                            <aspectratio align="center" aligny="top">keep</aspectratio>
+                            <texture flipy="true" diffuse="thumb_reflect.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture flipy="true" diffuse="thumb_reflect.png" border="-2">grey.png</bordertexture>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>3</top>
+                            <width>94</width>
+							<height>135</height>
+                            <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                            <texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
+                            <bordertexture border="-2">grey.png</bordertexture>
+                        </control>
+                    </control>
+                </focusedlayout>
+                <content>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.0.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.0.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.0.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.0.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.0.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.1.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.1.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.1.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.1.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.1.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.2.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.2.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.2.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.2.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.2.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.3.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.3.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.3.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.3.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.3.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.4.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.4.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.4.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.4.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.4.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.5.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.5.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.5.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.5.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.5.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.6.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.6.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.6.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.6.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.6.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.7.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.7.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.7.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.7.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.7.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.8.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.8.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.8.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.8.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.8.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.9.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.9.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.9.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.9.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.9.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.10.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.10.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.10.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.10.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.10.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.11.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.11.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.11.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.11.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.11.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.12.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.12.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.12.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.12.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.12.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.13.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.13.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.13.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.13.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.13.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.14.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.14.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.14.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.14.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.14.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.15.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.15.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.15.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.15.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.15.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.16.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.16.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.16.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.16.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.16.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.17.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.17.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.17.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.17.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.17.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.18.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.18.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.18.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.18.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.18.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.19.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.19.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.19.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.19.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.19.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.20.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.20.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.20.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.20.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.20.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.21.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.21.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.21.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.21.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.21.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.22.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.22.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.22.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.22.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.22.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.23.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.23.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.23.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.23.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.23.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.24.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.24.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.24.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.24.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.24.Title))</visible>
+                    </item>
+                    <item>
+                        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.25.Title)]</label>
+                        <icon>$INFO[Window(Home).Property(SkinHelper.MovieSet.25.Poster)]</icon>
+                        <property name="Disc">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.DiscArt)]</property>
+                        <property name="Fanart">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.FanArt)]</property>
+                        <property name="Landscape">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.Landscape)]</property>
+                        <property name="Banner">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.Banner)]</property>
+                        <property name="ClearLogo">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.ClearLogo)]</property>
+                        <property name="ClearArt">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.ClearArt)]</property>
+                        <property name="Plot">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.Plot)]</property>
+                        <property name="Year">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.Year)]</property>
+                        <property name="Duration">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.Duration)]</property>
+                        <property name="AspectRatio">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.AspectRatio)]</property>
+                        <property name="Resolution">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.Resolution)]</property>
+                        <property name="Codec">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.Codec)]</property>
+                        <property name="AudioCodec">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.AudioCodec)]</property>
+                        <property name="AudioChannels">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.AudioChannels)]</property>
+                        <property name="AudioLanguage">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.AudioLanguage)]</property>
+                        <property name="SubTitle">$INFO[Window(Home).Property(SkinHelper.MovieSet.25.SubTitle)]</property>
+                        <onclick>RunScript(service.skin.widgets,movieid=$INFO[Window(Home).Property(SkinHelper.MovieSet.25.DBID)])</onclick>
+                        <visible>!IsEmpty(Window(Home).Property(SkinHelper.MovieSet.25.Title))</visible>
+                    </item>
+                </content>
+            </control></control>
+
+	<control type="scrollbar" id="80">
+	<!--Banner Info-->
+	<include>ScrollBar_Horizontal</include>
+	<left>1800</left>
+	<top>442</top>
+	<height>525</height>
+	<onleft>76</onleft>
+	<onright>9920</onright>
+	<include>Animation_Fade</include>
+	<visible allowhiddenfocus="true">StringCompare(Container.Viewmode,POSTER ZOOM) + Control.HasFocus(80)</visible>
+	</control>
+	</control>
+    </include>
+</includes>

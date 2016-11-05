@@ -270,7 +270,7 @@
 				<onfocus>Skin.SetString(menu0201.master,tvshowrecently)</onfocus>
 				<!-- Episodios recentes -->
 				<onfocus>Skin.SetString(menu0201.action,ActivateWindow(videos,recentlyaddedepisodes,return))</onfocus>
-				<onfocus>Skin.SetString(menu0202.master,tvguide)</onfocus>
+				<onfocus>Skin.SetString(menu0202.master,tvshowguide)</onfocus>
 				<!-- Guia de TV -->
 				<onfocus>Skin.SetString(menu0202.action,RunScript(script.tv.show.next.aired))</onfocus>
 				<onfocus>Skin.SetString(menu0203.master,tvshowgenres)</onfocus>

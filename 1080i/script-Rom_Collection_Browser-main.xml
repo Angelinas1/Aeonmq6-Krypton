@@ -22,7 +22,7 @@
         <control type="multiimage" id="5020">
             <!-- Extra Fanart -->
             <include>InvisibleButton</include>
-            <imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
+             <imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
             <visible>SubString(skin.string(gamesfanart),extra)</visible>
         </control>
         <!-- Views Group -->

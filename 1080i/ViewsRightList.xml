@@ -354,7 +354,7 @@
                         <visible>![Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]</visible>
                     </control>
                     <control type="list" id="49">
-                        <visible>![Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]</visible>
+                        <visible>[Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]</visible>
                         <itemlayout height="30">
                             <control type="label">
                                 <width>218</width>

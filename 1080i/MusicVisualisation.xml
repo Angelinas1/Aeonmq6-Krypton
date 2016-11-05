@@ -44,20 +44,6 @@
 | StringCompare(skin.string(vis_bg),slideshowmix)] + IsEmpty(Control.GetLabel(5045)) | [StringCompare(skin.string(vis_bg),slideshowmosaic) 
 | StringCompare(skin.string(vis_bg),slideshowmosaicmix)] + IsEmpty(Control.GetLabel(5046))</visible>
         </control>
-        <!--
-		<control type="multiimage" id="5043">
-			<include>WindowBG</include>
-			<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
-			<animation effect="fade" start="100" end="50" time="400" condition="StringCompare(skin.string(vis_bg),fanartmix)">Conditional</animation>	
-			<visible>[StringCompare(skin.string(vis_bg),fanart) | StringCompare(skin.string(vis_bg),fanartmix)] + SubString(skin.string(musicfanart),extra)</visible>
-		</control>
-		<control type="multiimage" id="5044">	
-			<include>WindowBG</include>
-			<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>		
-			<animation effect="fade" start="100" end="50" time="400" condition="StringCompare(skin.string(vis_bg),fanartmix)">Conditional</animation>		
-			<visible>[StringCompare(skin.string(vis_bg),fanart) | StringCompare(skin.string(vis_bg),fanartmix)] + SubString(skin.string(musicfanart),extra) + IsEmpty(Control.GetLabel(5043))</visible>
-		</control> 
-		-->
         <control type="multiimage" id="5045">
             <!-- Artist SlideShow -->
             <aspectratio>keep</aspectratio>
@@ -199,7 +185,7 @@
                     <top>-30</top>
                     <width>360</width>
                     <height>360</height>
-                    <texture fallback="Empty.png" diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.DiscArt)]</texture>
+                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.DiscArt)]</texture>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>!Pvr.IsPlayingRadio+!IsEmpty(Window(Home).Property(SkinHelper.Player.Music.DiscArt))</visible>
                 </control>
@@ -232,7 +218,7 @@
                 <width>525</width>
                 <height>366</height>
                 <fadetime>200</fadetime>
-                <texture flipy="true" fallback="$INFO[MusicPlayer.Cover]" diffuse="thumb_reflect.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.Thumb)]</texture>
+                <texture flipy="true" fallback="defaultaudiocover.png" diffuse="thumb_reflect.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.Thumb)]</texture>
                 <aspectratio align="left" aligny="top">keep</aspectratio>
             </control>
             <control type="image">
@@ -241,7 +227,7 @@
                 <width>525</width>
                 <height>366</height>
                 <fadetime>200</fadetime>
-                <texture fallback="$INFO[MusicPlayer.Cover]" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.Thumb)]</texture>
+                <texture fallback="defaultaudiocover.png" diffuse="thumb_cdcover_mask_cdart.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.AlbumThumb)]</texture>
                 <aspectratio align="left">keep</aspectratio>
             </control>
             <control type="image">
@@ -524,7 +510,7 @@
                 <top>15</top>
                 <width>330</width>
                 <height>142</height>
-                <texture fallback="Empty.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.ClearLogo)]</texture>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.ClearLogo)]</texture>
                 <aspectratio align="left">keep</aspectratio>
                 <visible>stringcompare(Control.GetLabel(5704),Empty.png)</visible>
             </control>
@@ -670,7 +656,7 @@
                     <top>-80</top>
                     <width>435</width>
                     <height>435</height>
-                    <texture fallback="Empty.png" diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.DiscArt)]</texture>
+                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.DiscArt)]</texture>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>!Pvr.IsPlayingRadio</visible>
                 </control>
@@ -690,7 +676,7 @@
                     <top>-80</top>
                     <width>435</width>
                     <height>435</height>
-                    <texture fallback="Empty.png" background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/disc.png]</texture>
+                    <texture background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/disc.png]</texture>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>!Pvr.IsPlayingRadio</visible>
                 </control>
@@ -720,7 +706,7 @@
                 <top>-120</top>
                 <width>270</width>
                 <height>150</height>
-                <texture fallback="Empty.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.ClearLogo)]</texture>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.ClearLogo)]</texture>
                 <fadetime>300</fadetime>
                 <aspectratio align="left" aligny="bottom">keep</aspectratio>
             </control>
@@ -978,7 +964,7 @@
                     <top>180</top>
                     <width>435</width>
                     <height>435</height>
-                    <texture fallback="Empty.png" diffuse="cdart_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$VAR[value_playertitle]</texture>
+                    <texture diffuse="cdart_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$VAR[value_playertitle]</texture>
                     <aspectratio align="center" aligny="center">stretch</aspectratio>
                     <visible>!Pvr.IsPlayingRadio</visible>
                 </control>
@@ -988,7 +974,7 @@
                     <top>180</top>
                     <width>435</width>
                     <height>435</height>
-                    <texture fallback="Empty.png" diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.DiscArt)]</texture>
+                    <texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.DiscArt)]</texture>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                     <visible>!Pvr.IsPlayingRadio</visible>
                 </control>
@@ -1020,7 +1006,7 @@
                 <width>632</width>
                 <height>450</height>
                 <fadetime>200</fadetime>
-                <texture fallback="Empty.png" diffuse="thumb_poster_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.Banner)]</texture>
+                <texture fallback="banner_glass.png" diffuse="thumb_poster_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.Banner)]</texture>
                 <aspectratio align="left">keep</aspectratio>
             </control>
             <control type="image" id="5645">
@@ -1030,18 +1016,18 @@
                 <width>632</width>
                 <height>450</height>
                 <colordiffuse>30FFFFFF</colordiffuse>
-                <texture flipy="true" fallback="Empty.png" diffuse="thumb_poster_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.Banner)]</texture>
+                <texture flipy="true" diffuse="thumb_poster_diffuse.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.Banner)]</texture>
                 <aspectratio align="left" aligny="top">keep</aspectratio>
-                <visible>!StringCompare(Control.GetLabel(5644),Empty.png)</visible>
+                <visible>!StringCompare(Control.GetLabel(5644),banner_glass.png)</visible>
             </control>
             <control type="image" id="5646">
                 <!-- Fake banner -->
                 <left>30</left>
-                <top>188</top>
+                <top>180</top>
                 <width>632</width>
-                <height>135</height>
+                <height>168</height>
                 <fadetime>200</fadetime>
-                <texture fallback="Empty.png" diffuse="thumb_poster_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$VAR[value_playertitle]</texture>
+                <texture diffuse="thumb_poster_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$VAR[value_playertitle]</texture>
                 <aspectratio align="left">scale</aspectratio>
                 <visible>IsEmpty(Window(Home).Property(SkinHelper.Player.Music.Banner))</visible>
             </control>
@@ -1049,32 +1035,22 @@
                 <!-- Fake banner reflect -->
                 <!-- reflexo -->
                 <left>30</left>
-                <top>315</top>
+                <top>348</top>
                 <width>632</width>
                 <height>195</height>
                 <colordiffuse>30FFFFFF</colordiffuse>
-                <texture flipy="true" fallback="Empty.png" diffuse="thumb_poster_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$VAR[value_playertitle]</texture>
+                <texture flipy="true" diffuse="thumb_poster_diffuse.png" background="true">http://localhost:52307/getthumb&amp;title=$VAR[value_playertitle]</texture>
                 <aspectratio align="left">scale</aspectratio>
                 <visible>IsEmpty(Window(Home).Property(SkinHelper.Player.Music.Banner))</visible>
             </control>
-            <control type="image" id="5648">
-                <!-- logo artista -->
-                <left>698</left>
-                <top>-120</top>
-                <width>1192</width>
-                <height>150</height>
-                <texture fallback="Empty.png" background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/logo.png]</texture>
-                <fadetime>300</fadetime>
-                <aspectratio align="right" aligny="bottom">keep</aspectratio>
-                <visible>StringCompare(Control.GetLabel(5649),Empty.png)</visible>
-            </control>
+
             <control type="image" id="5649">
                 <!-- logo artista -->
                 <left>698</left>
                 <top>-120</top>
                 <width>1192</width>
                 <height>150</height>
-                <texture fallback="Empty.png" background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.ClearLogo)]</texture>
+                <texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.ClearLogo)]</texture>
                 <fadetime>300</fadetime>
                 <aspectratio align="right" aligny="bottom">keep</aspectratio>
                 <visible>!IsEmpty(Window(Home).Property(SkinHelper.Player.Music.ClearLogo))</visible>
@@ -1092,7 +1068,7 @@
                 <shadowcolor>AA000000</shadowcolor>
                 <scroll>false</scroll>
                 <scrollout>false</scrollout>
-                <visible>!Pvr.IsPlayingRadio + IsEmpty(Window(Home).Property(SkinHelper.Player.Music.ClearLogo))+StringCompare(Control.GetLabel(5648),Empty.png)</visible>
+                <visible>!Pvr.IsPlayingRadio + IsEmpty(Window(Home).Property(SkinHelper.Player.Music.ClearLogo))</visible>
             </control>
             <control type="label">
                 <!-- Nome da faixa -->
@@ -1276,6 +1252,6 @@
                 <aspectratio align="left" aligny="bottom">keep</aspectratio>
             </control>
         </control>
-        <include>BGBlack</include>
+        <include>BGBlack</include> 
     </controls>
 </window>

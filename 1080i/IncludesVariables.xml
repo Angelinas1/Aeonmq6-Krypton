@@ -3,7 +3,7 @@
 	<!-- Aeon MQ 6 -->
 	<!--############################################################################### SUBMENU  - IR PARA ###############################################################################-->
 	<variable name="SkinVersion">
-		<value>6.6.59 MOD[COLOR=80FFFFFF] | [/COLOR]6/6/2016</value>
+		<value>6.6.61 MOD[COLOR=80FFFFFF] | [/COLOR]26/10/2016</value>
 	</variable>
 	<variable name="service_library">
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),dualwidget1)">plugin://service.library.data.provider?type=$INFO[Skin.String(widget1a)]+$INFO[Skin.String(widget1b)]&amp;reload=$INFO[Window(0).Property($INFO[Skin.String(widget1a)])]$INFO[Window(0).Property($INFO[Skin.String(widget1b)])]</value>
@@ -56,7 +56,7 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),moviecountries)">6041</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),movietags)">6042</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),tvshowrecently)">6043</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(subid),tvguide)">6044</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),tvshowguide)">6044</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),tvshowgenres)">6045</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),tvshowyears)">6046</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),tvshowactors)">6047</value>
@@ -149,6 +149,26 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),vnode18)">6318</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),vnode19)">6319</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),vnode20)">6320</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode1)">6301</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode2)">6302</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode3)">6303</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode4)">6304</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode5)">6305</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode6)">6306</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode7)">6307</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode8)">6308</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode9)">6309</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode10)">6310</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode11)">6311</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode12)">6312</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode13)">6313</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode14)">6314</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode15)">6315</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode16)">6316</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode17)">6317</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode18)">6318</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode19)">6319</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(subid),anode20)">6320</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),favs1)">6401</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),favs2)">6402</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),favs3)">6403</value>
@@ -195,7 +215,7 @@
 	<!--############################################################################### TOP MENU - IR PARA ############################################################################# -->
 	<variable name="Top_GoTo">
 		<value condition="![StringCompare(Container(9000).ListItem.Property(widgets),settings) | IsEmpty(Container(9000).ListItem.Property(widgets)) | IsEmpty(Container(510).ListItem(1).Label)] + [!SubString(Container(9000).ListItem.Property(id),extras) | !Skin.HasSetting(extra_extra)] + !Skin.HasSetting(widget_one)">510</value>
-		<value condition="![StringCompare(Container(9000).ListItem.Property(widgets),settings) | StringCompare(Container(9000).ListItem.Property(widgets),plus.pvrhelper) | IsEmpty(Container(9000).ListItem.Property(widgets)) | IsEmpty(Container(510).ListItem(1).Label)] + [!SubString(Container(9000).ListItem.Property(id),extras) | !Skin.HasSetting(extra_extra)] + Skin.HasSetting(widget_one)">9224</value>
+		<value condition="![StringCompare(Container(9000).ListItem.Property(widgets),settings) | StringCompare(Container(9000).ListItem.Property(widgets),plus.pvrhelper) | IsEmpty(Container(9000).ListItem.Property(widgets)) | IsEmpty(Container(510).ListItem(1).Label)] + [!SubString(Container(9000).ListItem.Property(id),extras) | !Skin.HasSetting(extra_extra)] + Skin.HasSetting(widget_one) | StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.unairedepisodes) | StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.nextairedtvshows)">9224</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),plus.pvrhelper)">9224</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),extras) + Skin.HasSetting(extra_extra)">2517</value>
 		<value condition="[IsEmpty(Container(9000).ListItem.Property(widgets)) | IsEmpty(Container(510).ListItem(1).Label)] + ![StringCompare(Container(9000).ListItem.Property(widgets),settings) | Skin.HasSetting(kioskcode)]">5100</value>
@@ -2837,49 +2857,49 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="SubString(ListItem.Mpaa,Australia:X)">flags/mpaa/Australian_OFLC_X18s.png</value>
 	</variable>
 	<variable name="value_mpaa_sextra">
-		<value condition="SubString(Window.Property(movie.mpaa),Rated NR) | SubString(Window.Property(movie.mpaa),Rated: NR) | StringCompare(Window.Property(movie.mpaa),NR)">flags/mpaa/MPAA_NR_Certificate_US.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Rated G) | SubString(Window.Property(movie.mpaa),Rated: G) | StringCompare(Window.Property(movie.mpaa),G)">flags/mpaa/MPAA_G_Certificate_US.png</value>
-		<value condition="[SubString(Window.Property(movie.mpaa),Rated PG) | SubString(Window.Property(movie.mpaa),Rated: PG) | StringCompare(Window.Property(movie.mpaa),PG)] + ![SubString(Window.Property(movie.mpaa),Rated PG-13) | SubString(Window.Property(movie.mpaa),Rated: PG-13)]">flags/mpaa/MPAA_PG_Certificate_US.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Rated PG-13) | SubString(Window.Property(movie.mpaa),Rated: PG-13) | StringCompare(Window.Property(movie.mpaa),PG-13)">flags/mpaa/MPAA_PG-13_Certificate_US.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Rated R) | SubString(Window.Property(movie.mpaa),Rated: R) | StringCompare(Window.Property(movie.mpaa),R)">flags/mpaa/MPAA_R_Certificate_US.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Rated NC-17) | SubString(Window.Property(movie.mpaa),Rated: NC-17) | StringCompare(Window.Property(movie.mpaa),NC-17)">flags/mpaa/MPAA_NC-17_Certificate_US.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),UK:U)">flags/mpaa/BBFC_U_Certificate_UK.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),UK:PG)">flags/mpaa/BBFC_PG_Certificate_UK.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),UK:12) + !SubString(Window.Property(movie.mpaa),UK:12A)">flags/mpaa/BBFC_12_Certificate_UK.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),UK:12A)">flags/mpaa/BBFC_12A_Certificate_UK.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),UK:15)">flags/mpaa/BBFC_15_Certificate_UK.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),UK:18)">flags/mpaa/BBFC_18_Certificate_UK.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Brazil:Livre) | SubString(Window.Property(movie.mpaa),Livre)">flags/mpaa/MPAA_Brazil_Livre.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Brazil:10) | SubString(Window.Property(movie.mpaa),10 anos)">flags/mpaa/MPAA_Brazil_10.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Brazil:12) | SubString(Window.Property(movie.mpaa),12 anos)">flags/mpaa/MPAA_Brazil_12.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Brazil:14) | SubString(Window.Property(movie.mpaa),14 anos)">flags/mpaa/MPAA_Brazil_14.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Brazil:16) | SubString(Window.Property(movie.mpaa),16 anos)">flags/mpaa/MPAA_Brazil_16.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Brazil:18) | SubString(Window.Property(movie.mpaa),18 anos)">flags/mpaa/MPAA_Brazil_18.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),TV-G)">flags/mpaa/TV-G_Certificate_US.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),TV-PG)">flags/mpaa/TV-PG_Certificate_US.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),TV-14)">flags/mpaa/TV-14_Certificate_US.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),TV-MA)">flags/mpaa/TV-MA_Certificate_US.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),FSK0) | SubString(Window.Property(movie.mpaa),Rated 0) | SubString(Window.Property(movie.mpaa),FSK 0) | SubString(Window.Property(movie.mpaa),FSK o.A.) | SubString(Window.Property(movie.mpaa),o.A.) | SubString(Window.Property(movie.mpaa),ab 0) | SubString(Window.Property(movie.mpaa),Germany:0) | SubString(Window.Property(movie.mpaa),Germany:o.Al.)">flags/mpaa/FSK-0.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),FSK6) | SubString(Window.Property(movie.mpaa),Rated 6) | SubString(Window.Property(movie.mpaa),FSK 6) | SubString(Window.Property(movie.mpaa),ab 6) | SubString(Window.Property(movie.mpaa),Germany:6)">flags/mpaa/FSK-6.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),FSK12) | SubString(Window.Property(movie.mpaa),Rated 12) | SubString(Window.Property(movie.mpaa),FSK 12) | SubString(Window.Property(movie.mpaa),ab 12) | SubString(Window.Property(movie.mpaa),Germany:12)">flags/mpaa/FSK-12.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),FSK16) | SubString(Window.Property(movie.mpaa),Rated 16) | SubString(Window.Property(movie.mpaa),FSK 16) | SubString(Window.Property(movie.mpaa),ab 16) | SubString(Window.Property(movie.mpaa),Germany:16)">flags/mpaa/FSK-16.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),FSK18) | SubString(Window.Property(movie.mpaa),Rated 18) | SubString(Window.Property(movie.mpaa),FSK 18) | SubString(Window.Property(movie.mpaa),ab 18) | SubString(Window.Property(movie.mpaa),Germany:18)">flags/mpaa/FSK-18.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),HU-KN)">flags/mpaa/HU_KN.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),HU-12)">flags/mpaa/HU_12.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),HU-16)">flags/mpaa/HU_16.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),HU-18)">flags/mpaa/HU_18.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),France:U) | SubString(Window.Property(movie.mpaa),Rated U)">flags/mpaa/CSA_U_FR.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),France:-10) | SubString(Window.Property(movie.mpaa),Rated 10)">flags/mpaa/CSA_-10_FR.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),France:-12) | SubString(Window.Property(movie.mpaa),Rated 12)">flags/mpaa/CSA_-12_FR.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),France:-16) | SubString(Window.Property(movie.mpaa),Rated 16)">flags/mpaa/CSA_-16_FR.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),France:-18) | SubString(Window.Property(movie.mpaa),Rated 18)">flags/mpaa/CSA_-18_FR.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Australia:E)">flags/mpaa/Australian_OFLC_Es.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Australia:G)">flags/mpaa/Australian_OFLC_Gs.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Australia:PG)">flags/mpaa/Australian_OFLC_PGs.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Australia:M) + !SubString(Window.Property(movie.mpaa),Australia:MA)">flags/mpaa/Australian_OFLC_Ms.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Australia:MA)">flags/mpaa/Australian_OFLC_MA15s.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Australia:R)">flags/mpaa/Australian_OFLC_R18s.png</value>
-		<value condition="SubString(Window.Property(movie.mpaa),Australia:X)">flags/mpaa/Australian_OFLC_X18s.png</value>
+		<value condition="SubString(Window.Property(mpaa),Rated NR) | SubString(Window.Property(mpaa),Rated: NR) | StringCompare(Window.Property(mpaa),NR)">flags/mpaa/MPAA_NR_Certificate_US.png</value>
+		<value condition="SubString(Window.Property(mpaa),Rated G) | SubString(Window.Property(mpaa),Rated: G) | StringCompare(Window.Property(mpaa),G)">flags/mpaa/MPAA_G_Certificate_US.png</value>
+		<value condition="[SubString(Window.Property(mpaa),Rated PG) | SubString(Window.Property(mpaa),Rated: PG) | StringCompare(Window.Property(mpaa),PG)] + ![SubString(Window.Property(mpaa),Rated PG-13) | SubString(Window.Property(mpaa),Rated: PG-13)]">flags/mpaa/MPAA_PG_Certificate_US.png</value>
+		<value condition="SubString(Window.Property(mpaa),Rated PG-13) | SubString(Window.Property(mpaa),Rated: PG-13) | StringCompare(Window.Property(mpaa),PG-13)">flags/mpaa/MPAA_PG-13_Certificate_US.png</value>
+		<value condition="SubString(Window.Property(mpaa),Rated R) | SubString(Window.Property(mpaa),Rated: R) | StringCompare(Window.Property(mpaa),R)">flags/mpaa/MPAA_R_Certificate_US.png</value>
+		<value condition="SubString(Window.Property(mpaa),Rated NC-17) | SubString(Window.Property(mpaa),Rated: NC-17) | StringCompare(Window.Property(mpaa),NC-17)">flags/mpaa/MPAA_NC-17_Certificate_US.png</value>
+		<value condition="SubString(Window.Property(mpaa),UK:U)">flags/mpaa/BBFC_U_Certificate_UK.png</value>
+		<value condition="SubString(Window.Property(mpaa),UK:PG)">flags/mpaa/BBFC_PG_Certificate_UK.png</value>
+		<value condition="SubString(Window.Property(mpaa),UK:12) + !SubString(Window.Property(mpaa),UK:12A)">flags/mpaa/BBFC_12_Certificate_UK.png</value>
+		<value condition="SubString(Window.Property(mpaa),UK:12A)">flags/mpaa/BBFC_12A_Certificate_UK.png</value>
+		<value condition="SubString(Window.Property(mpaa),UK:15)">flags/mpaa/BBFC_15_Certificate_UK.png</value>
+		<value condition="SubString(Window.Property(mpaa),UK:18)">flags/mpaa/BBFC_18_Certificate_UK.png</value>
+		<value condition="SubString(Window.Property(mpaa),Brazil:Livre) | SubString(Window.Property(mpaa),Livre)">flags/mpaa/MPAA_Brazil_Livre.png</value>
+		<value condition="SubString(Window.Property(mpaa),Brazil:10) | SubString(Window.Property(mpaa),10 anos)">flags/mpaa/MPAA_Brazil_10.png</value>
+		<value condition="SubString(Window.Property(mpaa),Brazil:12) | SubString(Window.Property(mpaa),12 anos)">flags/mpaa/MPAA_Brazil_12.png</value>
+		<value condition="SubString(Window.Property(mpaa),Brazil:14) | SubString(Window.Property(mpaa),14 anos)">flags/mpaa/MPAA_Brazil_14.png</value>
+		<value condition="SubString(Window.Property(mpaa),Brazil:16) | SubString(Window.Property(mpaa),16 anos)">flags/mpaa/MPAA_Brazil_16.png</value>
+		<value condition="SubString(Window.Property(mpaa),Brazil:18) | SubString(Window.Property(mpaa),18 anos)">flags/mpaa/MPAA_Brazil_18.png</value>
+		<value condition="SubString(Window.Property(mpaa),TV-G)">flags/mpaa/TV-G_Certificate_US.png</value>
+		<value condition="SubString(Window.Property(mpaa),TV-PG)">flags/mpaa/TV-PG_Certificate_US.png</value>
+		<value condition="SubString(Window.Property(mpaa),TV-14)">flags/mpaa/TV-14_Certificate_US.png</value>
+		<value condition="SubString(Window.Property(mpaa),TV-MA)">flags/mpaa/TV-MA_Certificate_US.png</value>
+		<value condition="SubString(Window.Property(mpaa),FSK0) | SubString(Window.Property(mpaa),Rated 0) | SubString(Window.Property(mpaa),FSK 0) | SubString(Window.Property(mpaa),FSK o.A.) | SubString(Window.Property(mpaa),o.A.) | SubString(Window.Property(mpaa),ab 0) | SubString(Window.Property(mpaa),Germany:0) | SubString(Window.Property(mpaa),Germany:o.Al.)">flags/mpaa/FSK-0.png</value>
+		<value condition="SubString(Window.Property(mpaa),FSK6) | SubString(Window.Property(mpaa),Rated 6) | SubString(Window.Property(mpaa),FSK 6) | SubString(Window.Property(mpaa),ab 6) | SubString(Window.Property(mpaa),Germany:6)">flags/mpaa/FSK-6.png</value>
+		<value condition="SubString(Window.Property(mpaa),FSK12) | SubString(Window.Property(mpaa),Rated 12) | SubString(Window.Property(mpaa),FSK 12) | SubString(Window.Property(mpaa),ab 12) | SubString(Window.Property(mpaa),Germany:12)">flags/mpaa/FSK-12.png</value>
+		<value condition="SubString(Window.Property(mpaa),FSK16) | SubString(Window.Property(mpaa),Rated 16) | SubString(Window.Property(mpaa),FSK 16) | SubString(Window.Property(mpaa),ab 16) | SubString(Window.Property(mpaa),Germany:16)">flags/mpaa/FSK-16.png</value>
+		<value condition="SubString(Window.Property(mpaa),FSK18) | SubString(Window.Property(mpaa),Rated 18) | SubString(Window.Property(mpaa),FSK 18) | SubString(Window.Property(mpaa),ab 18) | SubString(Window.Property(mpaa),Germany:18)">flags/mpaa/FSK-18.png</value>
+		<value condition="SubString(Window.Property(mpaa),HU-KN)">flags/mpaa/HU_KN.png</value>
+		<value condition="SubString(Window.Property(mpaa),HU-12)">flags/mpaa/HU_12.png</value>
+		<value condition="SubString(Window.Property(mpaa),HU-16)">flags/mpaa/HU_16.png</value>
+		<value condition="SubString(Window.Property(mpaa),HU-18)">flags/mpaa/HU_18.png</value>
+		<value condition="SubString(Window.Property(mpaa),France:U) | SubString(Window.Property(mpaa),Rated U)">flags/mpaa/CSA_U_FR.png</value>
+		<value condition="SubString(Window.Property(mpaa),France:-10) | SubString(Window.Property(mpaa),Rated 10)">flags/mpaa/CSA_-10_FR.png</value>
+		<value condition="SubString(Window.Property(mpaa),France:-12) | SubString(Window.Property(mpaa),Rated 12)">flags/mpaa/CSA_-12_FR.png</value>
+		<value condition="SubString(Window.Property(mpaa),France:-16) | SubString(Window.Property(mpaa),Rated 16)">flags/mpaa/CSA_-16_FR.png</value>
+		<value condition="SubString(Window.Property(mpaa),France:-18) | SubString(Window.Property(mpaa),Rated 18)">flags/mpaa/CSA_-18_FR.png</value>
+		<value condition="SubString(Window.Property(mpaa),Australia:E)">flags/mpaa/Australian_OFLC_Es.png</value>
+		<value condition="SubString(Window.Property(mpaa),Australia:G)">flags/mpaa/Australian_OFLC_Gs.png</value>
+		<value condition="SubString(Window.Property(mpaa),Australia:PG)">flags/mpaa/Australian_OFLC_PGs.png</value>
+		<value condition="SubString(Window.Property(mpaa),Australia:M) + !SubString(Window.Property(mpaa),Australia:MA)">flags/mpaa/Australian_OFLC_Ms.png</value>
+		<value condition="SubString(Window.Property(mpaa),Australia:MA)">flags/mpaa/Australian_OFLC_MA15s.png</value>
+		<value condition="SubString(Window.Property(mpaa),Australia:R)">flags/mpaa/Australian_OFLC_R18s.png</value>
+		<value condition="SubString(Window.Property(mpaa),Australia:X)">flags/mpaa/Australian_OFLC_X18s.png</value>
 	</variable>
 	<variable name="value_mpaa_gallery">
 		<value condition="Control.HasFocus(2518) + SubString(Container(2518).ListItem.MPAA,Australia:E)">flags/mpaa/Australian_OFLC_Es.png</value>
@@ -3872,6 +3892,26 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),vnodes18)">$INFO[skin.string(menu18.path)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),vnodes19)">$INFO[skin.string(menu19.path)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),vnodes20)">$INFO[skin.string(menu20.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes1)">$INFO[skin.string(menu1.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes2)">$INFO[skin.string(menu2.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes3)">$INFO[skin.string(menu2.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes4)">$INFO[skin.string(menu4.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes5)">$INFO[skin.string(menu5.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes6)">$INFO[skin.string(menu6.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes7)">$INFO[skin.string(menu7.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes8)">$INFO[skin.string(menu8.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes9)">$INFO[skin.string(menu9.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes10)">$INFO[skin.string(menu10.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes11)">$INFO[skin.string(menu12.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes12)">$INFO[skin.string(menu12.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes13)">$INFO[skin.string(menu13.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes14)">$INFO[skin.string(menu14.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes15)">$INFO[skin.string(menu15.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes16)">$INFO[skin.string(menu16.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes17)">$INFO[skin.string(menu17.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes18)">$INFO[skin.string(menu18.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes19)">$INFO[skin.string(menu19.path)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes20)">$INFO[skin.string(menu20.path)]</value>
 	</variable>
 	<variable name="value_widgetsmusic">
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),music.recentsong)">musicdb://songs/</value>
@@ -3906,15 +3946,18 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),apl20.recent)">special://musicplaylists/$INFO[skin.string(menu20.path)]</value>
 	</variable>
 	<variable name="value_target">
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),addons.video)">video</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(target),video)">videos</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),addons.video)">videos</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),addons.audio)">music</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),channel.group)">tvchannels</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),addons.programs)">programs</value>
 	</variable>
 	<variable name="value_widgetsplus">
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),channel.tv)">pvr://channels/tv/All&amp;channels/</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),channel.tv)">pvr://channels/tv/*?</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),channel.group)">pvr://channels/tv/</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),channel.epg)">pvr://channels/tv/All&amp;channels/</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),channel.radio)">pvr://channels/radio/All&amp;channels/</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),addons.programs)">addons://sources/executable/</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),channel.epg)">pvr://channels/tv/*?</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),channel.radio)">pvr://channels/radio/*?</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),addons.programs)">addons://user/all/</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),addons.android)">androidapp://sources/apps/</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),addons.video)">addons://sources/video/</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),addons.audio)">addons://sources/audio/</value>
@@ -3962,11 +4005,13 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.helper.recommendedsongs)">plugin://script.skin.helper.service/?action=recommendedsongs&amp;limit=50&amp;reload=$INFO[Window(Home).Property(widgetreloadmusic)]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.helper.moviesforgenre)">plugin://script.skin.helper.service/?action=moviesforgenre&amp;limit=50&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.helper.showsforgenre)">plugin://script.skin.helper.service/?action=showsforgenre&amp;limit=50&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.helper.favouritemedia)">plugin://script.skin.helper.service/?action=favouritemedia&amp;limit=25&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.helper.favouritemedia)">plugin://script.skin.helper.service/?action=favouritemedia</value>
 		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.helper.favourites)">plugin://script.skin.helper.service/?action=favourites&amp;limit=50&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.helper.inprogressmedia)">plugin://script.skin.helper.service/?action=inprogressmedia&amp;limit=50&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.helper.nextairedtvshows)">plugin://script.skin.helper.service/?action=nextairedtvshows&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-	</variable>
+		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.helper.nextairedtvshows)">plugin://script.skin.helper.service/?action=nextairedtvshows</value>
+		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.helper.unairedepisodes)">plugin://script.skin.helper.service/?action=unairedepisodes</value>
+
+		</variable>
 	<variable name="value_widgetsextras2">
 		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras2.mostplayedroms)">plugin://script.extendedinfo?info=youtubeplaylist&amp;&amp;id=rEnWoR732-BHrPp_Pm8_VleD68f9s14-</value>
 	</variable>
@@ -4037,6 +4082,26 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),vnodes18)">$INFO[skin.string(menu18.label)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),vnodes19)">$INFO[skin.string(menu19.label)]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),vnodes20)">$INFO[skin.string(menu20.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes1)">$INFO[skin.string(menu1.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes2)">$INFO[skin.string(menu2.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes3)">$INFO[skin.string(menu2.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes4)">$INFO[skin.string(menu4.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes5)">$INFO[skin.string(menu5.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes6)">$INFO[skin.string(menu6.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes7)">$INFO[skin.string(menu7.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes8)">$INFO[skin.string(menu8.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes9)">$INFO[skin.string(menu9.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes10)">$INFO[skin.string(menu10.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes11)">$INFO[skin.string(menu12.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes12)">$INFO[skin.string(menu12.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes13)">$INFO[skin.string(menu13.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes14)">$INFO[skin.string(menu14.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes15)">$INFO[skin.string(menu15.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes16)">$INFO[skin.string(menu16.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes17)">$INFO[skin.string(menu17.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes18)">$INFO[skin.string(menu18.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes19)">$INFO[skin.string(menu19.label)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),anodes20)">$INFO[skin.string(menu20.label)]</value>
 	</variable>
 	<variable name="value_widgetsmodemusic">
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),music.recentsong)">$LOCALIZE[182] - $LOCALIZE[31583]</value>
@@ -4136,6 +4201,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.favourites)">Favourites (Script.helper)</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.inprogressmedia)">InProgress Media (Script.helper)</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.nextairedtvshows)">NextAired TVShows (Script.helper)</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),extras.helper.unairedepisodes)">UnAired Episodes (Script.helper)</value>
 	</variable>
 	<variable name="value_castgallery">
 		<value condition="[Control.HasFocus(2512) + !IsEmpty(Container(2512).ListItem.CastAndRole)]">$INFO[Container(2512).ListItem.CastAndRole]</value>
@@ -4156,7 +4222,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_playertitle">
 		<value condition="Player.HasVideo">$INFO[VideoPlayer.Title]</value>
-		<value condition="Player.HasAudio + !Control.HasFocus(603)">$INFO[Player.ChannelName]</value>
+		<value condition="Player.HasAudio + !Control.HasFocus(603)">$INFO[Player.Title]</value>
 		<value condition="Player.HasAudio + Control.HasFocus(603)">$LOCALIZE[554] $INFO[Container(603).ListItem.Label]</value>
 	</variable>
 	<variable name="value_playersubtitle">
@@ -4183,7 +4249,8 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.5.SimilarName), / ][CR]   $INFO[MusicPlayer.Property(Artist_Description)]$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography), 
 
 - ]</value>
-		<value condition="Player.HasAudio + IsEmpty(Window(Visualisation).Property(ArtistSlideshow.ArtistBiography))">$INFO[MusicPlayer.Property(Artist_Description)]</value>
+		<value condition="Player.HasAudio + IsEmpty(Window(Visualisation).Property(ArtistSlideshow.ArtistBiography))+!IsEmpty(MusicPlayer.Property(Artist_Description))">$INFO[MusicPlayer.Property(Artist_Description)]</value>
+		<value condition="Player.HasAudio + IsEmpty(Window(Visualisation).Property(ArtistSlideshow.ArtistBiography))+IsEmpty(MusicPlayer.Property(Artist_Description))">$INFO[Window(Home).Property(SkinHelper.Player.Music.Info)]</value>
 	</variable>
 	<variable name="value_playerposter">
 		<value condition="Player.HasVideo">$INFO[VideoPlayer.Cover]</value>
@@ -4360,10 +4427,15 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),channel.radio)">http://localhost:52307/getthumb&amp;title=$INFO[Container(510).ListItem.Label] radio</value>
 	</variable>
 	<variable name="value_widgets_cast">
-		<value condition="IsEmpty(Container(510).ListItem.Season) + !StringCompare(Container(9000).ListItem.Property(widgets),movie.sets)+!StringCompare(Container(510).ListItem.Property(Type),tvshow)+!StringCompare(Container(510).ListItem.Property(Type),episode)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[Container(510).ListItem.Title]&amp;downloadthumbs=true</value>
+		<value condition="IsEmpty(Container(510).ListItem.Season) + !SubString(Container(9000).ListItem.Property(widgets),music) + !StringCompare(Container(9000).ListItem.Property(widgets),movie.sets)+!StringCompare(Container(510).ListItem.Property(Type),tvshow)+!StringCompare(Container(510).ListItem.Property(Type),episode)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[Container(510).ListItem.Title]&amp;downloadthumbs=true</value>
 		<value condition="!IsEmpty(Container(510).ListItem.TVShowTitle) | StringCompare(Container(510).ListItem.Property(Type),tvshow)">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[Container(510).ListItem.TVShowTitle]&amp;downloadthumbs=true</value>
 		<value condition="!IsEmpty(Container(510).ListItem.TVShowTitle) | StringCompare(Container(510).ListItem.Property(Type),episode)">plugin://script.skin.helper.service/?action=getcast&amp;episode=$INFO[Container(510).ListItem.TVShowTitle]&amp;downloadthumbs=true</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(widgets),movie.sets)">plugin://script.skin.helper.service/?action=getcast&amp;movieset=$INFO[Container(510).ListItem.Title]&amp;downloadthumbs=true</value>
+	</variable>
+	<variable name="value_zoom_cast">
+		<value condition="Container.Content(movies)+!SubString(ListItem.Path,videodb://movies/sets,left)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[ListItem.Title]&amp;downloadthumbs=true</value>
+		<value condition="!IsEmpty(ListItem.TVShowTitle)">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[ListItem.TVShowTitle]&amp;downloadthumbs=true</value>
+		<value condition="SubString(ListItem.Path,videodb://movies/sets,left)">plugin://script.skin.helper.service/?action=getcast&amp;movieset=$INFO[ListItem.Title]&amp;downloadthumbs=true</value>
 	</variable>
 	<variable name="value_mainmenubg_preview">
 		<value condition="Control.HasFocus(9100) + Container(9100).HasFocus(22)">special://skin/backgrounds/</value>
@@ -5304,6 +5376,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(tvshow.poster)) + ![Container.Content(artists) | Container.Content(albums) | Container.Content(genres) | Container.Content(countries) | Container.Content(studios) | Container.Content(years) | Container.Content(episodes)] | Container.Content(episodes)">$INFO[ListItem.Icon]</value>
 		<value condition="[StringCompare(Container.Viewmode,RIGHT LIST) | StringCompare(Container.Viewmode,LOW LIST)]+Container.Content(artists)">$INFO[Window(Home).Property(SkinHelper.Music.ArtistThumb)]</value>
 		<value condition="[StringCompare(Container.Viewmode,RIGHT LIST) | StringCompare(Container.Viewmode,LOW LIST)]+Container.Content(albums)">$INFO[Window(Home).Property(SkinHelper.Music.AlbumThumb)]</value>
+		<value condition="[StringCompare(Container.Viewmode,RIGHT LIST) | StringCompare(Container.Viewmode,LOW LIST)]+Container.Content(songs)">$INFO[Window(Home).Property(SkinHelper.Music.AlbumThumb)]</value>
 		<value condition="![StringCompare(Container.Viewmode,RIGHT LIST) | StringCompare(Container.Viewmode,LOW LIST)]+[Container.Content(artists) | Container.Content(albums)]">$INFO[ListItem.Icon]</value>
 		<value condition="IsEmpty(ListItem.Icon) +![StringCompare(Container.Viewmode,RIGHT LIST) | StringCompare(Container.Viewmode,LOW LIST)]+[Container.Content(artists) | Container.Content(albums)]">$INFO[$INFO[Window(Home).Property(SkinHelper.Music.Thumb)]]</value>
 		<value condition="Window.IsActive(videos) + Container.Content(genres) + !Skin.HasSetting(externalvideogenreicon)">genres/video/$INFO[ListItem.Label,,.jpg]</value>
@@ -5668,103 +5741,119 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="StringCompare(skin.string(vis_layout_time),25)">25</value>
 	</variable>
 	<variable name="button_widget_info_label">
-		<value condition="StringCompare(skin.string(button_widget_info),trailer)">Trailer</value>
-		<value condition="StringCompare(skin.string(button_widget_info),helper)">Helper</value>
-		<value condition="StringCompare(skin.string(button_widget_info),extended)">Extended</value>
-		<value condition="StringCompare(skin.string(button_widget_info),youtube)">Youtube</value>
-		<value condition="StringCompare(skin.string(button_widget_info),cinemavision)">Cinemavision</value>
+	<!-- Button Widget info Movie -->
+		<value condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),trailer)">Trailer</value>
+		<value condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),helper)">Helper</value>
+		<value condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),extended)">Extended</value>
+		<value condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),youtube)">Youtube</value>
+		<value condition="[SubString(Container(9000).ListItem.Property(widgets),movie.)|SubString(Container(9000).ListItem.Property(widgets),tvshow.)]+StringCompare(skin.string(button_widget_info),cinemavision)">Cinemavision</value>
+	<!-- Button Widget info Music -->
+		<value condition="SubString(Container(9000).ListItem.Property(widgets),music.)+StringCompare(skin.string(button_widget_info_music),helper)">Helper</value>
+		<value condition="SubString(Container(9000).ListItem.Property(widgets),music.)+StringCompare(skin.string(button_widget_info_music),extended)">Extended</value>
+		<value condition="SubString(Container(9000).ListItem.Property(widgets),music.)+StringCompare(skin.string(button_widget_info_music),youtube)">Youtube</value>
+	<!-- Button Widget info extras -->
+		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),trailer)">Trailer</value>
+		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),helper)">Helper</value>
+		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),extended)">Extended</value>
+		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),youtube)">Youtube</value>
+		<value condition="SubString(Container(9000).ListItem.Property(widgets),extras.)+StringCompare(skin.string(button_widget_info_extras),cinemavision)">Cinemavision</value>
 	</variable>
 	<variable name="value_librarystatus">
-		<value condition="SubString(Container(9000).ListItem.Property(id),movie)">$INFO[Window(0).Property(Movies.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Movies.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),movie)+!SubString(Container(9000).ListItem.Property(id),moviesets)">$INFO[Window(0).Property(Movies.Count),[COLOR=FFFFFAF0]$LOCALIZE[20342]: [/COLOR]]  $INFO[Window(0).Property(Movies.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),moviesets)">$INFO[Window(Home).Property(SkinHelper.TotalMovieSets),[COLOR=FFFFFAF0]$LOCALIZE[31029]: [/COLOR]]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),tvshow)">$INFO[Window(0).Property(TVShows.Count),[COLOR=FFFFFAF0]$LOCALIZE[20343]: [/COLOR]]    $INFO[Window(0).Property(Episodes.Count),[COLOR=FFFFFAF0]$LOCALIZE[20360]: [/COLOR]]    $INFO[Window(0).Property(Episodes.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),concert)">$INFO[Window(0).Property(MusicVideos.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(MusicVideos.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),music)">$INFO[Window(0).Property(Music.ArtistsCount),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Music.AlbumsCount),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Music.SongsCount),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl1)">$INFO[Window(0).Property(Widget1.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget1.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl2)">$INFO[Window(0).Property(Widget2.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget2.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl3)">$INFO[Window(0).Property(Widget3.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget3.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl4)">$INFO[Window(0).Property(Widget4.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget4.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl5)">$INFO[Window(0).Property(Widget5.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget5.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl6)">$INFO[Window(0).Property(Widget6.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget6.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl7)">$INFO[Window(0).Property(Widget7.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget7.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl8)">$INFO[Window(0).Property(Widget8.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget8.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl9)">$INFO[Window(0).Property(Widget9.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget9.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl10)">$INFO[Window(0).Property(Widget10.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget10.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl11)">$INFO[Window(0).Property(Widget11.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget11.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl12)">$INFO[Window(0).Property(Widget12.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget12.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl13)">$INFO[Window(0).Property(Widget13.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget13.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl14)">$INFO[Window(0).Property(Widget14.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget14.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl15)">$INFO[Window(0).Property(Widget15.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget15.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl16)">$INFO[Window(0).Property(Widget16.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget16.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl17)">$INFO[Window(0).Property(Widget17.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget17.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl18)">$INFO[Window(0).Property(Widget18.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget18.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl19)">$INFO[Window(0).Property(Widget19.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget19.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl20)">$INFO[Window(0).Property(Widget20.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget20.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl1)">$INFO[Window(0).Property(Widget1.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget1.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget1.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl2)">$INFO[Window(0).Property(Widget2.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget2.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget2.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl3)">$INFO[Window(0).Property(Widget3.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget3.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget3.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl4)">$INFO[Window(0).Property(Widget4.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget4.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget4.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl5)">$INFO[Window(0).Property(Widget5.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget5.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget5.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl6)">$INFO[Window(0).Property(Widget6.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget6.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget6.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl7)">$INFO[Window(0).Property(Widget7.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget7.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget7.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl8)">$INFO[Window(0).Property(Widget8.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget8.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget8.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl9)">$INFO[Window(0).Property(Widget9.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget9.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget9.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl10)">$INFO[Window(0).Property(Widget10.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget10.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget10.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl11)">$INFO[Window(0).Property(Widget11.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget11.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget11.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl12)">$INFO[Window(0).Property(Widget12.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget12.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget12.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl13)">$INFO[Window(0).Property(Widget13.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget13.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget13.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl14)">$INFO[Window(0).Property(Widget14.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget14.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget14.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl15)">$INFO[Window(0).Property(Widget15.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget15.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget15.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl16)">$INFO[Window(0).Property(Widget16.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget16.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget16.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl17)">$INFO[Window(0).Property(Widget17.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget17.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget17.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl18)">$INFO[Window(0).Property(Widget18.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget18.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget18.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl19)">$INFO[Window(0).Property(Widget19.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget19.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget19.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl20)">$INFO[Window(0).Property(Widget20.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget20.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget20.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl1)">$INFO[Window(0).Property(Widget1.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget1.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl2)">$INFO[Window(0).Property(Widget2.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget2.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl3)">$INFO[Window(0).Property(Widget3.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget3.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl4)">$INFO[Window(0).Property(Widget4.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget4.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl5)">$INFO[Window(0).Property(Widget5.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget5.UnWatched),[COLOR=FFFFFAF0] LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl6)">$INFO[Window(0).Property(Widget6.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget6.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl7)">$INFO[Window(0).Property(Widget7.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget7.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl8)">$INFO[Window(0).Property(Widget8.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget8.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl9)">$INFO[Window(0).Property(Widget9.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget9.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl10)">$INFO[Window(0).Property(Widget10.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget10.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl11)">$INFO[Window(0).Property(Widget11.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget11.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl12)">$INFO[Window(0).Property(Widget12.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget12.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl13)">$INFO[Window(0).Property(Widget13.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget13.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl14)">$INFO[Window(0).Property(Widget14.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget14.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl15)">$INFO[Window(0).Property(Widget15.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget15.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl16)">$INFO[Window(0).Property(Widget16.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget16.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl17)">$INFO[Window(0).Property(Widget17.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget17.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl18)">$INFO[Window(0).Property(Widget18.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget18.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl19)">$INFO[Window(0).Property(Widget19.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget19.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),vpl20)">$INFO[Window(0).Property(Widget20.Count),[COLOR=FFFFFAF0]$LOCALIZE[31072]: [/COLOR]]$INFO[Window(0).Property(Widget20.UnWatched),[COLOR=FFFFFAF0] $LOCALIZE[16101]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl1)">$INFO[Window(0).Property(Widget1.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget1.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget1.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl2)">$INFO[Window(0).Property(Widget2.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget2.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget2.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl3)">$INFO[Window(0).Property(Widget3.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget3.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget3.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl4)">$INFO[Window(0).Property(Widget4.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget4.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget4.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl5)">$INFO[Window(0).Property(Widget5.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget5.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget5.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl6)">$INFO[Window(0).Property(Widget6.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget6.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget6.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl7)">$INFO[Window(0).Property(Widget7.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget7.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget7.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl8)">$INFO[Window(0).Property(Widget8.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget8.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget8.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl9)">$INFO[Window(0).Property(Widget9.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget9.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget9.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl10)">$INFO[Window(0).Property(Widget10.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget10.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget10.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl11)">$INFO[Window(0).Property(Widget11.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget11.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget11.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl12)">$INFO[Window(0).Property(Widget12.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget12.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget12.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl13)">$INFO[Window(0).Property(Widget13.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget13.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget13.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl14)">$INFO[Window(0).Property(Widget14.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget14.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget14.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl15)">$INFO[Window(0).Property(Widget15.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget15.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget15.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl16)">$INFO[Window(0).Property(Widget16.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget16.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget16.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl17)">$INFO[Window(0).Property(Widget17.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget17.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget17.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl18)">$INFO[Window(0).Property(Widget18.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget18.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget18.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl19)">$INFO[Window(0).Property(Widget19.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget19.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget19.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),apl20)">$INFO[Window(0).Property(Widget20.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget20.Albums),[COLOR=FFFFFAF0] $LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget20.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(id),favourites)">$INFO[Window(0).Property(Favourite.Count),[COLOR=FFFFFAF0]$LOCALIZE[20161]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),pictures)">$INFO[Window(Home).Property(SkinHelper.TotalPicturesAddons),[COLOR=FFFFFAF0]$LOCALIZE[20161]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),programs)">$INFO[Window(Home).Property(SkinHelper.TotalProgramAddons),[COLOR=FFFFFAF0]$LOCALIZE[20161]: [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),livetv)|StringCompare(Container(9000).ListItem.Property(id),livetvepg)">$INFO[Window(Home).Property(SkinHelper.TotalTVChannels),[COLOR=FFFFFAF0]$LOCALIZE[31333] : [/COLOR]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(id),radio)">$INFO[Window(Home).Property(SkinHelper.TotalRadioChannels),[COLOR=FFFFFAF0]$LOCALIZE[31120] $LOCALIZE[31333] : [/COLOR]]</value>
 	</variable>
 	<variable name="value_multilabel">
 		<value condition="Container.Content(movies) + ![StringCompare(Container.FolderPath,videodb://movies/sets/) | Window.IsActive(selectdialog) | Skin.HasSetting(trailers) | !IsEmpty(skin.string(playlists)) | Container.Content(sets)]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20342]:[/COLOR] $INFO[Window(0).Property(Movies.Count)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16102]:[/COLOR] $INFO[Window(0).Property(Movies.Watched)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]:[/COLOR] $INFO[Window(0).Property(Movies.UnWatched)]</value>
 		<value condition="Container.Content(sets) + !Control.HasFocus(5801)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20457]:[/COLOR] $INFO[Container.NumItems]</value>
 		<value condition="Container.Content(sets) + Control.HasFocus(5801)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20342]:[/COLOR] $INFO[Container(5801).NumItems]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl1)">$INFO[Window(0).Property(Widget1.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget1.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl2)">$INFO[Window(0).Property(Widget2.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget2.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl3)">$INFO[Window(0).Property(Widget3.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget3.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl4)">$INFO[Window(0).Property(Widget4.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget4.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl5)">$INFO[Window(0).Property(Widget5.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget5.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl6)">$INFO[Window(0).Property(Widget6.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget6.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl7)">$INFO[Window(0).Property(Widget7.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget7.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl8)">$INFO[Window(0).Property(Widget8.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget8.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl9)">$INFO[Window(0).Property(Widget9.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget9.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl10)">$INFO[Window(0).Property(Widget10.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget10.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl11)">$INFO[Window(0).Property(Widget11.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget11.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl12)">$INFO[Window(0).Property(Widget12.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget12.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl13)">$INFO[Window(0).Property(Widget13.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget13.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl14)">$INFO[Window(0).Property(Widget14.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget14.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl15)">$INFO[Window(0).Property(Widget15.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget15.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl16)">$INFO[Window(0).Property(Widget16.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget16.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl17)">$INFO[Window(0).Property(Widget17.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget17.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl18)">$INFO[Window(0).Property(Widget18.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget18.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl19)">$INFO[Window(0).Property(Widget19.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget19.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),vpl20)">$INFO[Window(0).Property(Widget20.Count),,[COLOR=50FFFAF0] | [/COLOR]]$INFO[Window(0).Property(Widget20.UnWatched),[COLOR=FFFFFAF0]$LOCALIZE[16101]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl1)">$INFO[Window(0).Property(Widget1.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget1.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget1.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl2)">$INFO[Window(0).Property(Widget2.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget2.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget2.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl3)">$INFO[Window(0).Property(Widget3.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget3.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget3.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl4)">$INFO[Window(0).Property(Widget4.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget4.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget4.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl5)">$INFO[Window(0).Property(Widget5.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget5.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget5.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl6)">$INFO[Window(0).Property(Widget6.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget6.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget6.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl7)">$INFO[Window(0).Property(Widget7.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget7.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget7.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl8)">$INFO[Window(0).Property(Widget8.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget8.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget8.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl9)">$INFO[Window(0).Property(Widget9.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget9.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget9.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl10)">$INFO[Window(0).Property(Widget10.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget10.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget10.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl11)">$INFO[Window(0).Property(Widget11.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget11.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget11.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl12)">$INFO[Window(0).Property(Widget12.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget12.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget12.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl13)">$INFO[Window(0).Property(Widget13.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget13.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget13.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl14)">$INFO[Window(0).Property(Widget14.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget14.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget14.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl15)">$INFO[Window(0).Property(Widget15.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget15.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget15.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl16)">$INFO[Window(0).Property(Widget16.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget16.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget16.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl17)">$INFO[Window(0).Property(Widget17.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget17.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget17.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl18)">$INFO[Window(0).Property(Widget18.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget18.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget18.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl19)">$INFO[Window(0).Property(Widget19.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget19.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget19.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
-		<value condition="StringCompare(skin.string(playlists),apl20)">$INFO[Window(0).Property(Widget20.Artists),[COLOR=FFFFFAF0]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget20.Albums),[COLOR=FFFFFAF0]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget20.Songs),[COLOR=FFFFFAF0]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl1)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget1.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget1.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl2)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget2.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget2.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl3)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget3.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget3.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl4)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget4.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget4.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl5)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget5.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget5.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl6)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget6.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget6.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl7)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget7.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget7.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl8)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget8.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget8.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl9)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget9.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget9.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl10)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget10.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget10.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl11)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget11.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget11.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl12)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget12.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget12.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl13)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget13.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget13.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl14)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget14.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget14.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl15)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget15.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget15.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl16)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget16.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget16.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl17)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget17.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget17.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl18)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget18.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget18.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl19)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget19.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget19.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),vpl20)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31107][/COLOR] : $INFO[Window(0).Property(Widget20.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Widget20.UnWatched)]</value>
+		<value condition="StringCompare(skin.string(playlists),apl1)">$INFO[Window(0).Property(Widget1.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget1.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget1.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl2)">$INFO[Window(0).Property(Widget2.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget2.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget2.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl3)">$INFO[Window(0).Property(Widget3.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget3.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget3.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl4)">$INFO[Window(0).Property(Widget4.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget4.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget4.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl5)">$INFO[Window(0).Property(Widget5.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget5.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget5.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl6)">$INFO[Window(0).Property(Widget6.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget6.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget6.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl7)">$INFO[Window(0).Property(Widget7.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget7.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget7.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl8)">$INFO[Window(0).Property(Widget8.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget8.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget8.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl9)">$INFO[Window(0).Property(Widget9.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget9.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget9.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl10)">$INFO[Window(0).Property(Widget10.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget10.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget10.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl11)">$INFO[Window(0).Property(Widget11.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget11.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget11.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl12)">$INFO[Window(0).Property(Widget12.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget12.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget12.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl13)">$INFO[Window(0).Property(Widget13.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget13.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget13.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl14)">$INFO[Window(0).Property(Widget14.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget14.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget14.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl15)">$INFO[Window(0).Property(Widget15.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget15.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget15.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl16)">$INFO[Window(0).Property(Widget16.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget16.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget16.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl17)">$INFO[Window(0).Property(Widget17.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget17.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget17.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl18)">$INFO[Window(0).Property(Widget18.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget18.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget18.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl19)">$INFO[Window(0).Property(Widget19.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget19.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget19.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
+		<value condition="StringCompare(skin.string(playlists),apl20)">$INFO[Window(0).Property(Widget20.Artists),[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]]    $INFO[Window(0).Property(Widget20.Albums),[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]]    $INFO[Window(0).Property(Widget20.Songs),[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]]</value>
 		<value condition="Skin.HasSetting(trailers)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31087]:[/COLOR] $INFO[Container.NumItems]</value>
 		<value condition="StringCompare(Container.FolderPath,videodb://movies/sets/) + !Window.IsActive(selectdialog)">$LOCALIZE[31029]</value>
 		<value condition="Container.Content(musicvideos) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31086]: [/COLOR]$INFO[Window(0).Property(MusicVideos.Count)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16102]:[/COLOR] $INFO[Window(0).Property(MusicVideos.Watched)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]:[/COLOR] $INFO[Window(0).Property(MusicVideos.UnWatched)]</value>
@@ -5772,13 +5861,14 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Container.Content(seasons) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[33054][/COLOR]</value>
 		<value condition="Container.Content(episodes) + ![Window.IsActive(selectdialog) | Skin.HasSetting(playlists)]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20360]:[/COLOR] $INFO[Window(0).Property(Episodes.Count)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16102]:[/COLOR] $INFO[Window(0).Property(Episodes.Watched)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]:[/COLOR] $INFO[Window(0).Property(Episodes.UnWatched)]</value>
 		<value condition="Container.Content(artists) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]$INFO[Window(0).Property(Music.ArtistsCount)]</value>
-		<value condition="Container.Content(albums) + ![Window.IsActive(selectdialog) | !IsEmpty(skin.string(playlists))]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]$INFO[Window(0).Property(Music.AlbumsCount)]</value>
-		<value condition="Container.Content(songs) + ![Window.IsActive(selectdialog) | !IsEmpty(skin.string(playlists))]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]$INFO[Window(0).Property(Music.SongsCount)]</value>
+		<value condition="Container.Content(albums) + ![Window.IsActive(selectdialog) | !IsEmpty(skin.string(playlists))]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[132]: [/COLOR]$INFO[Window(Home).Property(SkinHelper.ContentHeader)]</value>
+		<value condition="Container.Content(songs) + ![Window.IsActive(selectdialog) | !IsEmpty(skin.string(playlists))]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]$INFO[Window(Home).Property(SkinHelper.ContentHeader)]</value>
 		<value condition="Container.Content(actors) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[344]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="Container.Content(studios) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20388]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="Container.Content(genres) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[135]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="Container.Content(years) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[652]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="Window.IsActive(settings)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31445][/COLOR]</value>
+		<value condition="Window.IsActive(programs)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31030] - $INFO[Window(Home).Property(SkinHelper.TotalProgramAddons)][/COLOR]</value>
 		<value condition="Window.IsActive(loginscreen)">[COLOR=$VAR[value_headercolor]]Aeon MQ 6 - [/COLOR]$VAR[SkinVersion]</value>
 		<value condition="Window.IsActive(selectdialog) + Control.Hasfocus(3)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31210]: [/COLOR]$INFO[Container(3).NumItems] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[31215]: [/COLOR]$INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages]</value>
 		<value condition="Window.IsActive(selectdialog) + Control.Hasfocus(6)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31210]: [/COLOR]$INFO[Container(6).NumItems] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[31215]: [/COLOR]$INFO[Container(6).CurrentPage]/$INFO[Container(6).NumPages]</value>
@@ -5796,7 +5886,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Control.HasFocus(2517)">$INFO[Container(2517).ListItem.Title]</value>
 		<value condition="Control.HasFocus(2518)">$INFO[Container(2518).ListItem.Title]</value>
 		<value condition="Control.HasFocus(1000) + !IsEmpty(Container(1000).ListItem.label)">[COLOR=$VAR[value_headercolor]]$INFO[Container(1000).ListItem.Label][/COLOR]  as  $INFO[Container(1000).ListItem.Label2]</value>
-		<value condition="!IsEmpty(Container(510).ListItem.Title)">$INFO[Container(510).ListItem.Season,,/] $INFO[Container(510).ListItem.Number] $INFO[Container(510).ListItem.Episode,, - ]$INFO[Container(510).ListItem.TVShowTitle,(,) ]$INFO[Container(510).ListItem.Title]</value>
+		<value condition="!IsEmpty(Container(510).ListItem.Title)">$INFO[Container(510).ListItem.Season,,/] $INFO[Container(510).ListItem.Number] $INFO[Container(510).ListItem.Episode,, - ]$INFO[Container(510).ListItem.TVShowTitle,(,) ]$INFO[Container(510).ListItem.Artist,(,) ]$INFO[Container(510).ListItem.Title]</value>
 		<value condition="IsEmpty(Container(510).ListItem.Title) + [!Control.HasFocus(2517) | !Control.HasFocus(2518) | !Control.HasFocus(2510) | !Control.HasFocus(2511) | !Control.HasFocus(2512) | !Control.HasFocus(2513) | !Control.HasFocus(2514) | !Control.HasFocus(2515) | !Control.HasFocus(2516)]">$INFO[Container(510).ListItem.Label]</value>
 	</variable>
 	<variable name="value_extra_studio">
@@ -6028,10 +6118,17 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="!IsEmpty(Container(510).Player.Art(poster))">$INFO[Container(510).Player.Art(poster)]</value>
 		<value condition="!IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
 		<value condition="!IsEmpty(Window.Property(movie.Poster))">$INFO[Window.Property(movie.Poster)]</value>
-		<value condition="IsEmpty(Player.Art(poster))+IsEmpty(Container(510).Player.Art(poster))+IsEmpty(Player.Art(tvshow.poster))+IsEmpty(Window.Property(movie.Poster))">http://localhost:52307/getthumb&amp;title=$INFO[VideoPlayer.Title]</value>
+		<value condition="IsEmpty(Player.Art(poster))+IsEmpty(Container(510).Player.Art(poster))+IsEmpty(Player.Art(tvshow.poster))+IsEmpty(Window.Property(movie.Poster))">http://localhost:52307/getthumb&amp;title=$INFO[VideoPlayer.Title]_</value>
 	</variable>
 	<variable name="value_dialogselect_icon">
-		<value condition="Control.IsVisible(3)+IsEmpty(Container(3).ListItem.Icon)+[Container.Content(movies)|Container.Content(tvshows)|Container.Content(episodes)​]">http://localhost:52307/getthumb&amp;title=$INFO[Container(3).Listitem.Label]</value>
+		<value condition="![String.Contains(Container(3).Listitem.Label,Logo)|String.Contains(Container(3).Listitem.Label,Poster)|String.Contains(Container(3).Listitem.Label,Disc Art)|String.Contains(Container(3).Listitem.Label,Fanart)|String.Contains(Container(3).Listitem.Label,Banner)|String.Contains(Container(3).Listitem.Label,Thumb)|String.Contains(Container(3).Listitem.Label,clearart)]+Control.IsVisible(3)+IsEmpty(Container(3).ListItem.Icon)+[Container.Content(movies)|Container.Content(tvshows)|Container.Content(episodes)​]">http://localhost:52307/getthumb&amp;title=$INFO[Container(3).Listitem.Label]_</value>
+		<value condition="String.Contains(Container(3).Listitem.Label,Logo)+Control.IsVisible(3)+IsEmpty(Container(3).ListItem.Icon)+[Container.Content(movies)|Container.Content(tvshows)|Container.Content(episodes)​]">aeonmq6_logo.png</value>
+		<value condition="String.Contains(Container(3).Listitem.Label,Poster)+Control.IsVisible(3)+IsEmpty(Container(3).ListItem.Icon)+[Container.Content(movies)|Container.Content(tvshows)|Container.Content(episodes)​]">aeonmq6_poster.jpg</value>
+		<value condition="String.Contains(Container(3).Listitem.Label,Disc Art)+Control.IsVisible(3)+IsEmpty(Container(3).ListItem.Icon)+[Container.Content(movies)|Container.Content(tvshows)|Container.Content(episodes)​]">aeonmq6_disc.jpg</value>
+		<value condition="String.Contains(Container(3).Listitem.Label,Fanart)+Control.IsVisible(3)+IsEmpty(Container(3).ListItem.Icon)+[Container.Content(movies)|Container.Content(tvshows)|Container.Content(episodes)​]">aeonmq6_fanart.jpg</value>
+		<value condition="String.Contains(Container(3).Listitem.Label,Banner)+Control.IsVisible(3)+IsEmpty(Container(3).ListItem.Icon)+[Container.Content(movies)|Container.Content(tvshows)|Container.Content(episodes)​]">aeonmq6_banner.jpg</value>
+		<value condition="String.Contains(Container(3).Listitem.Label,Thumb)+Control.IsVisible(3)+IsEmpty(Container(3).ListItem.Icon)+[Container.Content(movies)|Container.Content(tvshows)|Container.Content(episodes)​]">aeonmq6_thumb 16x9.jpg</value>
+		<value condition="String.Contains(Container(3).Listitem.Label,clearart)+Control.IsVisible(3)+IsEmpty(Container(3).ListItem.Icon)+[Container.Content(movies)|Container.Content(tvshows)|Container.Content(episodes)​]">clearart.png</value>
 		<value condition="Control.IsVisible(3)">$INFO[Container(3).ListItem.Icon]</value>
 		<value condition="Control.IsVisible(6)">$INFO[Container(6).ListItem.Icon]</value>
 	</variable>
@@ -6183,14 +6280,17 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Player.Rewinding32x">$LOCALIZE[31301] 32X</value>
 	</variable>
 	<variable name="value_music_title">
-		<value condition="Container.Content(artists) + [StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,WALL) | StringCompare(Container.Viewmode,COVERFLOW) | StringCompare(Container.Viewmode,PANEL) | StringCompare(Container.Viewmode,CowerFlowandBack) | Window.IsActive(musicinformation)]">$INFO[ListItem.Artist]</value>
-		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
-		<value condition="Container.Content(songs) + [StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,WALL) | StringCompare(Container.Viewmode,COVERFLOW) | StringCompare(Container.Viewmode,PANEL) | Window.IsActive(songinformation)]">$INFO[ListItem.Label]</value>
+		<value condition="!Window.IsActive(visualisation)+Container.Content(artists) + [StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,WALL) | StringCompare(Container.Viewmode,COVERFLOW) | StringCompare(Container.Viewmode,PANEL) | StringCompare(Container.Viewmode,CowerFlowandBack) | Window.IsActive(musicinformation)]">$INFO[ListItem.Artist]</value>
+		<value condition="!Window.IsActive(visualisation)+Container.Content(albums)">$INFO[ListItem.Artist]</value>
+		<value condition="!Window.IsActive(visualisation)+Container.Content(songs) + [StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,WALL) | StringCompare(Container.Viewmode,COVERFLOW) | StringCompare(Container.Viewmode,PANEL) | Window.IsActive(songinformation)]">$INFO[ListItem.Label]</value>
+		<value condition="Window.IsActive(visualisation)">$INFO[MusicPlayer.Artist]</value>
+	
 	</variable>
 	<variable name="value_music_subtitle">
-		<value condition="Container.Content(albums) + [StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,WALL) | StringCompare(Container.Viewmode,COVERFLOW) | StringCompare(Container.Viewmode,PANEL) | Window.IsActive(musicinformation)]">$INFO[ListItem.Label]</value>
-		<value condition="Container.Content(songs) + [StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,WALL) | StringCompare(Container.Viewmode,COVERFLOW) | Window.IsActive(songinformation)]">$INFO[ListItem.Artist]$INFO[ListItem.Album, | ]</value>
-	</variable>
+		<value condition="!Window.IsActive(visualisation)+Container.Content(albums) + [StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,WALL) | StringCompare(Container.Viewmode,COVERFLOW) | StringCompare(Container.Viewmode,PANEL) | Window.IsActive(musicinformation)]">$INFO[ListItem.Label]</value>
+		<value condition="!Window.IsActive(visualisation)+Container.Content(songs) + [StringCompare(Container.Viewmode,POSTER) | StringCompare(Container.Viewmode,WALL) | StringCompare(Container.Viewmode,COVERFLOW) | Window.IsActive(songinformation)]">$INFO[ListItem.Artist]$INFO[ListItem.Album, | ]</value>
+		<value condition="!Window.IsActive(visualisation)">$INFO[ListItem.Artist]$INFO[MusicPlayer.Album, | ]</value>
+		</variable>
 	<variable name="value_songinfo_track">
 		<value>$INFO[ListItem.TrackNumber]</value>
 	</variable>
@@ -6270,7 +6370,7 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="Control.HasFocus(118)">$LOCALIZE[31170]</value>
 		<value condition="Control.HasFocus(119)">$LOCALIZE[31171]</value>
 		<value condition="Control.HasFocus(129) | Control.HasFocus(130) | Control.HasFocus(131)">$LOCALIZE[31083]</value>
-		<value condition="Control.HasFocus(9000) + !IsEmpty(Container(9000).ListItem.Property(path)) + [SubString(Container(9000).ListItem.Property(id),vpl) | SubString(Container(9000).ListItem.Property(id),apl) | SubString(Container(9000).ListItem.Property(id),vnode) | SubString(Container(9000).ListItem.Property(id),favs) | SubString(Container(9000).ListItem.Property(id),addons)]">$LOCALIZE[31095][CR]$INFO[Container(9000).ListItem.Property(path)]</value>
+		<value condition="Control.HasFocus(9000) + !IsEmpty(Container(9000).ListItem.Property(path)) + [SubString(Container(9000).ListItem.Property(id),vpl) | SubString(Container(9000).ListItem.Property(id),apl) | SubString(Container(9000).ListItem.Property(id),vnode) | SubString(Container(9000).ListItem.Property(id),anode) | SubString(Container(9000).ListItem.Property(id),favs) | SubString(Container(9000).ListItem.Property(id),addons)]">$LOCALIZE[31095][CR]$INFO[Container(9000).ListItem.Property(path)]</value>
 	</variable>
 	<variable name="value_menubg">
 		<value condition="IsEmpty(Container(9000).ListItem.Icon)">$VAR[value_bgcustom]</value>
@@ -6299,12 +6399,26 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),weather)">$VAR[value_menutheme_weather]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),settings)">$VAR[value_menutheme_settings]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),shutdown)">$VAR[value_menutheme_shutdown]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),quit)">$VAR[value_menutheme_shutdown]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),powerdown)">$VAR[value_menutheme_shutdown]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),reboot)">$VAR[value_menutheme_shutdown]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),suspend)">$VAR[value_menutheme_shutdown]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),hibernate)">$VAR[value_menutheme_shutdown]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),timer)">$VAR[value_menutheme_shutdown]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),canceltimer)">$VAR[value_menutheme_shutdown]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),logoff)">$VAR[value_menutheme_shutdown]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),mymenu)">$VAR[value_menutheme_mymenu]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),vpl)">$VAR[value_menutheme_vplaylist]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),apl)">$VAR[value_menutheme_aplaylist]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),vnode)">$VAR[value_menutheme_vnodes]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),anode)">$VAR[value_menutheme_anodes]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),addon)">$VAR[value_menutheme_addons]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),extras)">$VAR[value_menutheme_extras]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),videos)">special://skin/backgrounds/video.jpg</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),videocleanlibrary)">special://skin/backgrounds/search.jpg</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),videoupdatelibrary)">special://skin/backgrounds/search.jpg</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),Search)">special://skin/backgrounds/search.jpg</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),Empty)">special://skin/fanart.jpg</value>
 	</variable>
 	<variable name="value_menutheme_movies">
 		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),colors)">special://skin/backgrounds/movies.jpg</value>
@@ -6597,6 +6711,17 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(extrapack)]backgrounds_darkness/vnodes.jpg</value>
 		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(extrapack)]backgrounds_digitalart/vnodes.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,vnodes]</value>
+	</variable>
+	<variable name="value_menutheme_anodes">
+		<value condition="SubString(skin.string(theme),colors)">special://skin/backgrounds/anodes.jpg</value>
+		<value condition="SubString(skin.string(theme),reddish)">$INFO[Skin.String(extrapack)]backgrounds_reddish/anodes.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(extrapack)]backgrounds_modern/anodes.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(extrapack)]backgrounds_future/anodes.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(extrapack)]backgrounds_cold/anodes.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(extrapack)]backgrounds_warm/anodes.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(extrapack)]backgrounds_darkness/anodes.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(extrapack)]backgrounds_digitalart/anodes.jpg</value>
+		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,anodes]</value>
 	</variable>
 	<variable name="value_menutheme_addons">
 		<value condition="SubString(skin.string(theme),colors)">special://skin/backgrounds/addons.jpg</value>
@@ -6929,4 +7054,10 @@ Ultra)]">$INFO[VideoPlayer.VideoCodec,flags/casecodec/,.png]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),extras) + SubString(skin.string(Gallery_2r),helperinprogressmedia)">plugin://script.skin.helper.service/?action=inprogressmedia&amp;limit=50&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),extras) + SubString(skin.string(Gallery_2r),helpernextairedtvshows)">plugin://script.skin.helper.service/?action=nextairedtvshows&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 	</variable>
+  <variable name="swash">
+    <value condition="[SubString(Container(110).ListItem.Label,a,Right) | SubString(Container(110).ListItem.Label,c,Right) | SubString(Container(110).ListItem.Label,d,Right) | SubString(Container(110).ListItem.Label,e,Right) | SubString(Container(110).ListItem.Label,f,Right)] + !IsEmpty(Container(110).ListItem.Property(part4))">}</value>
+    <value condition="[SubString(Container(110).ListItem.Label,h,Right) | SubString(Container(110).ListItem.Label,i,Right) | SubString(Container(110).ListItem.Label,k,Right) | SubString(Container(110).ListItem.Label,l,Right) | SubString(Container(110).ListItem.Label,m,Right)] + !IsEmpty(Container(110).ListItem.Property(part4))">}</value>
+    <value condition="[SubString(Container(110).ListItem.Label,n,Right) | SubString(Container(110).ListItem.Label,r,Right) | SubString(Container(110).ListItem.Label,t,Right) | SubString(Container(110).ListItem.Label,u,Right) | SubString(Container(110).ListItem.Label,x,Right)] + !IsEmpty(Container(110).ListItem.Property(part4))">}</value>
+	<value>{</value>
+  </variable>
 </includes>

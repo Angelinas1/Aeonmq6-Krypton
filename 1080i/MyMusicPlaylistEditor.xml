@@ -7,7 +7,7 @@
         <control type="image">
             <!-- Single Fanart -->
             <include>WindowBG</include>
-            <texture background="true">$VAR[value_defaultmusicfanart]</texture>
+            <texture  background="true">$VAR[value_defaultmusicfanart]</texture>
         </control>
         <control type="group">
             <!-- default group -->

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Aeon MQ 6 -->
+    <!--##################################################################################   VISTA SHOWART- ID 81   ##################################################################################-->
+    <include name="ShowArtLabel">
+        <left>0</left>
+        <height>30</height>
+        <width>600</width>
+        <font>Font_18A</font>
+        <aligny>top</aligny>
+        <align>left</align>
+        <textcolor>$VAR[value_headercolor]</textcolor>
+        <textoffsetx>0</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <scroll>true</scroll>
+    </include>
+    <include name="ShowArtFixedList">
+        <control type="fixedlist" id="81">
+            <include>ShowArt_Content</include>
+        </control>
+    </include>
+    <include name="ShowArtWrapList">
+        <control type="wraplist" id="81">
+            <include>ShowArt_Content</include>
+        </control>
+    </include>
+    <include name="ShowArt_Content">
+        <viewtype label="31819">list</viewtype>
+        <left>75</left>
+        <top>723</top>
+        <width>1800</width>
+        <height>450</height>
+        <pagecontrol>80</pagecontrol>
+        <onup condition="StringCompare(skin.string(showartvideopanel),manual) + !StringCompare(ListItem.Label,..)">9960</onup>
+        <onup condition="![StringCompare(skin.string(showartvideopanel),manual) + !StringCompare(ListItem.Label,..)]">9900</onup>
+        <ondown>80</ondown>
+        <orientation>horizontal</orientation>
+        <focusposition>2</focusposition>
+        <scrolltime>400</scrolltime>
+        
+        <animation effect="slide" start="0,0" end="0,-48" time="300" tween="sine" easing="out" condition="Control.HasFocus(80)">Conditional</animation>
+        <animation effect="fade" start="100" end="20" time="200" condition="Window.IsVisible(6621)">Conditional</animation>
+        <itemlayout condition="SubString(skin.string(showartvideogrid),default)" width="378" height="450">
+            <!-- tamanho normal -->
+            <control type="image">
+                <!-- reflexo -->
+                <left>0</left>
+                <top>248</top>
+                <width>270</width>
+                <height>171</height>
+                <aspectratio align="center" aligny="top">stretch</aspectratio>
+                <texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_logoandclearart_music]</texture>
+            </control>
+            <control type="image">
+                <!-- clearlogo e clearart -->
+                <left>0</left>
+                <top>75</top>
+                <width>270</width>
+                <height>171</height>
+                <texture fallback="aeon_logo_small.png" background="true">$VAR[value_logoandclearart_music]</texture>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+            </control>
+            <control type="image">
+                <left>248</left>
+                <top>98</top>
+                <width>45</width>
+                <height>45</height>
+                <texture>$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+            </control>
+            <control type="image">
+                <left>248</left>
+                <top>201</top>
+                <width>45</width>
+                <height>45</height>
+                <texture flipy="true">$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
+            </control>
+        </itemlayout>
+        <itemlayout condition="SubString(skin.string(showartvideogrid),big)" width="360" height="450">
+            <!-- tamanho grande -->
+            <control type="image">
+                <!-- reflexo -->
+                <left>0</left>
+                <top>244</top>
+                <width>330</width>
+                <height>231</height>
+                <aspectratio align="center" aligny="top">stretch</aspectratio>
+                <texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_logoandclearart_music]</texture>
+            </control>
+            <control type="image">
+                <!-- clearlogo e clearart -->
+                <left>0</left>
+                <top>15</top>
+                <width>330</width>
+                <height>231</height>
+                <texture fallback="aeon_logo_small.png" background="true">$VAR[value_logoandclearart_music]</texture>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+            </control>
+            <control type="image">
+                <left>303</left>
+                <top>68</top>
+                <width>45</width>
+                <height>45</height>
+                <texture>$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+            </control>
+            <control type="image">
+                <left>303</left>
+                <top>201</top>
+                <width>45</width>
+                <height>45</height>
+                <texture flipy="true">$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
+            </control>
+        </itemlayout>
+        <focusedlayout condition="SubString(skin.string(showartvideogrid),default)" width="378" height="450">
+            <!-- tamanho normal -->
+            <control type="image">
+                <!-- reflexo -->
+                <left>0</left>
+                <top>246</top>
+                <width>270</width>
+                <height>171</height>
+                <aspectratio align="center" aligny="top">stretch</aspectratio>
+                <texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_logoandclearart_music]</texture>
+                <animation effect="zoom" start="100" end="160" center="158,246" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+            </control>
+            <control type="image">
+                <!-- clearlogo e clearart -->
+                <left>0</left>
+                <top>75</top>
+                <width>270</width>
+                <height>171</height>
+                <texture fallback="aeon_logo_small.png" background="true">$VAR[value_logoandclearart_music]</texture>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <animation effect="zoom" start="100" end="160" center="158,246" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+            </control>
+            <control type="image">
+                <left>248</left>
+                <top>98</top>
+                <width>45</width>
+                <height>45</height>
+                <texture>$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <animation effect="zoom" start="100" end="160" center="158,246" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+                <visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+            </control>
+            <control type="image">
+                <left>248</left>
+                <top>201</top>
+                <width>45</width>
+                <height>45</height>
+                <texture flipy="true">$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <animation effect="zoom" start="100" end="160" center="158,246" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+                <visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
+            </control>
+        </focusedlayout>
+        <focusedlayout condition="SubString(skin.string(showartvideogrid),big)" width="360" height="450">
+            <!-- tamanho grande -->
+            <control type="image">
+                <!-- reflexo -->
+                <left>0</left>
+                <top>244</top>
+                <width>330</width>
+                <height>231</height>
+                <aspectratio align="center" aligny="top">stretch</aspectratio>
+                <texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_logoandclearart_music]</texture>
+                <animation effect="zoom" start="100" end="118" center="180,248" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+            </control>
+            <control type="image">
+                <!-- clearlogo e clearart -->
+                <left>0</left>
+                <top>15</top>
+                <width>330</width>
+                <height>231</height>
+                <texture fallback="aeon_logo_small.png" background="true">$VAR[value_logoandclearart_music]</texture>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <animation effect="zoom" start="100" end="118" center="180,248" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+            </control>
+            <control type="image">
+                <left>303</left>
+                <top>68</top>
+                <width>45</width>
+                <height>45</height>
+                <texture>$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <animation effect="zoom" start="100" end="118" center="180,248" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+                <visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+            </control>
+            <control type="image">
+                <left>303</left>
+                <top>201</top>
+                <width>45</width>
+                <height>45</height>
+                <texture flipy="true">$VAR[value_watchedstyle]</texture>
+                <colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <animation effect="zoom" start="100" end="118" center="180,248" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+                <visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
+            </control>
+        </focusedlayout>
+    </include>
+</includes>

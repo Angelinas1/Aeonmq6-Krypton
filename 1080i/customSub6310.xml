@@ -2,6 +2,7 @@
 <window id="6310" type="dialog">
     <!-- Aeon MQ 6 -->
     <!-- Vnode 10 -->
+	<!-- Anode 10 -->
     <defaultcontrol>-</defaultcontrol>
     <include>SubMenuCommon</include>
     <controls>

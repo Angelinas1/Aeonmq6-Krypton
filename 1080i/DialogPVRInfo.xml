@@ -134,7 +134,7 @@
                 <width>255</width>
                 <align>center</align>
                 <font>Font_50g</font>
-                <label>[B]$INFO[Window(Home).Property(SkinHelper.PVR.Rating][/B]</label>
+                <label>[B]$INFO[Window(Home).Property(SkinHelper.PVR.Rating)][/B]</label>
                 <textcolor>FFFFFAF0</textcolor>
             </control>
             <control type="label">
@@ -146,7 +146,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>Font_18A</font>
-                <label>$INFO[Window(Home).Property(SkinHelper.PVR.Studio]</label>
+                <label>$INFO[Window(Home).Property(SkinHelper.PVR.Studio)]</label>
                 <textcolor>FFFFFAF0</textcolor>
                 <scroll>true</scroll>
                 <scrollout>false</scrollout>
@@ -285,8 +285,8 @@
                         <label>OriginalTitle</label>
                         <!-- Original Title/Movies - Premiered/TvShows -->
                         <label2>$INFO[Window(Home).Property(SkinHelper.PVR.tmdb_title)]</label2>
-                        <onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Window(Home).Property(SkinHelper.PVR.tmdb_title])</onclick>
-                        <visible>IsEmpty(ListItem.EpisodeName) + !IsEmpty(Window(Home).Property(SkinHelper.PVR.tmdb_title)</visible>
+                        <onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Window(Home).Property(SkinHelper.PVR.tmdb_title)])</onclick>
+                        <visible>IsEmpty(ListItem.EpisodeName) + !IsEmpty(Window(Home).Property(SkinHelper.PVR.tmdb_title))</visible>
                     </item>
                     <item>
                         <label>EpisodeName</label>
@@ -379,7 +379,7 @@
                 <height>30</height>
                 <align>justify</align>
                 <font>Font_18A</font>
-                <label>Budget  -  $INFO[Window(Home).Property(SkinHelper.PVR.Budget]</label>
+                <label>Budget  -  $INFO[Window(Home).Property(SkinHelper.PVR.Budget)]</label>
                 <visible>!IsEmpty(Window(Home).Property(SkinHelper.PVR.Budget))</visible>
             </control>
             <control type="label">
@@ -389,7 +389,7 @@
                 <height>30</height>
                 <align>justify</align>
                 <font>Font_18A</font>
-                <label>Tmdb type  -  $INFO[Window(Home).Property(SkinHelper.PVR.Tmdb_type]</label>
+                <label>Tmdb type  -  $INFO[Window(Home).Property(SkinHelper.PVR.Tmdb_type)]</label>
                 <visible>!IsEmpty(Window(Home).Property(SkinHelper.PVR.Tmdb_type))</visible>
             </control>
             <control type="label">
@@ -399,7 +399,7 @@
                 <height>30</height>
                 <align>justify</align>
                 <font>Font_18A</font>
-                <label>Status  -  $INFO[Window(Home).Property(SkinHelper.PVR.Status]</label>
+                <label>Status  -  $INFO[Window(Home).Property(SkinHelper.PVR.Status)]</label>
                 <visible>!IsEmpty(Window(Home).Property(SkinHelper.PVR.Status))</visible>
             </control>
             <control type="label">
@@ -409,7 +409,7 @@
                 <height>30</height>
                 <align>justify</align>
                 <font>Font_18A</font>
-                <label>Imdb_id  -  $INFO[Window(Home).Property(SkinHelper.PVR.Imdb_id]</label>
+                <label>Imdb_id  -  $INFO[Window(Home).Property(SkinHelper.PVR.Imdb_id)]</label>
                 <visible>!IsEmpty(Window(Home).Property(SkinHelper.PVR.Imdb_id))</visible>
             </control>
             <control type="label">
@@ -419,7 +419,7 @@
                 <height>30</height>
                 <align>justify</align>
                 <font>Font_18A</font>
-                <label>Revenue  -  $INFO[Window(Home).Property(SkinHelper.PVR.Revenue]</label>
+                <label>Revenue  -  $INFO[Window(Home).Property(SkinHelper.PVR.Revenue)]</label>
                 <visible>!IsEmpty(Window(Home).Property(SkinHelper.PVR.Revenue))</visible>
             </control>
             <control type="textbox">

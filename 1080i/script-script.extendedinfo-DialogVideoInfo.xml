@@ -11,7 +11,7 @@
             <control type="multiimage">
                 <!-- Multi Fanart -->
                 <include>WindowBG</include>
-                <imagepath background="true">flags/black.png</imagepath>
+                <imagepath background="true">black.png</imagepath>
             </control>
             <control type="multiimage">
                 <!-- Multi Fanart -->
@@ -88,7 +88,7 @@
             </control>
             <control type="group">
                 <!-- CDART VIDEO -->
-                <left>1530</left>
+                <left>1500</left>
                 <top>0</top>
                 <animation type="WindowOpen">
                     <effect type="slide" start="0,150" end="0,0" time="1500" delay="500" tween="cubic" easing="out" />
@@ -103,7 +103,6 @@
                     <effect type="slide" start="0,0" end="0,150" time="300" tween="cubic" easing="out" />
                     <effect type="fade" start="100" end="0" time="200" />
                 </animation>
-                <animation effect="slide" time="200" start="0,0" end="-30,0" tween="cubic" easing="out" condition="!Skin.HasSetting(nolowlistvideocase)">Conditional</animation>
                 <control type="image">
                     <width>351</width>
                     <height>351</height>
