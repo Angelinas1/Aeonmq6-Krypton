@@ -197,7 +197,7 @@
                     <visible>[Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(songs) | Container.Content(albums) | Container.Content(years)]</visible>
                 </control>
                 <control type="list" id="55">
-                    <viewtype label="31807">list</viewtype>
+                    <viewtype label="LOW LIST">list</viewtype>
                     <left>450</left>
                     <top>765</top>
                     <width>900</width>

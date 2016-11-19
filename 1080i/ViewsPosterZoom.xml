@@ -121,7 +121,7 @@
 
 	<control type="wraplist" id="76">
 	<!-- Zoom Info -->
-	<viewtype label="31847">list</viewtype>
+	<viewtype label="POSTER ZOOM">list</viewtype>
 	<left>45</left>
 	<top>510</top>
 	<width>1880</width>

@@ -24,7 +24,7 @@
                 <animation effect="fade" time="200" start="100" end="0">Hidden</animation>
                 <!-- Movies/TVShows Poster/Programs -->
                 <control type="panel" id="62">
-                    <viewtype label="31818">icon</viewtype>
+                    <viewtype label="PANEL">icon</viewtype>
                     <left>758</left>
                     <top>165</top>
                     <width>1080</width>

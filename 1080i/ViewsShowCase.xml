@@ -167,7 +167,7 @@
         </control>
     </include>
     <include name="MovieShowCase_List_Content">
-        <viewtype label="31802">list</viewtype>
+        <viewtype label="SHOWCASE">list</viewtype>
         <left>-124</left>
         <top>540</top>
         <width>2169</width>

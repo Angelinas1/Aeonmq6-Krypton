@@ -206,7 +206,7 @@
                 <animation effect="slide" time="500" start="-1200,0" end="0,0" tween="cubic" easing="out">Visible</animation>
                 <animation effect="fade" time="200" start="100" end="0">Hidden</animation>
                 <control type="wraplist" id="70">
-                    <viewtype label="31814">list</viewtype>
+                    <viewtype label="POSTER LIST">list</viewtype>
                     <left>0</left>
                     <top>0</top>
                     <width>303</width>

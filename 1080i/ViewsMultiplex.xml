@@ -42,7 +42,7 @@
         </control>
     </include>
     <include name="Multiplex_Content">
-        <viewtype label="31803">list</viewtype>
+        <viewtype label="MULTIPLEX">list</viewtype>
         <left>0</left>
         <top>540</top>
         <width>1920</width>

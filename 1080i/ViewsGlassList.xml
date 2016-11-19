@@ -611,7 +611,7 @@
                 <texture>separator_v.png</texture>
             </control>
             <control type="list" id="57">
-                <viewtype label="31821">List</viewtype>
+                <viewtype label="GLASS LIST">List</viewtype>
                 <left>0</left>
                 <top>0</top>
                 <width>450</width>

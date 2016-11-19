@@ -303,7 +303,7 @@
                     </control>
                 </control>
                 <control type="list" id="65">
-                    <viewtype label="31820">list</viewtype>
+                    <viewtype label="SETS">list</viewtype>
                     <left>1350</left>
                     <top>436</top>
                     <width>570</width>
@@ -312,8 +312,7 @@
                     <onright>5801</onright>
                     <orientation>vertical</orientation>
                     <pagecontrol>80</pagecontrol>
-                    <scrolltime>400</scrolltime>
-                    
+                    <scrolltime>400</scrolltime>  
                     <visible>Container.Content(movies) | Container.Content(sets)</visible>
                     <itemlayout height="60">
                         <control type="image">

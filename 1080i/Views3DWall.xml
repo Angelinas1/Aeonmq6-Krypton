@@ -595,7 +595,7 @@
             <onright>67</onright>
             <onup>9900</onup>
             <ondown>80</ondown>
-            <viewtype label="31806">icon</viewtype>
+            <viewtype label="WALL 3D">icon</viewtype>
             <pagecontrol>80</pagecontrol>
             <itemgap>0</itemgap>
             <orientation>horizontal</orientation>

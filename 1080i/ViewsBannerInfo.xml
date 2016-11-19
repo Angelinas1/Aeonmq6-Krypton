@@ -97,7 +97,7 @@
             </control>
             <control type="panel" id="53">
                 <!-- Banner Info -->
-                <viewtype label="31812">Wide Icon</viewtype>
+                <viewtype label="BANNER INFO">Wide Icon</viewtype>
                 <left>142</left>
                 <top>447</top>
                 <width>1665</width>

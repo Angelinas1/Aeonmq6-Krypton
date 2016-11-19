@@ -1369,7 +1369,7 @@
                 </control>
             </control>
             <control type="wraplist" id="58">
-                <viewtype label="31810">icon</viewtype>
+                <viewtype label="COVERFLOW">icon</viewtype>
                 <left>-615</left>
                 <top>345</top>
                 <width>3150</width>

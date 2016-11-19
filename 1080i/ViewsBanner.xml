@@ -36,7 +36,7 @@
             <!-- Fundo -->
             <visible>StringCompare(Container.Viewmode,BANNER)</visible>
             <control type="panel" id="52">
-                <viewtype label="31811">Wide Icon</viewtype>
+                <viewtype label="BANNER">Wide Icon</viewtype>
                 <left>75</left>
                 <top>147</top>
                 <width>1800</width>

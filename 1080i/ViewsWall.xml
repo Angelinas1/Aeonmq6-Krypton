@@ -45,7 +45,7 @@
             <!-- Fundo -->
             <visible>StringCompare(Container.Viewmode,WALL)</visible>
             <control type="panel" id="56">
-                <viewtype label="31805">Panel</viewtype>
+                <viewtype label="WALL">Panel</viewtype>
                 <left>0</left>
                 <top>136</top>
                 <width>2062</width>

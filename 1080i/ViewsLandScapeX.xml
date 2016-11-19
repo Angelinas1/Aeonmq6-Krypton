@@ -143,7 +143,7 @@
                 <animation effect="fade" end="85" condition="true">Conditional</animation>
             </control>
             <control type="panel" id="64">
-                <viewtype label="31804">icon</viewtype>
+                <viewtype label="LANDSCAPEX">icon</viewtype>
                 <left>142</left>
                 <top>582</top>
                 <width>1665</width>

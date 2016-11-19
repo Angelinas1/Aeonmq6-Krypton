@@ -25,7 +25,7 @@
         </control>
     </include>
     <include name="ShowArt_Content">
-        <viewtype label="31819">list</viewtype>
+        <viewtype label="SHOWART">list</viewtype>
         <left>75</left>
         <top>723</top>
         <width>1800</width>

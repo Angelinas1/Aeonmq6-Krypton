@@ -8,7 +8,7 @@
             <animation effect="fade" time="400">VisibleChange</animation>
             <visible>StringCompare(Container.Viewmode,TOTAL ART)</visible>
             <control type="wraplist" id="71">
-                <viewtype label="31816">list</viewtype>
+                <viewtype label="TOTAL ART">list</viewtype>
                 <left>0</left>
                 <top>-48</top>
                 <width>1920</width>

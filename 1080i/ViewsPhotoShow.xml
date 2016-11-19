@@ -69,7 +69,7 @@
                 </control>
             </control>
             <control type="panel" id="79">
-                <viewtype label="31817">icon</viewtype>
+                <viewtype label="PANEL">icon</viewtype>
                 <left>66</left>
                 <top>682</top>
                 <width>1756</width>

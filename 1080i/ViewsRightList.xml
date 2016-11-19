@@ -493,7 +493,7 @@
                     </control>
                 </control>
                 <control type="list" id="51">
-                    <viewtype label="31822">list</viewtype>
+                    <viewtype label="RIGHT LIST">list</viewtype>
                     <left>900</left>
                     <top>30</top>
                     <width>1020</width>

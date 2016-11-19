@@ -98,7 +98,7 @@
                     <ondown>59</ondown>
                 </control>
                 <control type="list" id="59">
-                    <viewtype label="31813">list</viewtype>
+                    <viewtype label="WIDE">list</viewtype>
                     <left>0</left>
                     <top>98</top>
                     <width>960</width>

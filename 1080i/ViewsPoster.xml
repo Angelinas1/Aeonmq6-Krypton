@@ -25,7 +25,7 @@
         </control>
     </include>
     <include name="Poster_Content">
-        <viewtype label="31808">list</viewtype>
+        <viewtype label="POSTER">list</viewtype>
         <left>-132</left>
         <top>180</top>
         <width>2130</width>

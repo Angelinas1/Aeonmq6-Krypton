@@ -13,7 +13,7 @@
                 <animation effect="slide" time="1000" start="0,900" end="0,0" tween="cubic" easing="out">Visible</animation>
                 <animation effect="fade" time="200" start="100" end="0">Hidden</animation>
                 <control type="fixedlist" id="63">
-                    <viewtype label="31809">list</viewtype>
+                    <viewtype label="SHELF">list</viewtype>
                     <left>-45</left>
                     <top>315</top>
                     <height>922</height>
